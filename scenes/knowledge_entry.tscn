@@ -1,0 +1,70 @@
+[gd_scene format=3 uid="uid://cmwfwlylcj2tu"]
+
+[ext_resource type="Script" uid="uid://cq20nx448hvtv" path="res://scenes/knowledge_entry.gd" id="1_5tfcu"]
+[ext_resource type="Texture2D" uid="uid://df7v4td3d6gqq" path="res://assets/no.png" id="1_cddu7"]
+[ext_resource type="Texture2D" uid="uid://bycvflinttavg" path="res://assets/element_icons/violet.png" id="2_cddu7"]
+[ext_resource type="Texture2D" uid="uid://bwaikg2oxhk1y" path="res://assets/element_icons/bouche.png" id="3_4pxsj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4pxsj"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.16796875, 0.16796875, 0.16796875, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="LabelSettings" id="LabelSettings_5tfcu"]
+font_size = 24
+
+[node name="KnowledgeEntry" type="PanelContainer" unique_id=1097530464 node_paths=PackedStringArray("answer_icon", "emplacement_icon", "emplacement_name", "value_icon", "value_name")]
+custom_minimum_size = Vector2(0, 25)
+offset_right = 249.0
+offset_bottom = 34.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4pxsj")
+script = ExtResource("1_5tfcu")
+answer_icon = NodePath("HBoxContainer/AnswerIcon")
+emplacement_icon = NodePath("HBoxContainer/EmplacementIcon")
+emplacement_name = NodePath("HBoxContainer/EmplacementName")
+value_icon = NodePath("HBoxContainer/ValueIcon")
+value_name = NodePath("HBoxContainer/ValueName")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1375527426]
+layout_mode = 2
+
+[node name="AnswerIcon" type="TextureRect" parent="HBoxContainer" unique_id=1064081971]
+layout_mode = 2
+texture = ExtResource("1_cddu7")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="EmplacementIcon" type="TextureRect" parent="HBoxContainer" unique_id=758522914]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("3_4pxsj")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="EmplacementName" type="Label" parent="HBoxContainer" unique_id=395395707]
+layout_mode = 2
+text = "Mouth"
+label_settings = SubResource("LabelSettings_5tfcu")
+
+[node name="Equals" type="Label" parent="HBoxContainer" unique_id=148964322]
+layout_mode = 2
+text = "is"
+label_settings = SubResource("LabelSettings_5tfcu")
+
+[node name="ValueIcon" type="TextureRect" parent="HBoxContainer" unique_id=1064657488]
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_cddu7")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="ValueName" type="Label" parent="HBoxContainer" unique_id=622444477]
+layout_mode = 2
+text = "Violet"
+label_settings = SubResource("LabelSettings_5tfcu")

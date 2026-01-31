@@ -2,6 +2,7 @@ extends Node
 
 @export var ask_question_ui: Control
 @export var ask_question_container: Control
+@export var ask_button : Button
 @export var emplacement_popup: Control
 @export var caracteristique_popup: Control
 @export var color_popup: Control
@@ -22,15 +23,17 @@ extends Node
 @export var material_value_buttons: Array[ButtonItemMaterial]
 
 @export var enemy_question_container : OpponentQuestionContainer
+@export var yes_no_container : YesNoPanelContainer
+@export var enemy_answer_container : PanelContainer
 
 @export var mask_element_tooltip : MaskElementTooltip
 
 @export var enemy_mask_view : Mask
 
-var current_question: Question
+var current_player_question: Question
 
 func _ready() -> void:
-	current_question = Question.new()
+	current_player_question = Question.new()
 	hide_popups()
 	connect_signals()
 	question_value_button.disabled = true
@@ -71,25 +74,44 @@ func connect_signals():
 	
 
 func show_enemy_question():
-	enemy_question_container.show_for_question(GameState.generate_enemy_question())
+	ask_question_ui.hide()
+	var enemy_question := GameState.generate_enemy_question()
+	enemy_question_container.show_for_question(enemy_question)
+	yes_no_container.show_for_question(enemy_question)
+	var player_answer = await yes_no_container.player_answered
+	enemy_question_container.hide()
+	yes_no_container.hide()
+	GameState.answer_enemy_question(enemy_question,player_answer)
+	show_player_ask_interface()
 
-
+func show_player_ask_interface():
+	ask_question_ui.show()
+	await ask_button.pressed
+	ask_question_ui.hide()
+	var enemy_answer := GameState.ask_question_to_enemy(current_player_question)
+	enemy_answer_container.display_answer(enemy_answer)
+	await get_tree().create_timer(2).timeout
+	enemy_answer_container.hide()
+	show_enemy_question()
+	
+	
+	
 func _on_question_button_pressed(origin_button: Button, destination_button: Button):
 	destination_button.icon = origin_button.icon
 	if origin_button is ButtonItemEmplacement:
-		current_question.emplacement = origin_button.value
+		current_player_question.emplacement = origin_button.value
 	elif origin_button is ButtonItemCaracteristique:
-		if current_question.caracteristique != origin_button.value:
+		if current_player_question.caracteristique != origin_button.value:
 			question_value_button.icon = null
-			current_question.value = -1
-		current_question.caracteristique = origin_button.value
+			current_player_question.value = -1
+		current_player_question.caracteristique = origin_button.value
 		question_value_button.disabled = false
 	elif origin_button is ButtonItemColor:
-		current_question.value = origin_button.value
+		current_player_question.value = origin_button.value
 	elif origin_button is ButtonItemShape:
-		current_question.value = origin_button.value
+		current_player_question.value = origin_button.value
 	elif origin_button is ButtonItemMaterial:
-		current_question.value = origin_button.value
+		current_player_question.value = origin_button.value
 	hide_popups()
 	untoggle_buttons(null)
 
@@ -112,12 +134,12 @@ func _on_question_value_button_toggled(toggled: bool):
 	if toggled:
 		untoggle_buttons(question_value_button)
 
-		if current_question.caracteristique.is_empty():
+		if current_player_question.caracteristique.is_empty():
 			print("error : impossible d'ouvrir le selecteur de valeur car aucune caracteristique n'est renseignée dans la question")
 			# this should not happen
 			return
 			
-		match current_question.caracteristique:
+		match current_player_question.caracteristique:
 			&"couleur":
 				color_popup.show()
 			&"forme":

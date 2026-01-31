@@ -2,6 +2,7 @@
 extends Node
 
 signal turn_changed
+signal player_knowledge_acquired(knowledge:Dictionary) # {Question:bool}
 
 var available_masks : Array[Mask]
 
@@ -65,15 +66,15 @@ func get_mask_truth(mask:MaskInfo, question:Question) -> bool:
 			return mask.all_elements.any(func(element:MaskElementInfo): 
 				return element.has_caracteristique_value(question.caracteristique,question.value))
 		&"face":
-			return mask.face.has_caracteristique_value(question.caracteristique,question.value)
+			return mask.face_info.has_caracteristique_value(question.caracteristique,question.value)
 		&"coiffe":
-			return mask.coiffe.has_caracteristique_value(question.caracteristique,question.value)
+			return mask.coiffe_info.has_caracteristique_value(question.caracteristique,question.value)
 		&"yeux":
-			return mask.yeux.has_caracteristique_value(question.caracteristique,question.value)
+			return mask.yeux_info.has_caracteristique_value(question.caracteristique,question.value)
 		&"nez":
-			return mask.nez.has_caracteristique_value(question.caracteristique,question.value)
+			return mask.nez_info.has_caracteristique_value(question.caracteristique,question.value)
 		&"bouche":
-			return mask.bouche.has_caracteristique_value(question.caracteristique,question.value)
+			return mask.bouche_info.has_caracteristique_value(question.caracteristique,question.value)
 	return true
 
 func generate_enemy_question() -> Question:
@@ -91,7 +92,9 @@ func generate_enemy_question() -> Question:
 
 func ask_question_to_enemy(question:Question) -> bool:
 	var answer := get_mask_truth(player_mask, question)
-	player_knowledge.append({question:answer})
+	var new_knowledge := {question:answer}
+	player_knowledge.append(new_knowledge)
+	player_knowledge_acquired.emit(new_knowledge)
 	is_enemy_turn = true
 	return answer
 
