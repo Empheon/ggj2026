@@ -17,9 +17,24 @@
 [ext_resource type="Texture2D" uid="uid://cjyn5hywh62bl" path="res://assets/element_icons/forme.png" id="13_01n6w"]
 [ext_resource type="Texture2D" uid="uid://cfr4o7jn8m77e" path="res://assets/element_icons/matiere.png" id="14_6u1mn"]
 [ext_resource type="Script" path="res://scenes/question_item_caracteristique.gd" id="15_bcnxi"]
+[ext_resource type="Texture2D" uid="uid://dhfx8ojeuils" path="res://assets/element_icons/rouge.png" id="17_iav3h"]
 [ext_resource type="Script" uid="uid://crlknn7467584" path="res://scenes/question_item_color.gd" id="17_k6f3i"]
 [ext_resource type="Script" uid="uid://cw00juvvs8y32" path="res://scenes/question_item_shape.gd" id="18_xdqt8"]
 [ext_resource type="Script" uid="uid://bfnfe45lvmo77" path="res://scenes/question_item_material.gd" id="19_adb74"]
+[ext_resource type="Texture2D" uid="uid://lajyp8f8liff" path="res://assets/element_icons/jaune.png" id="19_womr8"]
+[ext_resource type="Texture2D" uid="uid://i2r4dny7psur" path="res://assets/element_icons/vert.png" id="20_onjth"]
+[ext_resource type="Texture2D" uid="uid://e3f46cdssqkx" path="res://assets/element_icons/bleu.png" id="21_xa0eo"]
+[ext_resource type="Texture2D" uid="uid://bycvflinttavg" path="res://assets/element_icons/violet.png" id="22_3mjum"]
+[ext_resource type="Texture2D" uid="uid://h5pduf4iqojv" path="res://assets/element_icons/carre.png" id="23_p27gv"]
+[ext_resource type="Texture2D" uid="uid://cxaa54lidrht2" path="res://assets/element_icons/triangle.png" id="25_cn4eu"]
+[ext_resource type="Texture2D" uid="uid://bbd8e4q87sin7" path="res://assets/element_icons/rond.png" id="26_0wyf6"]
+[ext_resource type="Texture2D" uid="uid://bbvih1002gv3a" path="res://assets/element_icons/piques.png" id="27_xp01v"]
+[ext_resource type="Texture2D" uid="uid://lp2ex3syjqaw" path="res://assets/element_icons/polyygon.png" id="28_jix7a"]
+[ext_resource type="Texture2D" uid="uid://bvqjb8b3u66y" path="res://assets/element_icons/plastique.png" id="29_segjr"]
+[ext_resource type="Texture2D" uid="uid://cr05qdjjehkw4" path="res://assets/element_icons/bois.png" id="31_beobj"]
+[ext_resource type="Texture2D" uid="uid://cgxvhmt58r3xb" path="res://assets/element_icons/metal.png" id="32_267kh"]
+[ext_resource type="Texture2D" uid="uid://dvxoyjaalklkb" path="res://assets/element_icons/fourrure.png" id="33_86meh"]
+[ext_resource type="Texture2D" uid="uid://cuty8s7fjdc47" path="res://assets/element_icons/pierre.png" id="34_duuju"]
 
 [sub_resource type="Gradient" id="Gradient_und3l"]
 
@@ -424,26 +439,31 @@ offset_bottom = 884.0
 
 [node name="QuestionItem" parent="AspectRatioContainer/16_10_Container/AskQuestionUI/ColorPopup/Grid" parent_id_path=PackedInt32Array(1113487206, 1457894234) index="0" unique_id=842373604]
 text = "RED"
+icon = ExtResource("17_iav3h")
 script = ExtResource("17_k6f3i")
 value = "red"
 
 [node name="QuestionItem2" parent="AspectRatioContainer/16_10_Container/AskQuestionUI/ColorPopup/Grid" parent_id_path=PackedInt32Array(1113487206, 1457894234) index="1" unique_id=1641545328]
 text = "YELLOW"
+icon = ExtResource("19_womr8")
 script = ExtResource("17_k6f3i")
 value = "yellow"
 
 [node name="QuestionItem3" parent="AspectRatioContainer/16_10_Container/AskQuestionUI/ColorPopup/Grid" parent_id_path=PackedInt32Array(1113487206, 1457894234) index="2" unique_id=336210733]
 text = "GREEN"
+icon = ExtResource("20_onjth")
 script = ExtResource("17_k6f3i")
 value = "green"
 
 [node name="QuestionItem4" parent="AspectRatioContainer/16_10_Container/AskQuestionUI/ColorPopup/Grid" parent_id_path=PackedInt32Array(1113487206, 1457894234) index="3" unique_id=457536566]
 text = "BLUE"
+icon = ExtResource("21_xa0eo")
 script = ExtResource("17_k6f3i")
 value = "blue"
 
 [node name="QuestionItem5" parent="AspectRatioContainer/16_10_Container/AskQuestionUI/ColorPopup/Grid" parent_id_path=PackedInt32Array(1113487206, 1457894234) index="4" unique_id=1216540401]
 text = "PURPLE"
+icon = ExtResource("22_3mjum")
 script = ExtResource("17_k6f3i")
 value = "purple"
 
@@ -459,26 +479,31 @@ offset_bottom = 884.0
 
 [node name="QuestionItem" parent="AspectRatioContainer/16_10_Container/AskQuestionUI/ShapePopup/Grid" parent_id_path=PackedInt32Array(284634523, 1457894234) index="0" unique_id=842373604]
 text = "SQUARE"
+icon = ExtResource("23_p27gv")
 script = ExtResource("18_xdqt8")
 value = "square"
 
 [node name="QuestionItem2" parent="AspectRatioContainer/16_10_Container/AskQuestionUI/ShapePopup/Grid" parent_id_path=PackedInt32Array(284634523, 1457894234) index="1" unique_id=1641545328]
 text = "TRIANGLE"
+icon = ExtResource("25_cn4eu")
 script = ExtResource("18_xdqt8")
 value = "triangle"
 
 [node name="QuestionItem3" parent="AspectRatioContainer/16_10_Container/AskQuestionUI/ShapePopup/Grid" parent_id_path=PackedInt32Array(284634523, 1457894234) index="2" unique_id=336210733]
 text = "ROUND"
+icon = ExtResource("26_0wyf6")
 script = ExtResource("18_xdqt8")
 value = "round"
 
 [node name="QuestionItem4" parent="AspectRatioContainer/16_10_Container/AskQuestionUI/ShapePopup/Grid" parent_id_path=PackedInt32Array(284634523, 1457894234) index="3" unique_id=457536566]
 text = "SPIKES"
+icon = ExtResource("27_xp01v")
 script = ExtResource("18_xdqt8")
 value = "spiky"
 
 [node name="QuestionItem5" parent="AspectRatioContainer/16_10_Container/AskQuestionUI/ShapePopup/Grid" parent_id_path=PackedInt32Array(284634523, 1457894234) index="4" unique_id=1216540401]
 text = "POLYGONAL"
+icon = ExtResource("28_jix7a")
 script = ExtResource("18_xdqt8")
 value = "polygon"
 
@@ -494,26 +519,31 @@ offset_bottom = 884.0
 
 [node name="QuestionItem" parent="AspectRatioContainer/16_10_Container/AskQuestionUI/MatterPopup/Grid" parent_id_path=PackedInt32Array(2061374874, 1457894234) index="0" unique_id=842373604]
 text = "PLASTIC"
+icon = ExtResource("29_segjr")
 script = ExtResource("19_adb74")
 value = "plastic"
 
 [node name="QuestionItem2" parent="AspectRatioContainer/16_10_Container/AskQuestionUI/MatterPopup/Grid" parent_id_path=PackedInt32Array(2061374874, 1457894234) index="1" unique_id=1641545328]
 text = "WOOD"
+icon = ExtResource("31_beobj")
 script = ExtResource("19_adb74")
 value = "wood"
 
 [node name="QuestionItem3" parent="AspectRatioContainer/16_10_Container/AskQuestionUI/MatterPopup/Grid" parent_id_path=PackedInt32Array(2061374874, 1457894234) index="2" unique_id=336210733]
 text = "METAL"
+icon = ExtResource("32_267kh")
 script = ExtResource("19_adb74")
 value = "metal"
 
 [node name="QuestionItem4" parent="AspectRatioContainer/16_10_Container/AskQuestionUI/MatterPopup/Grid" parent_id_path=PackedInt32Array(2061374874, 1457894234) index="3" unique_id=457536566]
 text = "FUR"
+icon = ExtResource("33_86meh")
 script = ExtResource("19_adb74")
 value = "fur"
 
 [node name="QuestionItem5" parent="AspectRatioContainer/16_10_Container/AskQuestionUI/MatterPopup/Grid" parent_id_path=PackedInt32Array(2061374874, 1457894234) index="4" unique_id=1216540401]
 text = "ROCK"
+icon = ExtResource("34_duuju")
 script = ExtResource("19_adb74")
 value = "rock"
 
