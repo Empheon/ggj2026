@@ -37,27 +37,18 @@ func generate_random_mask() -> MaskInfo:
 	picked_mask.bouche_info.texture_pack = Library.all_bouches_texturepacks.pick_random()
 	picked_mask.bouche_info.couleur = get_random_couleur()
 	picked_mask.bouche_info.forme = picked_mask.bouche_info.texture_pack.forme
-	picked_mask.bouche_info.matiere = get_random_matiere()
 	picked_mask.coiffe_info = MaskElementInfo.new()
 	picked_mask.coiffe_info.texture_pack = Library.all_coiffes_texturepacks.pick_random()
 	picked_mask.coiffe_info.couleur = get_random_couleur()
 	picked_mask.coiffe_info.forme = picked_mask.coiffe_info.texture_pack.forme
-	picked_mask.coiffe_info.matiere = get_random_matiere()
 	picked_mask.face_info = MaskElementInfo.new()
 	picked_mask.face_info.texture_pack = Library.all_faces_texturepacks.pick_random()
 	picked_mask.face_info.couleur = get_random_couleur()
 	picked_mask.face_info.forme = picked_mask.face_info.texture_pack.forme
-	picked_mask.face_info.matiere = get_random_matiere()
-	picked_mask.nez_info = MaskElementInfo.new()
-	picked_mask.nez_info.texture_pack = Library.all_nezs_texturepacks.pick_random()
-	picked_mask.nez_info.couleur = get_random_couleur()
-	picked_mask.nez_info.forme = picked_mask.nez_info.texture_pack.forme
-	picked_mask.nez_info.matiere = get_random_matiere()
 	picked_mask.yeux_info = MaskElementInfo.new()
 	picked_mask.yeux_info.texture_pack = Library.all_yeux_texturepacks.pick_random()
 	picked_mask.yeux_info.couleur = get_random_couleur()
 	picked_mask.yeux_info.forme = picked_mask.yeux_info.texture_pack.forme
-	picked_mask.yeux_info.matiere = get_random_matiere()
 	return picked_mask
 
 func get_mask_truth(mask:MaskInfo, question:Question) -> bool:
@@ -71,23 +62,19 @@ func get_mask_truth(mask:MaskInfo, question:Question) -> bool:
 			return mask.coiffe_info.has_caracteristique_value(question.caracteristique,question.value)
 		&"yeux":
 			return mask.yeux_info.has_caracteristique_value(question.caracteristique,question.value)
-		&"nez":
-			return mask.nez_info.has_caracteristique_value(question.caracteristique,question.value)
 		&"bouche":
 			return mask.bouche_info.has_caracteristique_value(question.caracteristique,question.value)
 	return true
 
 func generate_enemy_question() -> Question:
 	var question := Question.new()
-	question.emplacement = [&"any", &"face", &"coiffe", &"yeux", &"nez", &"bouche"].pick_random()
-	question.caracteristique = [&"couleur", &"forme", &"matiere"].pick_random()
+	question.emplacement = [&"any", &"face", &"coiffe", &"yeux", &"bouche"].pick_random()
+	question.caracteristique = [&"couleur", &"forme"].pick_random()
 	match question.caracteristique:
 		&"couleur":
 			question.value = get_random_couleur()
 		&"forme":
 			question.value = get_random_forme()
-		&"matiere":
-			question.value = get_random_matiere()
 	return question
 
 func ask_question_to_enemy(question:Question) -> bool:
@@ -110,6 +97,3 @@ func get_random_couleur() -> String:
 
 func get_random_forme() -> String:
 	return ["square", "triangle", "round", "spiky", "polygon"].pick_random()
-
-func get_random_matiere() -> String:
-	return ["plastic", "wood", "metal", "fur", "rock"].pick_random()

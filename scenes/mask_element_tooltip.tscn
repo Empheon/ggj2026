@@ -6,8 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://bycvflinttavg" path="res://assets/element_icons/violet.png" id="3_hadt1"]
 [ext_resource type="Texture2D" uid="uid://cjyn5hywh62bl" path="res://assets/element_icons/forme.png" id="4_eriuf"]
 [ext_resource type="Texture2D" uid="uid://bbvih1002gv3a" path="res://assets/element_icons/piques.png" id="5_j21qb"]
-[ext_resource type="Texture2D" uid="uid://cfr4o7jn8m77e" path="res://assets/element_icons/matiere.png" id="6_eriuf"]
-[ext_resource type="Texture2D" uid="uid://cuty8s7fjdc47" path="res://assets/element_icons/pierre.png" id="7_j21qb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eriuf"]
 content_margin_left = 20.0
@@ -31,7 +29,7 @@ font_size = 34
 [sub_resource type="LabelSettings" id="LabelSettings_bhugd"]
 font_size = 24
 
-[node name="MaskElementTooltip" type="PanelContainer" unique_id=162241741 node_paths=PackedStringArray("element_type_icon", "element_type_label", "couleur_value_icon", "couleur_value_name", "forme_value_icon", "forme_value_name", "matiere_value_icon", "matiere_value_name")]
+[node name="MaskElementTooltip" type="PanelContainer" unique_id=162241741 node_paths=PackedStringArray("element_type_icon", "element_type_label", "couleur_value_icon", "couleur_value_name", "forme_value_icon", "forme_value_name")]
 offset_right = 363.0
 offset_bottom = 201.0
 mouse_filter = 2
@@ -43,8 +41,6 @@ couleur_value_icon = NodePath("VBoxContainer/Grid/CouleurValueIcon")
 couleur_value_name = NodePath("VBoxContainer/Grid/CouleurValueName")
 forme_value_icon = NodePath("VBoxContainer/Grid/FormeValueIcon")
 forme_value_name = NodePath("VBoxContainer/Grid/FormeValueName")
-matiere_value_icon = NodePath("VBoxContainer/Grid/MatiereValueIcon")
-matiere_value_name = NodePath("VBoxContainer/Grid/MatiereValueName")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1525665887]
 layout_mode = 2
@@ -122,28 +118,4 @@ stretch_mode = 4
 [node name="FormeValueName" type="Label" parent="VBoxContainer/Grid" unique_id=1540353905]
 layout_mode = 2
 text = "Spiky"
-label_settings = SubResource("LabelSettings_bhugd")
-
-[node name="MatiereTypeIcon" type="TextureRect" parent="VBoxContainer/Grid" unique_id=1501442440]
-layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("6_eriuf")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="MatiereTypeName" type="Label" parent="VBoxContainer/Grid" unique_id=1052121450]
-layout_mode = 2
-text = "Material :"
-label_settings = SubResource("LabelSettings_bhugd")
-
-[node name="MatiereValueIcon" type="TextureRect" parent="VBoxContainer/Grid" unique_id=1217028164]
-layout_mode = 2
-mouse_filter = 2
-texture = ExtResource("7_j21qb")
-expand_mode = 3
-stretch_mode = 4
-
-[node name="MatiereValueName" type="Label" parent="VBoxContainer/Grid" unique_id=757314704]
-layout_mode = 2
-text = "Stone"
 label_settings = SubResource("LabelSettings_bhugd")

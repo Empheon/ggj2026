@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="MaskElementTexturePack" format=3 uid="uid://deu2xkvuu67xh"]
+
+[ext_resource type="Texture2D" uid="uid://dhet8qln1jkyi" path="res://assets/mask_elements/fills/mouth_square_alpha.png" id="1_nausf"]
+[ext_resource type="Texture2D" uid="uid://nftld82qaioh" path="res://assets/mask_elements/lines/mouth_square_line.png" id="2_vbfvd"]
+[ext_resource type="Script" uid="uid://dyqkrw2sq0kxy" path="res://systems/mask_element_texturepack.gd" id="3_iwesg"]
+
+[resource]
+script = ExtResource("3_iwesg")
+fill_texture = ExtResource("1_nausf")
+line_texture = ExtResource("2_vbfvd")
+forme = "polygon"
+metadata/_custom_type_script = "uid://dyqkrw2sq0kxy"

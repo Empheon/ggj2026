@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="MaskElementTexturePack" format=3 uid="uid://c4mjn7sodx51s"]
+
+[ext_resource type="Texture2D" uid="uid://bd7hmk0q0xjvk" path="res://assets/mask_elements/fills/horn_spike_alpha.png" id="1_2w1gj"]
+[ext_resource type="Texture2D" uid="uid://c1fv7kc5e4ch3" path="res://assets/mask_elements/lines/horn_spike_line.png" id="2_o6wve"]
+[ext_resource type="Script" uid="uid://dyqkrw2sq0kxy" path="res://systems/mask_element_texturepack.gd" id="3_iysxt"]
+
+[resource]
+script = ExtResource("3_iysxt")
+fill_texture = ExtResource("1_2w1gj")
+line_texture = ExtResource("2_o6wve")
+forme = "round"
+metadata/_custom_type_script = "uid://dyqkrw2sq0kxy"

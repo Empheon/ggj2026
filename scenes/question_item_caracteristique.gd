@@ -1,4 +1,4 @@
 class_name ButtonItemCaracteristique
 extends Button
 
-@export_enum("couleur", "forme", "matiere") var value : String
+@export_enum("couleur", "forme") var value : String

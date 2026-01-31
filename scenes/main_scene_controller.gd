@@ -7,7 +7,6 @@ extends Node
 @export var caracteristique_popup: Control
 @export var color_popup: Control
 @export var forme_popup: Control
-@export var matiere_popup: Control
 
 @export var enemy_answer_popup : Control
 
@@ -20,7 +19,6 @@ extends Node
 @export var caracteristique_value_buttons: Array[ButtonItemCaracteristique]
 @export var color_value_buttons: Array[ButtonItemColor]
 @export var shape_value_buttons: Array[ButtonItemShape]
-@export var material_value_buttons: Array[ButtonItemMaterial]
 
 @export var enemy_question_container : OpponentQuestionContainer
 @export var yes_no_container : YesNoPanelContainer
@@ -48,7 +46,6 @@ func hide_popups():
 	caracteristique_popup.hide()
 	color_popup.hide()
 	forme_popup.hide()
-	matiere_popup.hide()
 
 func untoggle_buttons(except_button: Button):
 	for button in [question_emplacement_button, question_caracteristique_button, question_value_button]:
@@ -69,8 +66,6 @@ func connect_signals():
 		color_value_button.pressed.connect(_on_question_button_pressed.bind(color_value_button, question_value_button))
 	for shape_value_button in shape_value_buttons:
 		shape_value_button.pressed.connect(_on_question_button_pressed.bind(shape_value_button, question_value_button))
-	for material_value_button in material_value_buttons:
-		material_value_button.pressed.connect(_on_question_button_pressed.bind(material_value_button, question_value_button))
 	
 
 func show_enemy_question():
@@ -85,6 +80,12 @@ func show_enemy_question():
 	show_player_ask_interface()
 
 func show_player_ask_interface():
+	current_player_question = Question.new()
+	question_emplacement_button.icon = null
+	question_caracteristique_button.icon = null
+	question_value_button.icon = null
+	ask_button.disabled = true
+	
 	ask_question_ui.show()
 	await ask_button.pressed
 	ask_question_ui.hide()
@@ -103,17 +104,16 @@ func _on_question_button_pressed(origin_button: Button, destination_button: Butt
 	elif origin_button is ButtonItemCaracteristique:
 		if current_player_question.caracteristique != origin_button.value:
 			question_value_button.icon = null
-			current_player_question.value = -1
+			current_player_question.value = ""
 		current_player_question.caracteristique = origin_button.value
 		question_value_button.disabled = false
 	elif origin_button is ButtonItemColor:
 		current_player_question.value = origin_button.value
 	elif origin_button is ButtonItemShape:
 		current_player_question.value = origin_button.value
-	elif origin_button is ButtonItemMaterial:
-		current_player_question.value = origin_button.value
 	hide_popups()
 	untoggle_buttons(null)
+	ask_button.disabled = not current_player_question.is_valid()
 
 
 func _on_question_emplacement_button_toggled(toggled: bool):
@@ -144,12 +144,9 @@ func _on_question_value_button_toggled(toggled: bool):
 				color_popup.show()
 			&"forme":
 				forme_popup.show()
-			&"matiere":
-				matiere_popup.show()
 	else:
 		color_popup.hide()
 		forme_popup.hide()
-		matiere_popup.hide()
 
 func _on_mask_element_hovered(element:MaskElement, element_type:String):
 	mask_element_tooltip.show_for(element,element_type)

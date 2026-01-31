@@ -16,10 +16,6 @@ var line_texturerect : TextureRect :
 	get:
 		return get_node("../%sLine" % name)
 
-var matiere_texturerect : TextureRect :
-	get:
-		return get_node("Matiere")
-
 func _ready() -> void:
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
@@ -35,7 +31,6 @@ func setup_textures():
 	texture_hover = mask_element_info.texture_pack.fill_texture
 	texture_focused = mask_element_info.texture_pack.fill_texture
 	line_texturerect.texture = mask_element_info.texture_pack.line_texture
-	(matiere_texturerect.texture as AtlasTexture).atlas = Config.MATIERE_TEXTURE[mask_element_info.matiere]
 	self_modulate = Config.COULEUR_COLOR_CODE[mask_element_info.couleur]
 
 func create_auto_click_mask():

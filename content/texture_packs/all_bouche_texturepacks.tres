@@ -6,5 +6,5 @@
 script = ExtResource("1_n15er")
 base_folder = "res://content/texture_packs/bouche"
 includes = Array[String](["*.tres"])
-paths = Array[String](["res://content/texture_packs/bouche/polygon_bonhomme.tres"])
+paths = Array[String](["res://content/texture_packs/bouche/mouth_circle.tres", "res://content/texture_packs/bouche/mouth_polygon.tres", "res://content/texture_packs/bouche/mouth_spike.tres", "res://content/texture_packs/bouche/mouth_square.tres", "res://content/texture_packs/bouche/mouth_triangle.tres"])
 metadata/_custom_type_script = "uid://cstjpitnmkxh7"

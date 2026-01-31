@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="MaskElementTexturePack" format=3 uid="uid://ctp3gkemeygdv"]
+
+[ext_resource type="Texture2D" uid="uid://tvlkcq80gjtx" path="res://assets/mask_elements/fills/base_triangle_alpha.png" id="1_0mj5l"]
+[ext_resource type="Texture2D" uid="uid://dw7grry6jvpyk" path="res://assets/mask_elements/lines/base_triangle_line.png" id="2_n3mho"]
+[ext_resource type="Script" uid="uid://dyqkrw2sq0kxy" path="res://systems/mask_element_texturepack.gd" id="3_8tbqu"]
+
+[resource]
+script = ExtResource("3_8tbqu")
+fill_texture = ExtResource("1_0mj5l")
+line_texture = ExtResource("2_n3mho")
+forme = "square"
+metadata/_custom_type_script = "uid://dyqkrw2sq0kxy"

@@ -26,6 +26,3 @@ func update():
 		"forme":
 			value_icon.texture = Config.SHAPE_ICON[question.value]
 			value_name.text = Config.SHAPE_NAME[question.value]
-		"matiere":
-			value_icon.texture = Config.MATIERE_ICON[question.value]
-			value_name.text = Config.MATIERE_NAME[question.value]

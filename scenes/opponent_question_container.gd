@@ -13,6 +13,4 @@ func show_for_question(question:Question):
 			value_texture.texture = Config.COLOR_ICON[question.value]
 		"forme":
 			value_texture.texture = Config.SHAPE_ICON[question.value]
-		"matiere":
-			value_texture.texture = Config.MATIERE_ICON[question.value]
 	show()

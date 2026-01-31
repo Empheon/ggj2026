@@ -3,47 +3,18 @@
 [ext_resource type="Script" uid="uid://dwvtsnui3noth" path="res://templates/mask_template.gd" id="1_i62kp"]
 [ext_resource type="Texture2D" uid="uid://cfxqcfpbl42e7" path="res://assets/mask_elements/head.png" id="2_j62wh"]
 [ext_resource type="Texture2D" uid="uid://4eetbyojoihk" path="res://assets/mask_elements/fills/base_square_alpha.png" id="3_ippkq"]
-[ext_resource type="Texture2D" uid="uid://bfoq1yn54d3on" path="res://assets/matieres/txtr_fur.png" id="5_vftu5"]
 [ext_resource type="Texture2D" uid="uid://88mx6jlsh4bt" path="res://assets/mask_elements/lines/base_square_line.png" id="6_m8scb"]
 [ext_resource type="Script" uid="uid://soto0wyqqsgn" path="res://templates/mask_element_view.gd" id="6_nqneb"]
-[ext_resource type="Texture2D" uid="uid://w8nbayy3wcq6" path="res://assets/matieres/txtr_metal.png" id="7_b760k"]
 [ext_resource type="Texture2D" uid="uid://b48hj0o0aker3" path="res://assets/mask_elements/fills/horn_circle_alpha.png" id="7_ih6xj"]
 [ext_resource type="Texture2D" uid="uid://b4cut0s6aku2i" path="res://assets/mask_elements/lines/horn_circle_line.png" id="9_ejkdg"]
-[ext_resource type="Texture2D" uid="uid://chtn4v3jx70rk" path="res://assets/matieres/txtr_stone.png" id="10_0muvs"]
 [ext_resource type="Texture2D" uid="uid://bglvfvxetmjk1" path="res://assets/mask_elements/fills/eye_circle_alpha.png" id="11_s8sxc"]
-[ext_resource type="Texture2D" uid="uid://be61um14tiwyu" path="res://assets/matieres/txtr_wood.png" id="13_kl14v"]
 [ext_resource type="Texture2D" uid="uid://dxxalp3uyny4n" path="res://assets/mask_elements/lines/eye_circle_line.png" id="13_vlfv1"]
-[ext_resource type="Texture2D" uid="uid://bv3vtw2wd6k2a" path="res://assets/mask_elements/fills/nose_square_alpha.png" id="14_0ljxg"]
-[ext_resource type="Texture2D" uid="uid://d4m27re5vcbll" path="res://assets/mask_elements/lines/nose_square_line.png" id="15_jkq8o"]
 [ext_resource type="Texture2D" uid="uid://bfginoan5j2ii" path="res://assets/mask_elements/fills/mouth_polygon_alpha.png" id="16_silew"]
 [ext_resource type="Texture2D" uid="uid://b1e3f77u8dnmk" path="res://assets/mask_elements/lines/mouth_polygon_line.png" id="18_gak43"]
 
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_avcpd"]
-blend_mode = 3
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j62wh"]
-atlas = ExtResource("5_vftu5")
-region = Rect2(-819.166, -666.67004, 2226.1924, 1950.9762)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ippkq"]
-atlas = ExtResource("7_b760k")
-region = Rect2(0, 0, 2984.4531, 2627.5347)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m8scb"]
-atlas = ExtResource("7_b760k")
-region = Rect2(-2061.93, -1572.6583, 6843.917, 5051.2593)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ih6xj"]
-atlas = ExtResource("10_0muvs")
-region = Rect2(0, 0, 6123.1587, 4916.4385)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ejkdg"]
-atlas = ExtResource("13_kl14v")
-region = Rect2(0, 0, 4118.666, 4039.3499)
-
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_j62wh"]
 
-[node name="MaskTemplate" type="Control" unique_id=938033601 node_paths=PackedStringArray("face", "coiffe", "yeux", "nez", "bouche")]
+[node name="MaskTemplate" type="Control" unique_id=938033601 node_paths=PackedStringArray("face", "coiffe", "yeux", "bouche")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -54,10 +25,10 @@ script = ExtResource("1_i62kp")
 face = NodePath("Face")
 coiffe = NodePath("Coiffe")
 yeux = NodePath("Yeux")
-nez = NodePath("Nez")
 bouche = NodePath("Bouche")
 
 [node name="BaseHead" type="TextureRect" parent="." unique_id=489152504]
+texture_filter = 4
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.998
@@ -73,6 +44,7 @@ stretch_mode = 5
 [node name="Face" type="TextureButton" parent="." unique_id=96901369]
 self_modulate = Color(0.08235294, 0.5372549, 0.7921569, 1)
 clip_children = 2
+texture_filter = 4
 layout_mode = 1
 anchors_preset = -1
 anchor_right = 0.998
@@ -87,22 +59,9 @@ ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("6_nqneb")
 
-[node name="Matiere" type="TextureRect" parent="Face" unique_id=653510496]
-texture_repeat = 2
-material = SubResource("CanvasItemMaterial_avcpd")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = SubResource("AtlasTexture_j62wh")
-expand_mode = 1
-stretch_mode = 1
-
 [node name="FaceLine" type="TextureRect" parent="." unique_id=1236154025]
 self_modulate = Color(0, 0, 0, 1)
+texture_filter = 4
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -119,6 +78,7 @@ stretch_mode = 5
 [node name="Coiffe" type="TextureButton" parent="." unique_id=1296439010]
 self_modulate = Color(0.9529412, 0.22745098, 0.23921569, 1)
 clip_children = 2
+texture_filter = 4
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -132,22 +92,9 @@ ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("6_nqneb")
 
-[node name="Matiere" type="TextureRect" parent="Coiffe" unique_id=1266702748]
-texture_repeat = 2
-material = SubResource("CanvasItemMaterial_avcpd")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = SubResource("AtlasTexture_ippkq")
-expand_mode = 1
-stretch_mode = 5
-
 [node name="CoiffeLine" type="TextureRect" parent="." unique_id=1110878684]
 self_modulate = Color(0, 0, 0, 1)
+texture_filter = 4
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -164,6 +111,7 @@ stretch_mode = 5
 [node name="Yeux" type="TextureButton" parent="." unique_id=1867689873]
 self_modulate = Color(0.39215687, 0.6784314, 0.28627452, 1)
 clip_children = 2
+texture_filter = 4
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -177,22 +125,9 @@ ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("6_nqneb")
 
-[node name="Matiere" type="TextureRect" parent="Yeux" unique_id=759045668]
-texture_repeat = 2
-material = SubResource("CanvasItemMaterial_avcpd")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = SubResource("AtlasTexture_m8scb")
-expand_mode = 1
-stretch_mode = 5
-
 [node name="YeuxLine" type="TextureRect" parent="." unique_id=37880273]
 self_modulate = Color(0, 0, 0, 1)
+texture_filter = 4
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -206,54 +141,10 @@ texture = ExtResource("13_vlfv1")
 expand_mode = 1
 stretch_mode = 5
 
-[node name="Nez" type="TextureButton" parent="." unique_id=1339385224]
-self_modulate = Color(1, 0.6784314, 0.2784314, 1)
-clip_children = 2
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = ExtResource("14_0ljxg")
-texture_hover = ExtResource("14_0ljxg")
-texture_focused = ExtResource("14_0ljxg")
-ignore_texture_size = true
-stretch_mode = 5
-script = ExtResource("6_nqneb")
-
-[node name="Matiere" type="TextureRect" parent="Nez" unique_id=268689238]
-texture_repeat = 2
-material = SubResource("CanvasItemMaterial_avcpd")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = SubResource("AtlasTexture_ih6xj")
-expand_mode = 1
-stretch_mode = 5
-
-[node name="NezLine" type="TextureRect" parent="." unique_id=898861631]
-self_modulate = Color(0, 0, 0, 1)
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_top = 2.0
-offset_bottom = 2.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = ExtResource("15_jkq8o")
-expand_mode = 1
-stretch_mode = 5
-
 [node name="Bouche" type="TextureButton" parent="." unique_id=69439416]
 self_modulate = Color(0.6784314, 0.26666668, 0.72156864, 1)
 clip_children = 2
+texture_filter = 4
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -268,22 +159,9 @@ ignore_texture_size = true
 stretch_mode = 5
 script = ExtResource("6_nqneb")
 
-[node name="Matiere" type="TextureRect" parent="Bouche" unique_id=1277102144]
-texture_repeat = 2
-material = SubResource("CanvasItemMaterial_avcpd")
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-texture = SubResource("AtlasTexture_ejkdg")
-expand_mode = 1
-stretch_mode = 5
-
 [node name="BoucheLine" type="TextureRect" parent="." unique_id=240754210]
 self_modulate = Color(0, 0, 0, 1)
+texture_filter = 4
 material = SubResource("CanvasItemMaterial_j62wh")
 layout_mode = 1
 anchors_preset = 15

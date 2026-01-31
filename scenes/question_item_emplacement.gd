@@ -1,4 +1,4 @@
 class_name ButtonItemEmplacement
 extends Button
 
-@export_enum("any", "face", "coiffe", "yeux", "nez", "bouche") var value : String
+@export_enum("any", "face", "coiffe", "yeux", "bouche") var value : String
