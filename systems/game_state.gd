@@ -61,7 +61,7 @@ func generate_enemy_question() -> Question:
 	question.caracteristique = [&"couleur", &"forme", &"matiere"].pick_random()
 	match question.caracteristique:
 		&"couleur":
-			question.value = ["any", "face", "coiffe", "yeux", "nez", "bouche"].pick_random()
+			question.value = ["red", "yellow", "green", "blue", "purple"].pick_random()
 		&"forme":
 			question.value = ["square", "triangle", "round", "spiky", "polygon"].pick_random()
 		&"matiere":

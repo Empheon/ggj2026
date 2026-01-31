@@ -31,11 +31,14 @@ font_size = 34
 [sub_resource type="LabelSettings" id="LabelSettings_bhugd"]
 font_size = 24
 
-[node name="Control" type="PanelContainer" unique_id=162241741 node_paths=PackedStringArray("couleur_value_icon", "couleur_value_name", "forme_value_icon", "forme_value_name", "matiere_value_icon", "matiere_value_name")]
+[node name="MaskElementTooltip" type="PanelContainer" unique_id=162241741 node_paths=PackedStringArray("element_type_icon", "element_type_label", "couleur_value_icon", "couleur_value_name", "forme_value_icon", "forme_value_name", "matiere_value_icon", "matiere_value_name")]
 offset_right = 363.0
 offset_bottom = 201.0
+mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_eriuf")
 script = ExtResource("1_j21qb")
+element_type_icon = NodePath("VBoxContainer/HBoxContainer/ElementTypeIcon")
+element_type_label = NodePath("VBoxContainer/HBoxContainer/ElementTypeLabel")
 couleur_value_icon = NodePath("VBoxContainer/Grid/CouleurValueIcon")
 couleur_value_name = NodePath("VBoxContainer/Grid/CouleurValueName")
 forme_value_icon = NodePath("VBoxContainer/Grid/FormeValueIcon")
@@ -45,14 +48,17 @@ matiere_value_name = NodePath("VBoxContainer/Grid/MatiereValueName")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1525665887]
 layout_mode = 2
+mouse_filter = 2
 theme_override_constants/separation = 20
 
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=87548977]
 layout_mode = 2
+mouse_filter = 2
 alignment = 1
 
 [node name="ElementTypeIcon" type="TextureRect" parent="VBoxContainer/HBoxContainer" unique_id=7811000]
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("1_j80yh")
 expand_mode = 3
 stretch_mode = 4
@@ -65,12 +71,14 @@ label_settings = SubResource("LabelSettings_j21qb")
 [node name="Grid" type="GridContainer" parent="VBoxContainer" unique_id=495062408]
 layout_mode = 2
 size_flags_vertical = 3
+mouse_filter = 2
 theme_override_constants/h_separation = 10
 theme_override_constants/v_separation = 5
 columns = 4
 
 [node name="CouleurTypeIcon" type="TextureRect" parent="VBoxContainer/Grid" unique_id=673204072]
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("2_7w70n")
 expand_mode = 3
 stretch_mode = 4
@@ -82,6 +90,7 @@ label_settings = SubResource("LabelSettings_bhugd")
 
 [node name="CouleurValueIcon" type="TextureRect" parent="VBoxContainer/Grid" unique_id=1310395920]
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("3_hadt1")
 expand_mode = 3
 stretch_mode = 4
@@ -93,6 +102,7 @@ label_settings = SubResource("LabelSettings_bhugd")
 
 [node name="FormeTypeIcon" type="TextureRect" parent="VBoxContainer/Grid" unique_id=963149082]
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("4_eriuf")
 expand_mode = 3
 stretch_mode = 4
@@ -104,6 +114,7 @@ label_settings = SubResource("LabelSettings_bhugd")
 
 [node name="FormeValueIcon" type="TextureRect" parent="VBoxContainer/Grid" unique_id=327208577]
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("5_j21qb")
 expand_mode = 3
 stretch_mode = 4
@@ -115,6 +126,7 @@ label_settings = SubResource("LabelSettings_bhugd")
 
 [node name="MatiereTypeIcon" type="TextureRect" parent="VBoxContainer/Grid" unique_id=1501442440]
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("6_eriuf")
 expand_mode = 3
 stretch_mode = 4
@@ -126,6 +138,7 @@ label_settings = SubResource("LabelSettings_bhugd")
 
 [node name="MatiereValueIcon" type="TextureRect" parent="VBoxContainer/Grid" unique_id=1217028164]
 layout_mode = 2
+mouse_filter = 2
 texture = ExtResource("7_j21qb")
 expand_mode = 3
 stretch_mode = 4

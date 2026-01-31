@@ -5,7 +5,7 @@ extends PanelContainer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	hide()
 
 
 func display_answer(answer: bool) -> void:
@@ -13,6 +13,8 @@ func display_answer(answer: bool) -> void:
 		answer_label.text = "YES"
 	else:
 		answer_label.text = "NO"
+	show()
+	
 
 	# var tw := create_tween().set_ease(Tween.EASE_OUT)
 	# tw.tween_property(answer_label, "position",, 0.3)

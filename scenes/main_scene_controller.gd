@@ -8,6 +8,9 @@ extends Node
 @export var forme_popup: Control
 @export var matiere_popup: Control
 
+@export var enemy_answer_popup : Control
+
+
 @export var question_emplacement_button: Button
 @export var question_caracteristique_button: Button
 @export var question_value_button: Button
@@ -18,6 +21,12 @@ extends Node
 @export var shape_value_buttons: Array[ButtonItemShape]
 @export var material_value_buttons: Array[ButtonItemMaterial]
 
+@export var enemy_mask_container : Control
+
+@export var enemy_question_container : OpponentQuestionContainer
+
+@export var mask_element_tooltip : MaskElementTooltip
+
 var current_question: Question
 
 func _ready() -> void:
@@ -25,6 +34,11 @@ func _ready() -> void:
 	hide_popups()
 	connect_signals()
 	question_value_button.disabled = true
+	GameState.start_round()
+	enemy_mask_container.add_child(GameState.enemy_mask)
+	GameState.enemy_mask.element_hovered.connect(_on_mask_element_hovered)
+	GameState.enemy_mask.element_hovered_out.connect(_on_mask_element_hovered_out)
+	show_enemy_question()
 
 func hide_popups():
 	emplacement_popup.hide()
@@ -55,6 +69,10 @@ func connect_signals():
 	for material_value_button in material_value_buttons:
 		material_value_button.pressed.connect(_on_question_button_pressed.bind(material_value_button, question_value_button))
 	
+
+func show_enemy_question():
+	enemy_question_container.show_for_question(GameState.generate_enemy_question())
+
 
 func _on_question_button_pressed(origin_button: Button, destination_button: Button):
 	destination_button.icon = origin_button.icon
@@ -110,3 +128,9 @@ func _on_question_value_button_toggled(toggled: bool):
 		color_popup.hide()
 		forme_popup.hide()
 		matiere_popup.hide()
+
+func _on_mask_element_hovered(element:MaskElement, element_type:String):
+	mask_element_tooltip.show_for(element,element_type)
+
+func _on_mask_element_hovered_out():
+	mask_element_tooltip.hide()

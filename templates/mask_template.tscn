@@ -14,12 +14,19 @@
 atlas = ExtResource("1_ixxfr")
 region = Rect2(218, 0, 533, 584.5)
 
-[node name="MaskTemplate" type="Control" unique_id=938033601]
+[node name="MaskTemplate" type="Control" unique_id=938033601 node_paths=PackedStringArray("face", "coiffe", "yeux", "nez", "bouche")]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 707.0
-offset_bottom = 779.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 script = ExtResource("1_i62kp")
+face = NodePath("Face")
+coiffe = NodePath("Coiffe")
+yeux = NodePath("Yeux")
+nez = NodePath("Nez")
+bouche = NodePath("Bouche")
 
 [node name="BaseTemplate" type="TextureRect" parent="." unique_id=489152504]
 self_modulate = Color(0, 0, 0, 1)
