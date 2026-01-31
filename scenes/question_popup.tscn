@@ -15,14 +15,14 @@ corner_radius_bottom_left = 10
 
 [node name="QuestionPopup" type="PanelContainer" unique_id=475127142]
 custom_minimum_size = Vector2(200, 200)
+offset_right = 215.0
+offset_bottom = 236.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 theme_override_styles/panel = SubResource("StyleBoxFlat_01n6w")
 
-[node name="Grid" type="GridContainer" parent="." unique_id=1395794506]
+[node name="Grid" type="VBoxContainer" parent="." unique_id=1457894234]
 layout_mode = 2
-size_flags_horizontal = 4
-columns = 4
 
 [node name="QuestionItem" parent="Grid" unique_id=842373604 instance=ExtResource("1_5cnnj")]
 layout_mode = 2
@@ -37,4 +37,7 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="QuestionItem5" parent="Grid" unique_id=1216540401 instance=ExtResource("1_5cnnj")]
+layout_mode = 2
+
+[node name="QuestionItem6" parent="Grid" unique_id=446211000 instance=ExtResource("1_5cnnj")]
 layout_mode = 2

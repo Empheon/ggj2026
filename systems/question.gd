@@ -3,6 +3,6 @@ extends Resource
 
 
 
-var emplacement : StringName # &"any", "face", "coiffe", "yeux", "nez", "bouche"
-var caracteristique : StringName # &"couleur", "forme", "matiere"
-var value : Variant # one of MaskElement.COULEUR/FORME/MATIERE values
+var emplacement : StringName = &"" # &"any", "face", "coiffe", "yeux", "nez", "bouche"
+var caracteristique : StringName = &"" # &"couleur", "forme", "matiere"
+var value : Variant = -1 # one of MaskElement.COULEUR/FORME/MATIERE values
