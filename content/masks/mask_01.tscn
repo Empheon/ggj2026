@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://chjb327wuckkc"]
+
+[ext_resource type="PackedScene" uid="uid://coyxsh5ai4ls" path="res://templates/mask_template.tscn" id="1_llhk5"]
+
+[node name="Mask01" unique_id=938033601 instance=ExtResource("1_llhk5")]

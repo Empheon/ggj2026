@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ResourceGroup" format=3 uid="uid://djk170xi31cpx"]
+
+[ext_resource type="Script" uid="uid://cstjpitnmkxh7" path="res://addons/godot_resource_groups/resource_group.gd" id="1_mfmle"]
+
+[resource]
+script = ExtResource("1_mfmle")
+base_folder = "res://content/masks"
+includes = Array[String](["*.tscn"])
+paths = Array[String](["res://content/masks/mask_01.tscn", "res://content/masks/mask_02.tscn"])
+metadata/_custom_type_script = "uid://cstjpitnmkxh7"

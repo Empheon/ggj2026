@@ -1,0 +1,122 @@
+[gd_scene format=3 uid="uid://coyxsh5ai4ls"]
+
+[ext_resource type="Script" uid="uid://dwvtsnui3noth" path="res://templates/mask_template.gd" id="1_i62kp"]
+[ext_resource type="Texture2D" uid="uid://m7ksabc42goy" path="res://assets/ennemi.png" id="1_ixxfr"]
+[ext_resource type="Texture2D" uid="uid://dcd2lieswvqvf" path="res://assets/mask_elements/faces/face_1.png" id="2_4ago0"]
+[ext_resource type="Texture2D" uid="uid://cuu1jkite3ig1" path="res://assets/mask_elements/coiffes/coiffe_1.png" id="3_c57ul"]
+[ext_resource type="Material" uid="uid://kolwnd20sic0" path="res://templates/mask_element_material.tres" id="4_i62kp"]
+[ext_resource type="Texture2D" uid="uid://cbvd6qlquaquo" path="res://assets/mask_elements/yeux/yeux_1.png" id="4_nqneb"]
+[ext_resource type="Texture2D" uid="uid://dyh4q7edjuqnq" path="res://assets/mask_elements/nezs/nez_1.png" id="5_i62kp"]
+[ext_resource type="Script" uid="uid://soto0wyqqsgn" path="res://templates/mask_element_view.gd" id="6_nqneb"]
+[ext_resource type="Texture2D" uid="uid://c0c5vn0m63e0r" path="res://assets/mask_elements/bouches/bouche_1.png" id="6_thcuu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l1phi"]
+atlas = ExtResource("1_ixxfr")
+region = Rect2(218, 0, 533, 584.5)
+
+[node name="MaskTemplate" type="Control" unique_id=938033601]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 707.0
+offset_bottom = 779.0
+script = ExtResource("1_i62kp")
+
+[node name="BaseTemplate" type="TextureRect" parent="." unique_id=489152504]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.998
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_right = 0.22766113
+offset_bottom = -0.2199707
+mouse_filter = 2
+texture = SubResource("AtlasTexture_l1phi")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Face" type="TextureRect" parent="." unique_id=1612139201]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.998
+anchor_bottom = 1.0
+offset_top = 2.0
+offset_right = 0.22766113
+offset_bottom = -0.2199707
+mouse_filter = 0
+texture = ExtResource("2_4ago0")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("6_nqneb")
+couleur = 1
+forme = 1
+
+[node name="Coiffe" type="TextureRect" parent="." unique_id=1642963767]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.007
+anchor_top = 0.010000001
+anchor_right = 1.006
+anchor_bottom = 0.45400003
+offset_left = 0.2631197
+offset_top = 0.13779974
+offset_right = -0.04309082
+offset_bottom = -0.14389038
+mouse_filter = 0
+texture = ExtResource("3_c57ul")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("6_nqneb")
+
+[node name="Yeux" type="TextureRect" parent="." unique_id=277983371]
+material = ExtResource("4_i62kp")
+instance_shader_parameters/width = 4.1750001983125
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.312
+anchor_right = 0.998
+anchor_bottom = 0.69100004
+offset_top = 0.099365234
+offset_right = 0.22766113
+offset_bottom = -0.07803345
+mouse_filter = 0
+texture = ExtResource("4_nqneb")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("6_nqneb")
+couleur = 1
+forme = 2
+
+[node name="Nez" type="TextureRect" parent="." unique_id=1589369055]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.34100002
+anchor_top = 0.60400003
+anchor_right = 0.646
+anchor_bottom = 0.776
+offset_left = -0.03945923
+offset_top = -0.2889099
+offset_right = 0.13931274
+offset_bottom = 0.09329224
+mouse_filter = 0
+texture = ExtResource("5_i62kp")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("6_nqneb")
+
+[node name="Bouche" type="TextureRect" parent="." unique_id=1931683920]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.25500003
+anchor_top = 0.754
+anchor_right = 0.71400005
+anchor_bottom = 0.864
+offset_left = -0.12922668
+offset_top = -0.009857178
+offset_right = -0.1618042
+offset_bottom = -0.051330566
+mouse_filter = 0
+texture = ExtResource("6_thcuu")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("6_nqneb")

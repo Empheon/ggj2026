@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ResourceGroup" format=3 uid="uid://bnkwl60fsgevw"]
+
+[ext_resource type="Script" uid="uid://cstjpitnmkxh7" path="res://addons/godot_resource_groups/resource_group.gd" id="1_r1rt4"]
+
+[resource]
+script = ExtResource("1_r1rt4")
+base_folder = "res://assets/mask_elements/faces"
+includes = Array[String](["*.png"])
+paths = Array[String](["res://assets/mask_elements/faces/face_1.png"])
+metadata/_custom_type_script = "uid://cstjpitnmkxh7"

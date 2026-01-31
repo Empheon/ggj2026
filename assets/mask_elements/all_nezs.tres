@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ResourceGroup" format=3 uid="uid://f2fwm7bwjhdi"]
+
+[ext_resource type="Script" uid="uid://cstjpitnmkxh7" path="res://addons/godot_resource_groups/resource_group.gd" id="1_biv61"]
+
+[resource]
+script = ExtResource("1_biv61")
+base_folder = "res://assets/mask_elements/nezs"
+includes = Array[String](["*.png"])
+paths = Array[String](["res://assets/mask_elements/nezs/nez_1.png"])
+metadata/_custom_type_script = "uid://cstjpitnmkxh7"
