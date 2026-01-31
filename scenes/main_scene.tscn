@@ -1,0 +1,279 @@
+[gd_scene format=3 uid="uid://bn80thmxcvuf6"]
+
+[ext_resource type="Texture2D" uid="uid://m7ksabc42goy" path="res://assets/ennemi.png" id="1_pw63i"]
+[ext_resource type="Texture2D" uid="uid://b0xl3li25ricw" path="res://assets/table.png" id="2_7ykc4"]
+[ext_resource type="Texture2D" uid="uid://brghiiw2e8ian" path="res://icon.svg" id="3_7ykc4"]
+
+[sub_resource type="Gradient" id="Gradient_und3l"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_w2twt"]
+gradient = SubResource("Gradient_und3l")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pu3yx"]
+content_margin_left = 100.0
+content_margin_top = 40.0
+content_margin_right = 100.0
+content_margin_bottom = 40.0
+bg_color = Color(0.09221632, 0.25482938, 0.26809105, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gubc5"]
+bg_color = Color(0.27546945, 0.55202836, 0.23137423, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rt2n2"]
+bg_color = Color(0.2095682, 0.4282287, 0.17471573, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c16ls"]
+bg_color = Color(0.32940543, 0.65690076, 0.27716067, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pw63i"]
+bg_color = Color(0.8204735, 0.23499575, 0.22530821, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ykc4"]
+bg_color = Color(0.6500605, 0.163225, 0.15946415, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_18nlu"]
+bg_color = Color(0.926667, 0.34485224, 0.31945273, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7ykc4"]
+font_size = 28
+font_color = Color(0.6042, 0.76, 0.532, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c1pb6"]
+bg_color = Color(0.27546945, 0.55202836, 0.23137423, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6wevv"]
+bg_color = Color(0.2095682, 0.4282287, 0.17471573, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e1cbu"]
+bg_color = Color(0.32940543, 0.65690076, 0.27716067, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[node name="MainScene" type="Control" unique_id=53327232]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="." unique_id=670894497]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_w2twt")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=1091246154]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+ratio = 1.6
+
+[node name="16_10_Container" type="Control" parent="AspectRatioContainer" unique_id=841804095]
+layout_mode = 2
+
+[node name="Ennemi" type="TextureRect" parent="AspectRatioContainer/16_10_Container" unique_id=2032441529]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -450.0
+offset_top = -548.0
+offset_right = 480.0
+offset_bottom = 351.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_pw63i")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Table" type="TextureRect" parent="AspectRatioContainer/16_10_Container" unique_id=386368298]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -960.0
+offset_top = 80.0
+offset_right = 958.0
+offset_bottom = 486.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_7ykc4")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="YesNoPanelContainer" type="PanelContainer" parent="AspectRatioContainer/16_10_Container" unique_id=1085846489]
+visible = false
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 501.0
+offset_top = -324.0
+offset_right = -501.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pu3yx")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AspectRatioContainer/16_10_Container/YesNoPanelContainer" unique_id=1233160160]
+layout_mode = 2
+theme_override_constants/separation = 40
+
+[node name="VBoxContainerYes" type="VBoxContainer" parent="AspectRatioContainer/16_10_Container/YesNoPanelContainer/HBoxContainer" unique_id=1274534996]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="YesButton" type="Button" parent="AspectRatioContainer/16_10_Container/YesNoPanelContainer/HBoxContainer/VBoxContainerYes" unique_id=360842254]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 65
+theme_override_styles/normal = SubResource("StyleBoxFlat_gubc5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rt2n2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_c16ls")
+text = "YES"
+
+[node name="LyingLabel" type="Label" parent="AspectRatioContainer/16_10_Container/YesNoPanelContainer/HBoxContainer/VBoxContainerYes" unique_id=1857671888]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "(LYING)"
+horizontal_alignment = 1
+
+[node name="VBoxContainerNo" type="VBoxContainer" parent="AspectRatioContainer/16_10_Container/YesNoPanelContainer/HBoxContainer" unique_id=296417668]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="NoButton" type="Button" parent="AspectRatioContainer/16_10_Container/YesNoPanelContainer/HBoxContainer/VBoxContainerNo" unique_id=272141412]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 65
+theme_override_styles/normal = SubResource("StyleBoxFlat_pw63i")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7ykc4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_18nlu")
+text = "NO"
+
+[node name="LyingLabel" type="Label" parent="AspectRatioContainer/16_10_Container/YesNoPanelContainer/HBoxContainer/VBoxContainerNo" unique_id=1300133365]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "(LYING)"
+horizontal_alignment = 1
+
+[node name="QuestionContainer" type="PanelContainer" parent="AspectRatioContainer/16_10_Container" unique_id=1575122753]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 228.0
+offset_top = -284.0
+offset_right = -228.0
+offset_bottom = -88.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pu3yx")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AspectRatioContainer/16_10_Container/QuestionContainer" unique_id=552352996]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="QuestionStart" type="Label" parent="AspectRatioContainer/16_10_Container/QuestionContainer/HBoxContainer" unique_id=1531232710]
+layout_mode = 2
+text = "Do I have a"
+label_settings = SubResource("LabelSettings_7ykc4")
+
+[node name="EmplacementButton" type="Button" parent="AspectRatioContainer/16_10_Container/QuestionContainer/HBoxContainer" unique_id=1406790698]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_constants/icon_max_width = 80
+theme_override_font_sizes/font_size = 65
+theme_override_styles/normal = SubResource("StyleBoxFlat_gubc5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rt2n2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_c16ls")
+icon = ExtResource("3_7ykc4")
+icon_alignment = 1
+expand_icon = true
+
+[node name="QuestionMid" type="Label" parent="AspectRatioContainer/16_10_Container/QuestionContainer/HBoxContainer" unique_id=41963229]
+layout_mode = 2
+text = "whose"
+label_settings = SubResource("LabelSettings_7ykc4")
+
+[node name="CategoryButton" type="Button" parent="AspectRatioContainer/16_10_Container/QuestionContainer/HBoxContainer" unique_id=981623945]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_constants/icon_max_width = 80
+theme_override_font_sizes/font_size = 65
+theme_override_styles/normal = SubResource("StyleBoxFlat_gubc5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rt2n2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_c16ls")
+icon = ExtResource("3_7ykc4")
+icon_alignment = 1
+expand_icon = true
+
+[node name="QuestionEnd" type="Label" parent="AspectRatioContainer/16_10_Container/QuestionContainer/HBoxContainer" unique_id=483210003]
+layout_mode = 2
+text = "is a"
+label_settings = SubResource("LabelSettings_7ykc4")
+
+[node name="EmplacementButton3" type="Button" parent="AspectRatioContainer/16_10_Container/QuestionContainer/HBoxContainer" unique_id=1363373009]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_vertical = 6
+theme_override_constants/icon_max_width = 80
+theme_override_font_sizes/font_size = 65
+theme_override_styles/normal = SubResource("StyleBoxFlat_gubc5")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rt2n2")
+theme_override_styles/hover = SubResource("StyleBoxFlat_c16ls")
+icon = ExtResource("3_7ykc4")
+icon_alignment = 1
+expand_icon = true
+
+[node name="QuestionMark" type="Label" parent="AspectRatioContainer/16_10_Container/QuestionContainer/HBoxContainer" unique_id=874061727]
+layout_mode = 2
+text = "?"
+label_settings = SubResource("LabelSettings_7ykc4")
+
+[node name="AskButton" type="Button" parent="AspectRatioContainer/16_10_Container/QuestionContainer/HBoxContainer" unique_id=530994128]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_horizontal = 10
+size_flags_vertical = 3
+theme_override_font_sizes/font_size = 65
+theme_override_styles/normal = SubResource("StyleBoxFlat_c1pb6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_6wevv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_e1cbu")
+text = "ASK"
+icon_alignment = 1
