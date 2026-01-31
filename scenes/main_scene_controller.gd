@@ -33,10 +33,16 @@ func hide_popups():
 	forme_popup.hide()
 	matiere_popup.hide()
 
+func untoggle_buttons(except_button: Button):
+	for button in [question_emplacement_button, question_caracteristique_button, question_value_button]:
+		if button != except_button:
+			button.button_pressed = false
+
 func connect_signals():
-	question_emplacement_button.pressed.connect(_on_question_emplacement_button_pressed)
-	question_caracteristique_button.pressed.connect(_on_question_caracteristique_button_pressed)
-	question_value_button.pressed.connect(_on_question_value_button_pressed)
+	question_emplacement_button.toggled.connect(_on_question_emplacement_button_toggled)
+	question_caracteristique_button.toggled.connect(_on_question_caracteristique_button_toggled)
+	question_value_button.toggled.connect(_on_question_value_button_toggled)
+
 	for emplacement_value_button in emplacement_value_buttons:
 		emplacement_value_button.pressed.connect(_on_question_button_pressed.bind(emplacement_value_button, question_emplacement_button))
 	for caracteristique_value_button in caracteristique_value_buttons:
@@ -67,26 +73,40 @@ func _on_question_button_pressed(origin_button: Button, destination_button: Butt
 	elif origin_button is ButtonItemMaterial:
 		current_question.value = origin_button.value
 	hide_popups()
+	untoggle_buttons(null)
 
 
-func _on_question_emplacement_button_pressed():
-	hide_popups()
-	emplacement_popup.show()
+func _on_question_emplacement_button_toggled(toggled: bool):
+	if toggled:
+		emplacement_popup.show()
+		untoggle_buttons(question_emplacement_button)
+	else:
+		emplacement_popup.hide()
 
-func _on_question_caracteristique_button_pressed():
-	hide_popups()
-	caracteristique_popup.show()
+func _on_question_caracteristique_button_toggled(toggled: bool):
+	if toggled:
+		caracteristique_popup.show()
+		untoggle_buttons(question_caracteristique_button)
+	else:
+		caracteristique_popup.hide()
 
-func _on_question_value_button_pressed():
-	hide_popups()
-	if current_question.caracteristique.is_empty():
-		print("error : impossible d'ouvrir le selecteur de valeur car aucune caracteristique n'est renseignée dans la question")
-		# this should not happen
-		return
-	match current_question.caracteristique:
-		&"couleur":
-			color_popup.show()
-		&"forme":
-			forme_popup.show()
-		&"matiere":
-			matiere_popup.show()
+func _on_question_value_button_toggled(toggled: bool):
+	if toggled:
+		untoggle_buttons(question_value_button)
+
+		if current_question.caracteristique.is_empty():
+			print("error : impossible d'ouvrir le selecteur de valeur car aucune caracteristique n'est renseignée dans la question")
+			# this should not happen
+			return
+			
+		match current_question.caracteristique:
+			&"couleur":
+				color_popup.show()
+			&"forme":
+				forme_popup.show()
+			&"matiere":
+				matiere_popup.show()
+	else:
+		color_popup.hide()
+		forme_popup.hide()
+		matiere_popup.hide()
