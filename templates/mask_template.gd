@@ -1,6 +1,10 @@
 class_name Mask
 extends Control
 
+# "face", "coiffe", "yeux", "nez", "bouche"
+
+signal element_hovered(element:MaskElement, element_type:String)
+signal element_hovered_out()
 
 @export var face : MaskElement
 @export var coiffe : MaskElement
@@ -11,6 +15,22 @@ extends Control
 var all_elements : Array[MaskElement] : 
 	get:
 		return [face, coiffe, yeux, nez, bouche]
+
+func _ready() -> void:
+	connect_signals()
+
+func connect_signals():
+	face.hovered.connect(element_hovered.emit.bind(face,"face"))
+	coiffe.hovered.connect(element_hovered.emit.bind(coiffe,"coiffe"))
+	yeux.hovered.connect(element_hovered.emit.bind(yeux,"yeux"))
+	nez.hovered.connect(element_hovered.emit.bind(nez,"nez"))
+	bouche.hovered.connect(element_hovered.emit.bind(bouche,"bouche"))
+	face.hovered_out.connect(element_hovered_out.emit)
+	coiffe.hovered_out.connect(element_hovered_out.emit)
+	yeux.hovered_out.connect(element_hovered_out.emit)
+	nez.hovered_out.connect(element_hovered_out.emit)
+	bouche.hovered_out.connect(element_hovered_out.emit)
+	
 
 func is_equivalent_to(other_mask:Mask) -> bool:
 	var is_face_matching := face.texture == other_mask.face.texture

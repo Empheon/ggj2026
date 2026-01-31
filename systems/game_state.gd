@@ -19,7 +19,8 @@ var player_hp : int = 3
 var enemy_hp : int = 3
 
 func _ready():
-	available_masks.assign(Library.all_masks)
+	available_masks.assign(Library.all_masks.map(func(mask_scene:PackedScene):
+		return mask_scene.instantiate()))
 
 func start_round():
 	player_mask = pick_mask()
@@ -60,11 +61,11 @@ func generate_enemy_question() -> Question:
 	question.caracteristique = [&"couleur", &"forme", &"matiere"].pick_random()
 	match question.caracteristique:
 		&"couleur":
-			question.value = MaskElement.COULEUR.values().pick_random()
+			question.value = ["any", "face", "coiffe", "yeux", "nez", "bouche"].pick_random()
 		&"forme":
-			question.value = MaskElement.FORME.values().pick_random()
+			question.value = ["square", "triangle", "round", "spiky", "polygon"].pick_random()
 		&"matiere":
-			question.value = MaskElement.MATIERE.values().pick_random()
+			question.value = ["plastic", "wood", "metal", "fur", "rock"].pick_random()
 	return question
 
 func ask_question_to_enemy(question:Question) -> bool:

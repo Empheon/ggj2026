@@ -1,9 +1,6 @@
 class_name MaskElement
 extends TextureRect
 
-enum COULEUR {ROUGE, ORANGE, BLEU}
-enum FORME {POINTU, ROND, POILU}
-enum MATIERE {PLASTIQUE, BOIS, METAL, FOURRURE, PIERRE}
 
 signal hovered
 signal hovered_out
@@ -11,9 +8,9 @@ signal clicked
 
 var hover_tween : Tween
 
-@export var couleur : COULEUR
-@export var forme : FORME
-@export var matiere : MATIERE
+@export_enum("red", "yellow", "green", "blue", "purple") var couleur : String
+@export_enum("square", "triangle", "round", "spiky", "polygon") var forme : String
+@export_enum("plastic", "wood", "metal", "fur", "rock") var matiere : String
 
 
 func _ready() -> void:
@@ -32,7 +29,7 @@ func _gui_input(event: InputEvent) -> void:
 func set_outline_width(width:float):
 	set_instance_shader_parameter(&"width", width)
 
-func has_caracteristique_value(caracteristique:StringName, value:int) -> bool:
+func has_caracteristique_value(caracteristique:StringName, value:String) -> bool:
 	match caracteristique:
 		&"couleur":
 			return couleur == value

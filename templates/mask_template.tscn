@@ -48,8 +48,6 @@ texture = ExtResource("2_4ago0")
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("6_nqneb")
-couleur = 1
-forme = 1
 
 [node name="Coiffe" type="TextureRect" parent="." unique_id=1642963767]
 layout_mode = 1
@@ -84,8 +82,6 @@ texture = ExtResource("4_nqneb")
 expand_mode = 1
 stretch_mode = 5
 script = ExtResource("6_nqneb")
-couleur = 1
-forme = 2
 
 [node name="Nez" type="TextureRect" parent="." unique_id=1589369055]
 layout_mode = 1
