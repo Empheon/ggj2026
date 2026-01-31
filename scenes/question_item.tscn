@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://dbwymc4be63sc"]
+
+[ext_resource type="Texture2D" uid="uid://brghiiw2e8ian" path="res://icon.svg" id="1_okj4d"]
+
+[node name="QuestionItem" type="Button" unique_id=446211000]
+custom_minimum_size = Vector2(40, 40)
+offset_right = 40.0
+offset_bottom = 40.0
+icon = ExtResource("1_okj4d")
+icon_alignment = 1
+expand_icon = true

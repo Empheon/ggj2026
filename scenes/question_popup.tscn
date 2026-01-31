@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://djnd475p1ejia"]
+
+[ext_resource type="PackedScene" uid="uid://dbwymc4be63sc" path="res://scenes/question_item.tscn" id="1_5cnnj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_01n6w"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 0, 0, 0.4117647)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="QuestionPopup" type="PanelContainer" unique_id=475127142]
+custom_minimum_size = Vector2(200, 200)
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_01n6w")
+
+[node name="Grid" type="GridContainer" parent="." unique_id=1395794506]
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 4
+
+[node name="QuestionItem" parent="Grid" unique_id=842373604 instance=ExtResource("1_5cnnj")]
+layout_mode = 2
+
+[node name="QuestionItem2" parent="Grid" unique_id=1641545328 instance=ExtResource("1_5cnnj")]
+layout_mode = 2
+
+[node name="QuestionItem3" parent="Grid" unique_id=336210733 instance=ExtResource("1_5cnnj")]
+layout_mode = 2
+
+[node name="QuestionItem4" parent="Grid" unique_id=457536566 instance=ExtResource("1_5cnnj")]
+layout_mode = 2
+
+[node name="QuestionItem5" parent="Grid" unique_id=1216540401 instance=ExtResource("1_5cnnj")]
+layout_mode = 2

@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://b0xl3li25ricw" path="res://assets/table.png" id="2_7ykc4"]
 [ext_resource type="Texture2D" uid="uid://brghiiw2e8ian" path="res://icon.svg" id="3_7ykc4"]
 [ext_resource type="PackedScene" uid="uid://cmwfwlylcj2tu" path="res://scenes/answer_item.tscn" id="4_pu3yx"]
+[ext_resource type="Script" uid="uid://4fxb2yhr6ube" path="res://question_button.gd" id="4_rt2n2"]
+[ext_resource type="PackedScene" uid="uid://djnd475p1ejia" path="res://scenes/question_popup.tscn" id="5_c16ls"]
 
 [sub_resource type="Gradient" id="Gradient_und3l"]
 
@@ -67,6 +69,9 @@ corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pu3yx"]
+content_margin_left = 210.0
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mngbo"]
 content_margin_left = 10.0
@@ -244,33 +249,25 @@ layout_mode = 2
 text = "Do I have a"
 label_settings = SubResource("LabelSettings_7ykc4")
 
-[node name="EmplacementButton" type="Button" parent="AspectRatioContainer/16_10_Container/QuestionContainer/HBoxContainer" unique_id=1406790698]
+[node name="EmplacementButton" type="Button" parent="AspectRatioContainer/16_10_Container/QuestionContainer/HBoxContainer" unique_id=780568879 node_paths=PackedStringArray("popup")]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_vertical = 6
-theme_override_constants/icon_max_width = 80
-theme_override_font_sizes/font_size = 65
-theme_override_styles/normal = SubResource("StyleBoxFlat_gubc5")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_rt2n2")
-theme_override_styles/hover = SubResource("StyleBoxFlat_c16ls")
 icon = ExtResource("3_7ykc4")
 icon_alignment = 1
 expand_icon = true
+script = ExtResource("4_rt2n2")
+popup = NodePath("../../../QuestionPopupContainer/HBoxContainer/EmplacementQuestionPopup")
 
 [node name="QuestionMid" type="Label" parent="AspectRatioContainer/16_10_Container/QuestionContainer/HBoxContainer" unique_id=41963229]
 layout_mode = 2
 text = "whose"
 label_settings = SubResource("LabelSettings_7ykc4")
 
-[node name="CategoryButton" type="Button" parent="AspectRatioContainer/16_10_Container/QuestionContainer/HBoxContainer" unique_id=981623945]
+[node name="CategoryButton" type="Button" parent="AspectRatioContainer/16_10_Container/QuestionContainer/HBoxContainer" unique_id=1912288124]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_vertical = 6
-theme_override_constants/icon_max_width = 80
-theme_override_font_sizes/font_size = 65
-theme_override_styles/normal = SubResource("StyleBoxFlat_gubc5")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_rt2n2")
-theme_override_styles/hover = SubResource("StyleBoxFlat_c16ls")
 icon = ExtResource("3_7ykc4")
 icon_alignment = 1
 expand_icon = true
@@ -280,15 +277,10 @@ layout_mode = 2
 text = "is a"
 label_settings = SubResource("LabelSettings_7ykc4")
 
-[node name="EmplacementButton3" type="Button" parent="AspectRatioContainer/16_10_Container/QuestionContainer/HBoxContainer" unique_id=1363373009]
+[node name="EmplacementButton3" type="Button" parent="AspectRatioContainer/16_10_Container/QuestionContainer/HBoxContainer" unique_id=349294370]
 custom_minimum_size = Vector2(100, 100)
 layout_mode = 2
 size_flags_vertical = 6
-theme_override_constants/icon_max_width = 80
-theme_override_font_sizes/font_size = 65
-theme_override_styles/normal = SubResource("StyleBoxFlat_gubc5")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_rt2n2")
-theme_override_styles/hover = SubResource("StyleBoxFlat_c16ls")
 icon = ExtResource("3_7ykc4")
 icon_alignment = 1
 expand_icon = true
@@ -309,6 +301,58 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_6wevv")
 theme_override_styles/hover = SubResource("StyleBoxFlat_e1cbu")
 text = "ASK"
 icon_alignment = 1
+
+[node name="QuestionPopupContainer" type="PanelContainer" parent="AspectRatioContainer/16_10_Container" unique_id=1481410973]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 228.0
+offset_top = -545.0
+offset_right = -228.0
+offset_bottom = -295.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_pu3yx")
+
+[node name="HBoxContainer" type="Control" parent="AspectRatioContainer/16_10_Container/QuestionPopupContainer" unique_id=98041122]
+layout_mode = 2
+
+[node name="EmplacementQuestionPopup" parent="AspectRatioContainer/16_10_Container/QuestionPopupContainer/HBoxContainer" unique_id=475127142 instance=ExtResource("5_c16ls")]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 25.0
+offset_right = 214.0
+offset_bottom = 225.0
+
+[node name="CategoryQuestionPopup2" parent="AspectRatioContainer/16_10_Container/QuestionPopupContainer/HBoxContainer" unique_id=569791868 instance=ExtResource("5_c16ls")]
+layout_mode = 0
+offset_left = 238.0
+offset_top = 25.0
+offset_right = 438.00012
+offset_bottom = 225.0
+
+[node name="ColorPopup" parent="AspectRatioContainer/16_10_Container/QuestionPopupContainer/HBoxContainer" unique_id=1113487206 instance=ExtResource("5_c16ls")]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 25.0
+offset_right = 672.0
+offset_bottom = 225.0
+
+[node name="ShapePopup" parent="AspectRatioContainer/16_10_Container/QuestionPopupContainer/HBoxContainer" unique_id=284634523 instance=ExtResource("5_c16ls")]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 25.0
+offset_right = 672.0
+offset_bottom = 225.0
+
+[node name="MatterPopup" parent="AspectRatioContainer/16_10_Container/QuestionPopupContainer/HBoxContainer" unique_id=2061374874 instance=ExtResource("5_c16ls")]
+layout_mode = 0
+offset_left = 472.0
+offset_top = 25.0
+offset_right = 672.0
+offset_bottom = 225.0
 
 [node name="AnswersRecapContainer" type="PanelContainer" parent="AspectRatioContainer/16_10_Container" unique_id=1418793122]
 layout_mode = 1
@@ -394,3 +438,5 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_r6p65")
 theme_override_styles/hover = SubResource("StyleBoxFlat_si52b")
 text = "LIAR!"
 icon_alignment = 1
+
+[editable path="AspectRatioContainer/16_10_Container/QuestionPopupContainer/HBoxContainer/EmplacementQuestionPopup"]
