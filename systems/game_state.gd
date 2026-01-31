@@ -73,6 +73,19 @@ func get_mask_truth(mask: MaskInfo, question: Question) -> bool:
 			return mask.bouche_info.has_caracteristique_value(question.caracteristique, question.value)
 	return true
 
+func compare_masks(mask1: MaskInfo, mask2: MaskInfo) -> bool:
+	return mask1.face_info.forme == mask2.face_info.forme && mask1.coiffe_info.forme == mask2.coiffe_info.forme && mask1.yeux_info.forme == mask2.yeux_info.forme && mask1.bouche_info.forme == mask2.bouche_info.forme && mask1.face_info.couleur == mask2.face_info.couleur && mask1.coiffe_info.couleur == mask2.coiffe_info.couleur && mask1.yeux_info.couleur == mask2.yeux_info.couleur && mask1.bouche_info.couleur == mask2.bouche_info.couleur
+
+func player_submit_solution(mask: MaskInfo):
+	var is_right = compare_masks(mask, player_mask)
+	if !is_right:
+		player_hp -= 1
+		if player_hp <= 0:
+			print('Player loses!')
+	else:
+		print('Player wins!')
+	
+
 func generate_enemy_question() -> Question:
 	var current_question = null
 	if randf() < trick_question_probability:
