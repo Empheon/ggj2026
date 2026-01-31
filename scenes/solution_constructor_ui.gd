@@ -17,6 +17,7 @@ func _ready() -> void:
 	texture_pack_popup.hide()
 	connect_signals()
 	update_solution()
+	submit_button.disabled = true
 	
 func connect_signals():
 	player_mask.element_clicked.connect(_on_mask_element_clicked)
@@ -56,6 +57,7 @@ func get_texture_pack_button_for(forme: String) -> ButtonItemShape:
 
 func update_solution():
 	player_mask.mask_info = solution_mask_info
+	submit_button.disabled = not solution_mask_info.is_valid()
 
 func _on_color_value_button_pressed(color_value_button: ButtonItemColor):
 	match current_element_type:

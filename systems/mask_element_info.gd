@@ -12,3 +12,6 @@ func has_caracteristique_value(caracteristique:StringName, value:String) -> bool
 		&"forme":
 			return forme == value
 	return false
+
+func is_valid() -> bool:
+	return texture_pack is MaskElementTexturePack and not couleur.is_empty()

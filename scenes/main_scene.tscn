@@ -1,12 +1,12 @@
 [gd_scene format=3 uid="uid://bn80thmxcvuf6"]
 
 [ext_resource type="Script" uid="uid://batrl4igcvmbc" path="res://scenes/main_scene_controller.gd" id="1_01n6w"]
-[ext_resource type="PackedScene" path="res://scenes/mask_element_tooltip.tscn" id="1_onjth"]
+[ext_resource type="PackedScene" uid="uid://cxfrcsckvf7ob" path="res://scenes/mask_element_tooltip.tscn" id="1_onjth"]
 [ext_resource type="Texture2D" uid="uid://m7ksabc42goy" path="res://assets/ennemi.png" id="1_pw63i"]
 [ext_resource type="Texture2D" uid="uid://s0i31mefft5d" path="res://assets/decor/decor_background.png" id="2_0wyf6"]
 [ext_resource type="Texture2D" uid="uid://brghiiw2e8ian" path="res://icon.svg" id="3_7ykc4"]
 [ext_resource type="PackedScene" uid="uid://coyxsh5ai4ls" path="res://templates/mask_template.tscn" id="3_p27gv"]
-[ext_resource type="PackedScene" path="res://scenes/knowledge_entry.tscn" id="4_pu3yx"]
+[ext_resource type="PackedScene" uid="uid://cmwfwlylcj2tu" path="res://scenes/knowledge_entry.tscn" id="4_pu3yx"]
 [ext_resource type="Script" uid="uid://dc0jri8p6oc1f" path="res://scenes/opponent_question_container.gd" id="4_xa0eo"]
 [ext_resource type="Script" uid="uid://bewty6do40100" path="res://scenes/yes_no_panel_container.gd" id="5_3mjum"]
 [ext_resource type="PackedScene" uid="uid://djnd475p1ejia" path="res://scenes/question_popup.tscn" id="5_c16ls"]
@@ -28,15 +28,19 @@
 [ext_resource type="Texture2D" uid="uid://bbd8e4q87sin7" path="res://assets/element_icons/rond.png" id="26_0wyf6"]
 [ext_resource type="Texture2D" uid="uid://bbvih1002gv3a" path="res://assets/element_icons/piques.png" id="27_xp01v"]
 [ext_resource type="Texture2D" uid="uid://lp2ex3syjqaw" path="res://assets/element_icons/polyygon.png" id="28_jix7a"]
+[ext_resource type="Script" uid="uid://p71gtqfgq6y8" path="res://scenes/life_display.gd" id="32_p27gv"]
+[ext_resource type="Texture2D" uid="uid://cacmud6rtnja3" path="res://assets/heart.png" id="32_xa0eo"]
+[ext_resource type="Texture2D" uid="uid://cyd4rw663hjbu" path="res://assets/heart_empty.png" id="33_3mjum"]
 [ext_resource type="Script" uid="uid://cafmmqocct2dv" path="res://scenes/solution_constructor_ui.gd" id="35_womr8"]
 [ext_resource type="Texture2D" uid="uid://dx7c6mpd1dpjs" path="res://assets/ui_color.png" id="36_0wyf6"]
 [ext_resource type="Texture2D" uid="uid://5t3ulchtu2b" path="res://assets/mask_elements/fills/base_circle_alpha.png" id="36_cn4eu"]
 [ext_resource type="Script" uid="uid://c13d7tse1uyq8" path="res://scenes/opponent_answer_container.gd" id="36_womr8"]
 [ext_resource type="Texture2D" uid="uid://brli2nvck5tk6" path="res://assets/mask_elements/fills/base_polygon_alpha.png" id="37_0wyf6"]
-[ext_resource type="Script" path="res://scenes/answers_recap_container.gd" id="38_cn4eu"]
+[ext_resource type="Script" uid="uid://bjwcllmqlgptm" path="res://scenes/answers_recap_container.gd" id="38_cn4eu"]
 [ext_resource type="Texture2D" uid="uid://bt15rdu6voboe" path="res://assets/mask_elements/fills/base_spike_alpha.png" id="38_xp01v"]
 [ext_resource type="Texture2D" uid="uid://4eetbyojoihk" path="res://assets/mask_elements/fills/base_square_alpha.png" id="39_jix7a"]
 [ext_resource type="Texture2D" uid="uid://tvlkcq80gjtx" path="res://assets/mask_elements/fills/base_triangle_alpha.png" id="40_segjr"]
+[ext_resource type="Script" uid="uid://ctfmhi0amixtk" path="res://scenes/victory_window.gd" id="41_cn4eu"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pu3yx"]
 content_margin_left = 100.0
@@ -160,6 +164,24 @@ corner_radius_bottom_left = 50
 
 [sub_resource type="LabelSettings" id="LabelSettings_womr8"]
 font_size = 28
+
+[sub_resource type="LabelSettings" id="LabelSettings_3mjum"]
+font_size = 24
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p27gv"]
+bg_color = Color(0.35585532, 0.5729271, 0.27759397, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_cn4eu"]
+font_size = 114
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0wyf6"]
+bg_color = Color(0.79834294, 0.48394603, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xp01v"]
+bg_color = Color(0.3949234, 0.22915834, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jix7a"]
+bg_color = Color(0.9556342, 0.58328664, 3.85046e-07, 1)
 
 [node name="MainScene" type="Control" unique_id=53327232]
 layout_mode = 3
@@ -849,6 +871,45 @@ theme_override_font_sizes/font_size = 24
 text = "Of course I know him, 
 it's me!"
 
+[node name="LifeDisplay" type="MarginContainer" parent="AspectRatioContainerUI/16_10_Container/SolutionConstructorUI/PanelContainer/VBoxContainer" unique_id=793626257 node_paths=PackedStringArray("hearts")]
+layout_mode = 2
+script = ExtResource("32_p27gv")
+hearts = [NodePath("HBoxContainer/Heart1"), NodePath("HBoxContainer/Heart2"), NodePath("HBoxContainer/Heart3")]
+heart_full = ExtResource("32_xa0eo")
+heart_empty = ExtResource("33_3mjum")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="AspectRatioContainerUI/16_10_Container/SolutionConstructorUI/PanelContainer/VBoxContainer/LifeDisplay" unique_id=235434548]
+layout_mode = 2
+
+[node name="RemainingTriesTitle" type="Label" parent="AspectRatioContainerUI/16_10_Container/SolutionConstructorUI/PanelContainer/VBoxContainer/LifeDisplay/HBoxContainer" unique_id=497599751]
+layout_mode = 2
+text = "Remaining tries:"
+label_settings = SubResource("LabelSettings_3mjum")
+
+[node name="Heart1" type="TextureRect" parent="AspectRatioContainerUI/16_10_Container/SolutionConstructorUI/PanelContainer/VBoxContainer/LifeDisplay/HBoxContainer" unique_id=1239943868]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("32_xa0eo")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Heart2" type="TextureRect" parent="AspectRatioContainerUI/16_10_Container/SolutionConstructorUI/PanelContainer/VBoxContainer/LifeDisplay/HBoxContainer" unique_id=835958652]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("32_xa0eo")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="Heart3" type="TextureRect" parent="AspectRatioContainerUI/16_10_Container/SolutionConstructorUI/PanelContainer/VBoxContainer/LifeDisplay/HBoxContainer" unique_id=838956299]
+custom_minimum_size = Vector2(0, 42)
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("33_3mjum")
+expand_mode = 3
+stretch_mode = 5
+
 [node name="ColorPopup" parent="AspectRatioContainerUI/16_10_Container/SolutionConstructorUI" unique_id=1878665429 instance=ExtResource("5_c16ls")]
 layout_mode = 0
 offset_left = 660.0
@@ -939,6 +1000,67 @@ visible = false
 z_index = 2
 layout_mode = 0
 offset_bottom = 219.0
+
+[node name="VictoryWindow" type="Control" parent="." unique_id=1957963325 node_paths=PackedStringArray("continue_button")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("41_cn4eu")
+continue_button = NodePath("ContinueButton")
+
+[node name="ColorRect" type="ColorRect" parent="VictoryWindow" unique_id=2101201026]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.08947816, 0.18019974, 0.055419154, 0.8862745)
+
+[node name="VictoryPanel" type="PanelContainer" parent="VictoryWindow" unique_id=744248519]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -692.0
+offset_top = -187.0
+offset_right = 692.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_p27gv")
+
+[node name="GoodGuessLabel" type="Label" parent="VictoryWindow/VictoryPanel" unique_id=167881542]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Good guess!"
+label_settings = SubResource("LabelSettings_cn4eu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContinueButton" type="Button" parent="VictoryWindow" unique_id=970361530]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -235.30432
+offset_top = 234.0
+offset_right = 235.30444
+offset_bottom = 333.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_0wyf6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xp01v")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jix7a")
+text = "CONTINUE"
 
 [editable path="AspectRatioContainerUI/16_10_Container/AskQuestionUI/EmplacementQuestionPopup"]
 [editable path="AspectRatioContainerUI/16_10_Container/AskQuestionUI/CategoryQuestionPopup2"]

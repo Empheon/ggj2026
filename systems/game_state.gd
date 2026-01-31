@@ -3,6 +3,9 @@ extends Node
 
 signal turn_changed
 signal player_knowledge_acquired(knowledge: Dictionary) # {Question:bool}
+signal player_hp_changed
+signal victory
+signal gameover
 
 var available_masks: Array[Mask]
 
@@ -16,7 +19,10 @@ var is_enemy_turn: bool = false:
 
 var player_knowledge: Dictionary[Question, bool] # {Question:bool}
 var enemy_knowledge: Dictionary[Question, bool] # {Question:bool}
-var player_hp: int = 3
+var player_hp: int = 3 :
+	set(value):
+		player_hp = clampi(value,0,10)
+		player_hp_changed.emit()
 var enemy_hp: int = 3
 
 # enemy variables
@@ -81,9 +87,11 @@ func player_submit_solution(mask: MaskInfo):
 	if !is_right:
 		player_hp -= 1
 		if player_hp <= 0:
-			print('Player loses!')
+			print('GAME OVER')
+			gameover.emit()
 	else:
-		print('Player wins!')
+		print('VICTORY!')
+		victory.emit()
 	
 
 func generate_enemy_question() -> Question:

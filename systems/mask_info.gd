@@ -15,3 +15,6 @@ func _init():
 	coiffe_info = MaskElementInfo.new()
 	yeux_info = MaskElementInfo.new()
 	bouche_info = MaskElementInfo.new()
+
+func is_valid() -> bool:
+	return all_elements.all(func(element:MaskElementInfo): return element.is_valid())
