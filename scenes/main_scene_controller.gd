@@ -2,13 +2,13 @@ extends Node
 
 @export var ask_question_ui: Control
 @export var ask_question_container: Control
-@export var ask_button : Button
+@export var ask_button: Button
 @export var emplacement_popup: Control
 @export var caracteristique_popup: Control
 @export var color_popup: Control
 @export var forme_popup: Control
 
-@export var enemy_answer_popup : Control
+@export var enemy_answer_popup: Control
 
 
 @export var question_emplacement_button: Button
@@ -20,13 +20,13 @@ extends Node
 @export var color_value_buttons: Array[ButtonItemColor]
 @export var shape_value_buttons: Array[ButtonItemShape]
 
-@export var enemy_question_container : OpponentQuestionContainer
-@export var yes_no_container : YesNoPanelContainer
-@export var enemy_answer_container : PanelContainer
+@export var enemy_question_container: OpponentQuestionContainer
+@export var yes_no_container: YesNoPanelContainer
+@export var enemy_answer_container: PanelContainer
 
-@export var mask_element_tooltip : MaskElementTooltip
+@export var mask_element_tooltip: MaskElementTooltip
 
-@export var enemy_mask_view : Mask
+@export var enemy_mask_view: Mask
 
 var current_player_question: Question
 
@@ -70,13 +70,17 @@ func connect_signals():
 
 func show_enemy_question():
 	ask_question_ui.hide()
+	var guess_mask = GameState.try_to_take_a_guess()
+	if guess_mask != null:
+		print("Guessing mask: ", guess_mask)
+		
 	var enemy_question := GameState.generate_enemy_question()
 	enemy_question_container.show_for_question(enemy_question)
 	yes_no_container.show_for_question(enemy_question)
 	var player_answer = await yes_no_container.player_answered
 	enemy_question_container.hide()
 	yes_no_container.hide()
-	GameState.answer_enemy_question(enemy_question,player_answer)
+	GameState.answer_enemy_question(enemy_question, player_answer)
 	show_player_ask_interface()
 
 func show_player_ask_interface():
@@ -149,8 +153,8 @@ func _on_question_value_button_toggled(toggled: bool):
 		color_popup.hide()
 		forme_popup.hide()
 
-func _on_mask_element_hovered(element:MaskElement, element_type:String):
-	mask_element_tooltip.show_for(element,element_type)
+func _on_mask_element_hovered(element: MaskElement, element_type: String):
+	mask_element_tooltip.show_for(element, element_type)
 
 func _on_mask_element_hovered_out():
 	mask_element_tooltip.hide()
