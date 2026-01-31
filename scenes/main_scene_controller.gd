@@ -21,11 +21,11 @@ extends Node
 @export var shape_value_buttons: Array[ButtonItemShape]
 @export var material_value_buttons: Array[ButtonItemMaterial]
 
-@export var enemy_mask_container : Control
-
 @export var enemy_question_container : OpponentQuestionContainer
 
 @export var mask_element_tooltip : MaskElementTooltip
+
+@export var enemy_mask_view : Mask
 
 var current_question: Question
 
@@ -35,9 +35,9 @@ func _ready() -> void:
 	connect_signals()
 	question_value_button.disabled = true
 	GameState.start_round()
-	enemy_mask_container.add_child(GameState.enemy_mask)
-	GameState.enemy_mask.element_hovered.connect(_on_mask_element_hovered)
-	GameState.enemy_mask.element_hovered_out.connect(_on_mask_element_hovered_out)
+	enemy_mask_view.mask_info = GameState.enemy_mask
+	enemy_mask_view.element_hovered.connect(_on_mask_element_hovered)
+	enemy_mask_view.element_hovered_out.connect(_on_mask_element_hovered_out)
 	show_enemy_question()
 
 func hide_popups():

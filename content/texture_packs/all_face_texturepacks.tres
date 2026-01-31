@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ResourceGroup" format=3 uid="uid://bpyse7iaueocx"]
+
+[ext_resource type="Script" uid="uid://cstjpitnmkxh7" path="res://addons/godot_resource_groups/resource_group.gd" id="1_y5oax"]
+
+[resource]
+script = ExtResource("1_y5oax")
+base_folder = "res://content/texture_packs/face"
+includes = Array[String](["*.tres"])
+paths = Array[String](["res://content/texture_packs/face/square_bonhomme.tres"])
+metadata/_custom_type_script = "uid://cstjpitnmkxh7"

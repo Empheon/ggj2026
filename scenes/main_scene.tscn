@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://m7ksabc42goy" path="res://assets/ennemi.png" id="1_pw63i"]
 [ext_resource type="Texture2D" uid="uid://b0xl3li25ricw" path="res://assets/table.png" id="2_7ykc4"]
 [ext_resource type="Texture2D" uid="uid://brghiiw2e8ian" path="res://icon.svg" id="3_7ykc4"]
+[ext_resource type="PackedScene" uid="uid://coyxsh5ai4ls" path="res://templates/mask_template.tscn" id="3_p27gv"]
 [ext_resource type="PackedScene" uid="uid://cmwfwlylcj2tu" path="res://scenes/answer_item.tscn" id="4_pu3yx"]
 [ext_resource type="Script" uid="uid://dc0jri8p6oc1f" path="res://scenes/opponent_question_container.gd" id="4_xa0eo"]
 [ext_resource type="Script" uid="uid://bewty6do40100" path="res://scenes/yes_no_panel_container.gd" id="5_3mjum"]
@@ -154,7 +155,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Controller" type="Node" parent="." unique_id=659297586 node_paths=PackedStringArray("ask_question_ui", "ask_question_container", "emplacement_popup", "caracteristique_popup", "color_popup", "forme_popup", "matiere_popup", "enemy_answer_popup", "question_emplacement_button", "question_caracteristique_button", "question_value_button", "emplacement_value_buttons", "caracteristique_value_buttons", "color_value_buttons", "shape_value_buttons", "material_value_buttons", "enemy_mask_container", "enemy_question_container", "mask_element_tooltip")]
+[node name="Controller" type="Node" parent="." unique_id=659297586 node_paths=PackedStringArray("ask_question_ui", "ask_question_container", "emplacement_popup", "caracteristique_popup", "color_popup", "forme_popup", "matiere_popup", "enemy_answer_popup", "question_emplacement_button", "question_caracteristique_button", "question_value_button", "emplacement_value_buttons", "caracteristique_value_buttons", "color_value_buttons", "shape_value_buttons", "material_value_buttons", "enemy_question_container", "mask_element_tooltip", "enemy_mask_view")]
 script = ExtResource("1_01n6w")
 ask_question_ui = NodePath("../AspectRatioContainer/16_10_Container/AskQuestionUI")
 ask_question_container = NodePath("../AspectRatioContainer/16_10_Container/AskQuestionUI/AskQuestionContainer")
@@ -172,9 +173,9 @@ caracteristique_value_buttons = [NodePath("../AspectRatioContainer/16_10_Contain
 color_value_buttons = [NodePath("../AspectRatioContainer/16_10_Container/AskQuestionUI/ColorPopup/Grid/QuestionItem"), NodePath("../AspectRatioContainer/16_10_Container/AskQuestionUI/ColorPopup/Grid/QuestionItem2"), NodePath("../AspectRatioContainer/16_10_Container/AskQuestionUI/ColorPopup/Grid/QuestionItem3"), NodePath("../AspectRatioContainer/16_10_Container/AskQuestionUI/ColorPopup/Grid/QuestionItem4"), NodePath("../AspectRatioContainer/16_10_Container/AskQuestionUI/ColorPopup/Grid/QuestionItem5")]
 shape_value_buttons = [NodePath("../AspectRatioContainer/16_10_Container/AskQuestionUI/ShapePopup/Grid/QuestionItem"), NodePath("../AspectRatioContainer/16_10_Container/AskQuestionUI/ShapePopup/Grid/QuestionItem2"), NodePath("../AspectRatioContainer/16_10_Container/AskQuestionUI/ShapePopup/Grid/QuestionItem3"), NodePath("../AspectRatioContainer/16_10_Container/AskQuestionUI/ShapePopup/Grid/QuestionItem4"), NodePath("../AspectRatioContainer/16_10_Container/AskQuestionUI/ShapePopup/Grid/QuestionItem5")]
 material_value_buttons = [NodePath("../AspectRatioContainer/16_10_Container/AskQuestionUI/MatterPopup/Grid/QuestionItem"), NodePath("../AspectRatioContainer/16_10_Container/AskQuestionUI/MatterPopup/Grid/QuestionItem2"), NodePath("../AspectRatioContainer/16_10_Container/AskQuestionUI/MatterPopup/Grid/QuestionItem3"), NodePath("../AspectRatioContainer/16_10_Container/AskQuestionUI/MatterPopup/Grid/QuestionItem4"), NodePath("../AspectRatioContainer/16_10_Container/AskQuestionUI/MatterPopup/Grid/QuestionItem5")]
-enemy_mask_container = NodePath("../AspectRatioContainer/16_10_Container/Ennemi/EnemyMaskContainer")
 enemy_question_container = NodePath("../AspectRatioContainer/16_10_Container/OpponentQuestionContainer")
 mask_element_tooltip = NodePath("../MaskElementTooltip")
+enemy_mask_view = NodePath("../AspectRatioContainer/16_10_Container/Ennemi/EnemyMaskContainer/EnemyMask")
 
 [node name="Background" type="TextureRect" parent="." unique_id=670894497]
 layout_mode = 1
@@ -223,6 +224,9 @@ offset_right = 1.0
 offset_bottom = -366.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="EnemyMask" parent="AspectRatioContainer/16_10_Container/Ennemi/EnemyMaskContainer" unique_id=938033601 instance=ExtResource("3_p27gv")]
+layout_mode = 1
 
 [node name="Table" type="TextureRect" parent="AspectRatioContainer/16_10_Container" unique_id=386368298]
 layout_mode = 1

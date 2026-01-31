@@ -72,3 +72,19 @@ const CARACTERISTIQUE_ICON : Dictionary[String, Texture2D] = {
 	"forme" : preload("uid://cjyn5hywh62bl"),
 	"matiere" : preload("uid://cfr4o7jn8m77e")
 }
+
+const MATIERE_TEXTURE : Dictionary[String, Texture2D] = {
+	"plastic":preload("uid://c0ulah8ifd8wu"),
+	"wood":preload("uid://be61um14tiwyu"),
+	"metal":preload("uid://w8nbayy3wcq6"),
+	"fur":preload("uid://bfoq1yn54d3on"),
+	"rock":preload("uid://chtn4v3jx70rk")
+}
+
+const COULEUR_COLOR_CODE : Dictionary[String, Color] = {
+	"red":Color(0.953, 0.227, 0.239, 1.0),
+	"yellow":Color(1.0, 0.678, 0.278, 1.0),
+	"green":Color(0.392, 0.678, 0.286, 1.0),
+	"blue":Color(0.082, 0.537, 0.792, 1.0),
+	"purple":Color(0.678, 0.267, 0.722, 1.0),
+}

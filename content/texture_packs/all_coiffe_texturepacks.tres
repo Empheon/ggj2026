@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="ResourceGroup" format=3 uid="uid://bq8ylbi5wnd4l"]
+
+[ext_resource type="Script" uid="uid://cstjpitnmkxh7" path="res://addons/godot_resource_groups/resource_group.gd" id="1_dxbtt"]
+
+[resource]
+script = ExtResource("1_dxbtt")
+base_folder = "res://content/texture_packs/coiffe"
+includes = Array[String](["*.tres"])
+paths = Array[String](["res://content/texture_packs/coiffe/circle_bonhomme.tres"])
+metadata/_custom_type_script = "uid://cstjpitnmkxh7"
