@@ -35,6 +35,7 @@
 [ext_resource type="Texture2D" uid="uid://cgxvhmt58r3xb" path="res://assets/element_icons/metal.png" id="32_267kh"]
 [ext_resource type="Texture2D" uid="uid://dvxoyjaalklkb" path="res://assets/element_icons/fourrure.png" id="33_86meh"]
 [ext_resource type="Texture2D" uid="uid://cuty8s7fjdc47" path="res://assets/element_icons/pierre.png" id="34_duuju"]
+[ext_resource type="Script" uid="uid://c13d7tse1uyq8" path="res://scenes/opponent_answer_container.gd" id="36_womr8"]
 
 [sub_resource type="Gradient" id="Gradient_und3l"]
 
@@ -104,6 +105,7 @@ content_margin_left = 10.0
 content_margin_top = 10.0
 content_margin_right = 10.0
 content_margin_bottom = 10.0
+bg_color = Color(0, 0, 0, 0.19607843)
 corner_radius_top_left = 10
 corner_radius_top_right = 10
 corner_radius_bottom_right = 10
@@ -129,6 +131,17 @@ corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_onjth"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0, 0, 0, 0.19607843)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
 
 [node name="MainScene" type="Control" unique_id=53327232]
 layout_mode = 3
@@ -554,7 +567,6 @@ value = "rock"
 visible = false
 
 [node name="AnswersRecapContainer" type="PanelContainer" parent="AspectRatioContainer/16_10_Container" unique_id=1418793122]
-visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -629,7 +641,44 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Button" type="Button" parent="AspectRatioContainer/16_10_Container/AnswersRecapContainer/VBoxContainer" unique_id=2021612120]
+visible = false
 custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_4w45t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_r6p65")
+theme_override_styles/hover = SubResource("StyleBoxFlat_si52b")
+text = "LIAR!"
+icon_alignment = 1
+
+[node name="OpponentAnswerContainer" type="PanelContainer" parent="AspectRatioContainer/16_10_Container" unique_id=1977416733 node_paths=PackedStringArray("answer_label", "liar_button")]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -697.0
+offset_top = 304.0
+offset_right = -404.0
+offset_bottom = 405.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_onjth")
+script = ExtResource("36_womr8")
+answer_label = NodePath("VBoxContainer/Label")
+liar_button = NodePath("VBoxContainer/Button")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer/16_10_Container/OpponentAnswerContainer" unique_id=1492218830]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="AspectRatioContainer/16_10_Container/OpponentAnswerContainer/VBoxContainer" unique_id=1821411414]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "YES/NO"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="AspectRatioContainer/16_10_Container/OpponentAnswerContainer/VBoxContainer" unique_id=1103370626]
+custom_minimum_size = Vector2(0, 60)
 layout_mode = 2
 size_flags_vertical = 4
 theme_override_font_sizes/font_size = 40
