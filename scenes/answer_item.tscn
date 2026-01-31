@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cmwfwlylcj2tu"]
+
+[node name="AnswerItem" type="Button" unique_id=1709318547]
+custom_minimum_size = Vector2(0, 25)
+offset_right = 112.0
+offset_bottom = 24.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1375527426]
+layout_mode = 0
+offset_right = 112.0
+offset_bottom = 24.0
+
+[node name="CheckBox" type="CheckBox" parent="HBoxContainer" unique_id=1225593990]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=620373664]
+layout_mode = 2
+text = "nose color"

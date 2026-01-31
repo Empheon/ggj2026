@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://m7ksabc42goy" path="res://assets/ennemi.png" id="1_pw63i"]
 [ext_resource type="Texture2D" uid="uid://b0xl3li25ricw" path="res://assets/table.png" id="2_7ykc4"]
 [ext_resource type="Texture2D" uid="uid://brghiiw2e8ian" path="res://icon.svg" id="3_7ykc4"]
+[ext_resource type="PackedScene" uid="uid://cmwfwlylcj2tu" path="res://scenes/answer_item.tscn" id="4_pu3yx"]
 
 [sub_resource type="Gradient" id="Gradient_und3l"]
 
@@ -62,6 +63,37 @@ corner_radius_bottom_left = 50
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e1cbu"]
 bg_color = Color(0.32940543, 0.65690076, 0.27716067, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mngbo"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4w45t"]
+bg_color = Color(0.8204735, 0.23499575, 0.22530821, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r6p65"]
+bg_color = Color(0.6500605, 0.163225, 0.15946415, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_si52b"]
+bg_color = Color(0.926667, 0.34485224, 0.31945273, 1)
 corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
@@ -276,4 +308,89 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_c1pb6")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_6wevv")
 theme_override_styles/hover = SubResource("StyleBoxFlat_e1cbu")
 text = "ASK"
+icon_alignment = 1
+
+[node name="AnswersRecapContainer" type="PanelContainer" parent="AspectRatioContainer/16_10_Container" unique_id=1418793122]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -360.0
+offset_top = 50.0
+offset_right = -50.0
+offset_bottom = 467.0
+grow_horizontal = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_mngbo")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer/16_10_Container/AnswersRecapContainer" unique_id=1760828029]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="AspectRatioContainer/16_10_Container/AnswersRecapContainer/VBoxContainer" unique_id=150256816]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Content" type="VBoxContainer" parent="AspectRatioContainer/16_10_Container/AnswersRecapContainer/VBoxContainer/ScrollContainer" unique_id=763087973]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="AnswerItem" parent="AspectRatioContainer/16_10_Container/AnswersRecapContainer/VBoxContainer/ScrollContainer/Content" unique_id=293115311 instance=ExtResource("4_pu3yx")]
+layout_mode = 2
+
+[node name="AnswerItem2" parent="AspectRatioContainer/16_10_Container/AnswersRecapContainer/VBoxContainer/ScrollContainer/Content" unique_id=673379819 instance=ExtResource("4_pu3yx")]
+layout_mode = 2
+
+[node name="AnswerItem3" parent="AspectRatioContainer/16_10_Container/AnswersRecapContainer/VBoxContainer/ScrollContainer/Content" unique_id=1192143174 instance=ExtResource("4_pu3yx")]
+layout_mode = 2
+
+[node name="AnswerItem4" parent="AspectRatioContainer/16_10_Container/AnswersRecapContainer/VBoxContainer/ScrollContainer/Content" unique_id=264346828 instance=ExtResource("4_pu3yx")]
+layout_mode = 2
+
+[node name="AnswerItem5" parent="AspectRatioContainer/16_10_Container/AnswersRecapContainer/VBoxContainer/ScrollContainer/Content" unique_id=1968364296 instance=ExtResource("4_pu3yx")]
+layout_mode = 2
+
+[node name="AnswerItem6" parent="AspectRatioContainer/16_10_Container/AnswersRecapContainer/VBoxContainer/ScrollContainer/Content" unique_id=603195963 instance=ExtResource("4_pu3yx")]
+layout_mode = 2
+
+[node name="AnswerItem7" parent="AspectRatioContainer/16_10_Container/AnswersRecapContainer/VBoxContainer/ScrollContainer/Content" unique_id=988035705 instance=ExtResource("4_pu3yx")]
+layout_mode = 2
+
+[node name="AnswerItem8" parent="AspectRatioContainer/16_10_Container/AnswersRecapContainer/VBoxContainer/ScrollContainer/Content" unique_id=1962456760 instance=ExtResource("4_pu3yx")]
+layout_mode = 2
+
+[node name="AnswerItem9" parent="AspectRatioContainer/16_10_Container/AnswersRecapContainer/VBoxContainer/ScrollContainer/Content" unique_id=1643368542 instance=ExtResource("4_pu3yx")]
+layout_mode = 2
+
+[node name="AnswerItem10" parent="AspectRatioContainer/16_10_Container/AnswersRecapContainer/VBoxContainer/ScrollContainer/Content" unique_id=1688506732 instance=ExtResource("4_pu3yx")]
+layout_mode = 2
+
+[node name="AnswerItem11" parent="AspectRatioContainer/16_10_Container/AnswersRecapContainer/VBoxContainer/ScrollContainer/Content" unique_id=1307078288 instance=ExtResource("4_pu3yx")]
+layout_mode = 2
+
+[node name="AnswerItem12" parent="AspectRatioContainer/16_10_Container/AnswersRecapContainer/VBoxContainer/ScrollContainer/Content" unique_id=1720137114 instance=ExtResource("4_pu3yx")]
+layout_mode = 2
+
+[node name="AnswerItem13" parent="AspectRatioContainer/16_10_Container/AnswersRecapContainer/VBoxContainer/ScrollContainer/Content" unique_id=555362833 instance=ExtResource("4_pu3yx")]
+layout_mode = 2
+
+[node name="AnswerItem14" parent="AspectRatioContainer/16_10_Container/AnswersRecapContainer/VBoxContainer/ScrollContainer/Content" unique_id=1893034452 instance=ExtResource("4_pu3yx")]
+layout_mode = 2
+
+[node name="AnswerItem15" parent="AspectRatioContainer/16_10_Container/AnswersRecapContainer/VBoxContainer/ScrollContainer/Content" unique_id=1379466978 instance=ExtResource("4_pu3yx")]
+layout_mode = 2
+
+[node name="AnswerItem16" parent="AspectRatioContainer/16_10_Container/AnswersRecapContainer/VBoxContainer/ScrollContainer/Content" unique_id=889085685 instance=ExtResource("4_pu3yx")]
+layout_mode = 2
+
+[node name="AnswerItem17" parent="AspectRatioContainer/16_10_Container/AnswersRecapContainer/VBoxContainer/ScrollContainer/Content" unique_id=96792461 instance=ExtResource("4_pu3yx")]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="AspectRatioContainer/16_10_Container/AnswersRecapContainer/VBoxContainer" unique_id=2021612120]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_4w45t")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_r6p65")
+theme_override_styles/hover = SubResource("StyleBoxFlat_si52b")
+text = "LIAR!"
 icon_alignment = 1
