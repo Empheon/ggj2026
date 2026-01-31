@@ -19,9 +19,11 @@ func update():
 	answer_icon.texture = preload("uid://c0wmk0pcd6t0p") if answer else preload("uid://df7v4td3d6gqq")
 	emplacement_icon.texture = Config.ELEMENT_TYPE_ICON[question.emplacement]
 	emplacement_name.text = Config.ELEMENT_TYPE_NAME[question.emplacement]
+	value_icon.self_modulate = Color.WHITE
 	match question.caracteristique:
 		"couleur":
-			value_icon.texture = Config.COLOR_ICON[question.value]
+			value_icon.texture = preload("uid://dx7c6mpd1dpjs")
+			value_icon.self_modulate = Config.COULEUR_COLOR_CODE[question.value]
 			value_name.text = Config.COLOR_NAME[question.value]
 		"forme":
 			value_icon.texture = Config.SHAPE_ICON[question.value]

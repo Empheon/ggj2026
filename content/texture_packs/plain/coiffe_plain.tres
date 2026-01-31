@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MaskElementTexturePack" format=3 uid="uid://5qtcnyjia477"]
+
+[ext_resource type="Texture2D" uid="uid://v7q1wo3v8fnc" path="res://assets/mask_elements/plain/plain_horns.png" id="1_j6eh1"]
+[ext_resource type="Texture2D" uid="uid://d2g6cbwodwlo0" path="res://assets/mask_elements/plain/dot_horns.png" id="2_4fa4a"]
+[ext_resource type="Script" uid="uid://dyqkrw2sq0kxy" path="res://systems/mask_element_texturepack.gd" id="3_y4rpa"]
+
+[resource]
+script = ExtResource("3_y4rpa")
+fill_texture = ExtResource("1_j6eh1")
+line_texture = ExtResource("2_4fa4a")
+metadata/_custom_type_script = "uid://dyqkrw2sq0kxy"

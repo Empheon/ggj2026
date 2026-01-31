@@ -17,14 +17,6 @@ const ELEMENT_TYPE_NAME : Dictionary[String, String] = {
 	"bouche":"Mouth"
 }
 
-const COLOR_ICON : Dictionary[String, Texture2D] = {
-	"red":preload("uid://dhfx8ojeuils"),
-	"yellow":preload("uid://lajyp8f8liff"),
-	"green":preload("uid://i2r4dny7psur"),
-	"blue":preload("uid://e3f46cdssqkx"),
-	"purple":preload("uid://bycvflinttavg"),
-}
-
 const COLOR_NAME : Dictionary[String, String] = {
 	"red":"Red",
 	"yellow":"Yellow",

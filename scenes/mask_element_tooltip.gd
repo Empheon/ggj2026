@@ -15,7 +15,8 @@ func _ready() -> void:
 func show_for(mask_element:MaskElement, element_type:String):
 	element_type_icon.texture = Config.ELEMENT_TYPE_ICON[element_type]
 	element_type_label.text = Config.ELEMENT_TYPE_NAME[element_type]
-	couleur_value_icon.texture = Config.COLOR_ICON[mask_element.mask_element_info.couleur]
+	couleur_value_icon.texture = preload("uid://dx7c6mpd1dpjs")
+	couleur_value_icon.self_modulate = Config.COULEUR_COLOR_CODE[mask_element.mask_element_info.couleur]
 	couleur_value_name.text = Config.COLOR_NAME[mask_element.mask_element_info.couleur]
 	forme_value_icon.texture = Config.SHAPE_ICON[mask_element.mask_element_info.forme]
 	forme_value_name.text = Config.SHAPE_NAME[mask_element.mask_element_info.forme]

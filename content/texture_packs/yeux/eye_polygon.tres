@@ -1,12 +1,12 @@
 [gd_resource type="Resource" script_class="MaskElementTexturePack" format=3 uid="uid://dqu1yn82nochk"]
 
-[ext_resource type="Texture2D" uid="uid://bglvfvxetmjk1" path="res://assets/mask_elements/fills/eye_circle_alpha.png" id="1_a5wcp"]
-[ext_resource type="Texture2D" uid="uid://dxxalp3uyny4n" path="res://assets/mask_elements/lines/eye_circle_line.png" id="2_ws2ip"]
+[ext_resource type="Texture2D" uid="uid://tr7qaeokhccj" path="res://assets/mask_elements/fills/eye_polygon_alpha.png" id="1_a5wcp"]
+[ext_resource type="Texture2D" uid="uid://b2rvmjjg3xd88" path="res://assets/mask_elements/lines/eye_polygon_line.png" id="2_ws2ip"]
 [ext_resource type="Script" uid="uid://dyqkrw2sq0kxy" path="res://systems/mask_element_texturepack.gd" id="3_rxp2k"]
 
 [resource]
 script = ExtResource("3_rxp2k")
 fill_texture = ExtResource("1_a5wcp")
 line_texture = ExtResource("2_ws2ip")
-forme = "round"
+forme = "polygon"
 metadata/_custom_type_script = "uid://dyqkrw2sq0kxy"

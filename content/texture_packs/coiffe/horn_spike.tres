@@ -8,5 +8,5 @@
 script = ExtResource("3_iysxt")
 fill_texture = ExtResource("1_2w1gj")
 line_texture = ExtResource("2_o6wve")
-forme = "round"
+forme = "spiky"
 metadata/_custom_type_script = "uid://dyqkrw2sq0kxy"

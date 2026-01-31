@@ -96,9 +96,9 @@ func show_player_ask_interface():
 	show_enemy_question()
 	
 	
-	
 func _on_question_button_pressed(origin_button: Button, destination_button: Button):
 	destination_button.icon = origin_button.icon
+	destination_button.self_modulate = Color.WHITE
 	if origin_button is ButtonItemEmplacement:
 		current_player_question.emplacement = origin_button.value
 	elif origin_button is ButtonItemCaracteristique:
@@ -109,6 +109,7 @@ func _on_question_button_pressed(origin_button: Button, destination_button: Butt
 		question_value_button.disabled = false
 	elif origin_button is ButtonItemColor:
 		current_player_question.value = origin_button.value
+		destination_button.self_modulate = origin_button.self_modulate
 	elif origin_button is ButtonItemShape:
 		current_player_question.value = origin_button.value
 	hide_popups()

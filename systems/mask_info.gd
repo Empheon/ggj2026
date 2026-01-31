@@ -9,3 +9,9 @@ extends Resource
 var all_elements : Array[MaskElementInfo]:
 	get:
 		return [face_info, coiffe_info, yeux_info, bouche_info]
+
+func _init():
+	face_info = MaskElementInfo.new()
+	coiffe_info = MaskElementInfo.new()
+	yeux_info = MaskElementInfo.new()
+	bouche_info = MaskElementInfo.new()

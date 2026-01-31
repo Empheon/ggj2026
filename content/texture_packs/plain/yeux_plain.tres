@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="MaskElementTexturePack" format=3 uid="uid://cvvpny6pa68yf"]
+
+[ext_resource type="Texture2D" uid="uid://dvvn58d8pkbtf" path="res://assets/mask_elements/plain/plain_eyes.png" id="1_n8vev"]
+[ext_resource type="Texture2D" uid="uid://bo3knbtvua542" path="res://assets/mask_elements/plain/dot_eyes.png" id="2_q5nlq"]
+[ext_resource type="Script" uid="uid://dyqkrw2sq0kxy" path="res://systems/mask_element_texturepack.gd" id="3_mwoax"]
+
+[resource]
+script = ExtResource("3_mwoax")
+fill_texture = ExtResource("1_n8vev")
+line_texture = ExtResource("2_q5nlq")
+metadata/_custom_type_script = "uid://dyqkrw2sq0kxy"

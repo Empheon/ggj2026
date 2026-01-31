@@ -31,7 +31,7 @@ func setup_textures():
 	texture_hover = mask_element_info.texture_pack.fill_texture
 	texture_focused = mask_element_info.texture_pack.fill_texture
 	line_texturerect.texture = mask_element_info.texture_pack.line_texture
-	self_modulate = Config.COULEUR_COLOR_CODE[mask_element_info.couleur]
+	self_modulate = Config.COULEUR_COLOR_CODE[mask_element_info.couleur] if not mask_element_info.couleur.is_empty() else Color.WHITE
 
 func create_auto_click_mask():
 	texture_click_mask = BitMap.new()
@@ -43,7 +43,6 @@ func create_auto_click_mask():
 func _gui_input(event: InputEvent) -> void:
 	if event.is_action_pressed("click"):
 		clicked.emit()
-		print("%s clicked" % name)
 		get_viewport().set_input_as_handled()
 
 func _on_mouse_entered():

@@ -8,5 +8,5 @@
 script = ExtResource("3_efkr3")
 fill_texture = ExtResource("1_3mqmv")
 line_texture = ExtResource("2_va42b")
-forme = "round"
+forme = "square"
 metadata/_custom_type_script = "uid://dyqkrw2sq0kxy"

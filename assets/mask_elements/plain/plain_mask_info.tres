@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="MaskInfo" format=3 uid="uid://3n81kwgojaj6"]
+
+[ext_resource type="Script" uid="uid://bsukigrtr11vn" path="res://systems/mask_info.gd" id="1_8lkol"]
+[ext_resource type="Script" uid="uid://cmam1kc33h6q3" path="res://systems/mask_element_info.gd" id="1_vflfm"]
+[ext_resource type="Resource" uid="uid://dhu1muq4u8w8p" path="res://content/texture_packs/plain/bouche_plain.tres" id="2_iby0a"]
+[ext_resource type="Resource" uid="uid://5qtcnyjia477" path="res://content/texture_packs/plain/coiffe_plain.tres" id="3_pb1w2"]
+[ext_resource type="Resource" uid="uid://dg30egsqrenda" path="res://content/texture_packs/plain/face_plain.tres" id="4_flp23"]
+[ext_resource type="Resource" uid="uid://cvvpny6pa68yf" path="res://content/texture_packs/plain/yeux_plain.tres" id="6_ongfc"]
+
+[sub_resource type="Resource" id="Resource_b6461"]
+script = ExtResource("1_vflfm")
+texture_pack = ExtResource("2_iby0a")
+metadata/_custom_type_script = "uid://cmam1kc33h6q3"
+
+[sub_resource type="Resource" id="Resource_pgxkl"]
+script = ExtResource("1_vflfm")
+texture_pack = ExtResource("3_pb1w2")
+metadata/_custom_type_script = "uid://cmam1kc33h6q3"
+
+[sub_resource type="Resource" id="Resource_6cnp4"]
+script = ExtResource("1_vflfm")
+texture_pack = ExtResource("4_flp23")
+metadata/_custom_type_script = "uid://cmam1kc33h6q3"
+
+[sub_resource type="Resource" id="Resource_6r65v"]
+script = ExtResource("1_vflfm")
+texture_pack = ExtResource("6_ongfc")
+metadata/_custom_type_script = "uid://cmam1kc33h6q3"
+
+[resource]
+script = ExtResource("1_8lkol")
+face_info = SubResource("Resource_6cnp4")
+coiffe_info = SubResource("Resource_pgxkl")
+yeux_info = SubResource("Resource_6r65v")
+bouche_info = SubResource("Resource_b6461")
+metadata/_custom_type_script = "uid://bsukigrtr11vn"
