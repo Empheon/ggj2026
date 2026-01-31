@@ -28,6 +28,8 @@ var enemy_hp: int = 3
 # enemy variables
 var trick_question_probability: float = 0
 var trick_question_probability_step: float = 0.05
+var enemy_sure_masks_probability: float = 0
+var enemy_sure_masks_probability_step: float = 0.05
 var enemy_last_question: Question
 var enemy_sure_masks: Dictionary[String, MaskElementInfo]
 
@@ -135,8 +137,13 @@ func generate_enemy_trick_question() -> Question:
 	return question
 
 func try_to_take_a_guess() -> MaskInfo:
-	var r_take_a_guess = randf() < pow(enemy_sure_masks.size() / 4, 3) / 2
-	if (enemy_sure_masks.size() >= 2 && r_take_a_guess) || enemy_sure_masks.size() == 4:
+	if enemy_sure_masks.size() >= 1:
+		enemy_sure_masks_probability += enemy_sure_masks_probability_step
+
+	print('proba take a guess ', enemy_sure_masks_probability)
+	var r_take_a_guess = randf() < enemy_sure_masks_probability
+
+	if (enemy_sure_masks.size() >= 1 && r_take_a_guess) || enemy_sure_masks.size() == 4:
 		var guess_mask = MaskInfo.new()
 		if enemy_sure_masks["bouche"] != null:
 			guess_mask.bouche_info = enemy_sure_masks["bouche"]
