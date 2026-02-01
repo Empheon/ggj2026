@@ -1,0 +1,96 @@
+[gd_scene format=3 uid="uid://kyujtys3fddm"]
+
+[ext_resource type="Texture2D" uid="uid://s0i31mefft5d" path="res://assets/decor/decor_background.png" id="1_she06"]
+[ext_resource type="Texture2D" uid="uid://cojsu2qieode4" path="res://assets/decor/decor_vignette.png" id="2_a2du2"]
+[ext_resource type="FontFile" uid="uid://mriphbyw1vw3" path="res://assets/fonts/Comico-Regular.otf" id="3_a2du2"]
+[ext_resource type="Script" uid="uid://dog8f2fwh6sdw" path="res://scenes/play_button.gd" id="4_m3le7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m3le7"]
+bg_color = Color(0.27546945, 0.55202836, 0.23137423, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x5lbp"]
+bg_color = Color(0.2095682, 0.4282287, 0.17471573, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6gi7b"]
+bg_color = Color(0.32940543, 0.65690076, 0.27716067, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
+corner_radius_bottom_right = 50
+corner_radius_bottom_left = 50
+
+[node name="TitleMenu" type="Control" unique_id=643542623]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="." unique_id=1507752960]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_she06")
+expand_mode = 1
+
+[node name="Vignette" type="TextureRect" parent="." unique_id=2127413183]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_a2du2")
+expand_mode = 1
+
+[node name="AspectRatioContainerUI" type="AspectRatioContainer" parent="." unique_id=1857603650]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+ratio = 1.6
+
+[node name="16_10_Container" type="Control" parent="AspectRatioContainerUI" unique_id=1580490702]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="PlayButton" type="Button" parent="AspectRatioContainerUI/16_10_Container" unique_id=253196260]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = 227.0
+offset_right = 150.0
+offset_bottom = 373.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 10
+size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("3_a2du2")
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxFlat_m3le7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_x5lbp")
+theme_override_styles/hover = SubResource("StyleBoxFlat_6gi7b")
+text = "PLAY
+"
+icon_alignment = 1
+script = ExtResource("4_m3le7")
