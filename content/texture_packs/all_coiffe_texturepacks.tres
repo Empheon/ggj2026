@@ -6,5 +6,5 @@
 script = ExtResource("1_dxbtt")
 base_folder = "res://content/texture_packs/coiffe"
 includes = Array[String](["*.tres"])
-paths = Array[String](["res://content/texture_packs/coiffe/horn_circle.tres", "res://content/texture_packs/coiffe/horn_polygon.tres", "res://content/texture_packs/coiffe/horn_spike.tres", "res://content/texture_packs/coiffe/horn_square.tres", "res://content/texture_packs/coiffe/horn_triangle.tres"])
+paths = Array[String](["res://content/texture_packs/coiffe/horn_circle.tres", "res://content/texture_packs/coiffe/horn_spike.tres", "res://content/texture_packs/coiffe/horn_square.tres", "res://content/texture_packs/coiffe/horn_triangle.tres"])
 metadata/_custom_type_script = "uid://cstjpitnmkxh7"

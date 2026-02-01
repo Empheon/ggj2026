@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bn80thmxcvuf6"]
 
 [ext_resource type="Script" uid="uid://batrl4igcvmbc" path="res://scenes/main_scene_controller.gd" id="1_01n6w"]
-[ext_resource type="PackedScene" path="res://scenes/mask_element_tooltip.tscn" id="1_onjth"]
+[ext_resource type="PackedScene" uid="uid://cxfrcsckvf7ob" path="res://scenes/mask_element_tooltip.tscn" id="1_onjth"]
 [ext_resource type="Texture2D" uid="uid://m7ksabc42goy" path="res://assets/ennemi.png" id="1_pw63i"]
 [ext_resource type="Texture2D" uid="uid://s0i31mefft5d" path="res://assets/decor/decor_background.png" id="2_0wyf6"]
 [ext_resource type="Texture2D" uid="uid://brghiiw2e8ian" path="res://icon.svg" id="3_7ykc4"]
@@ -29,7 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://bbd8e4q87sin7" path="res://assets/element_icons/rond.png" id="26_0wyf6"]
 [ext_resource type="Texture2D" uid="uid://bbvih1002gv3a" path="res://assets/element_icons/piques.png" id="27_xp01v"]
 [ext_resource type="Texture2D" uid="uid://lp2ex3syjqaw" path="res://assets/element_icons/polyygon.png" id="28_jix7a"]
-[ext_resource type="Script" path="res://scenes/life_display.gd" id="32_p27gv"]
+[ext_resource type="Script" uid="uid://p71gtqfgq6y8" path="res://scenes/life_display.gd" id="32_p27gv"]
 [ext_resource type="Texture2D" uid="uid://cacmud6rtnja3" path="res://assets/heart.png" id="32_xa0eo"]
 [ext_resource type="Texture2D" uid="uid://cyd4rw663hjbu" path="res://assets/heart_empty.png" id="33_3mjum"]
 [ext_resource type="FontFile" uid="uid://mriphbyw1vw3" path="res://assets/fonts/Comico-Regular.otf" id="33_segjr"]
@@ -39,11 +39,11 @@
 [ext_resource type="Script" uid="uid://c13d7tse1uyq8" path="res://scenes/opponent_answer_container.gd" id="36_womr8"]
 [ext_resource type="Texture2D" uid="uid://brli2nvck5tk6" path="res://assets/mask_elements/fills/base_polygon_alpha.png" id="37_0wyf6"]
 [ext_resource type="LabelSettings" uid="uid://bcxwauw5ctkjl" path="res://content/label_settings/comico_28.tres" id="37_beobj"]
-[ext_resource type="Script" path="res://scenes/answers_recap_container.gd" id="38_cn4eu"]
+[ext_resource type="Script" uid="uid://bjwcllmqlgptm" path="res://scenes/answers_recap_container.gd" id="38_cn4eu"]
 [ext_resource type="Texture2D" uid="uid://bt15rdu6voboe" path="res://assets/mask_elements/fills/base_spike_alpha.png" id="38_xp01v"]
 [ext_resource type="Texture2D" uid="uid://4eetbyojoihk" path="res://assets/mask_elements/fills/base_square_alpha.png" id="39_jix7a"]
 [ext_resource type="Texture2D" uid="uid://tvlkcq80gjtx" path="res://assets/mask_elements/fills/base_triangle_alpha.png" id="40_segjr"]
-[ext_resource type="Script" path="res://scenes/victory_window.gd" id="41_cn4eu"]
+[ext_resource type="Script" uid="uid://ctfmhi0amixtk" path="res://scenes/victory_window.gd" id="41_cn4eu"]
 [ext_resource type="Script" uid="uid://5cuxxea7tm5t" path="res://scenes/game_over_window.gd" id="42_0wyf6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pu3yx"]
@@ -194,7 +194,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Controller" type="Node" parent="." unique_id=659297586 node_paths=PackedStringArray("ask_question_ui", "ask_question_container", "ask_button", "emplacement_popup", "caracteristique_popup", "color_popup", "forme_popup", "enemy_answer_popup", "question_emplacement_button", "question_caracteristique_button", "question_value_button", "enemy_question_container", "yes_no_container", "enemy_answer_container", "mask_element_tooltip", "enemy_mask_view")]
+[node name="Controller" type="Node" parent="." unique_id=659297586 node_paths=PackedStringArray("ask_question_ui", "ask_question_container", "ask_button", "emplacement_popup", "caracteristique_popup", "color_popup", "forme_popup", "enemy_answer_popup", "question_emplacement_button", "question_caracteristique_button", "question_value_button", "emplacement_value_buttons", "caracteristique_value_buttons", "color_value_buttons", "shape_value_buttons", "enemy_question_container", "yes_no_container", "enemy_answer_container", "mask_element_tooltip", "enemy_mask_view")]
 script = ExtResource("1_01n6w")
 ask_question_ui = NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI")
 ask_question_container = NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/AskQuestionContainer")
@@ -207,6 +207,10 @@ enemy_answer_popup = NodePath("../AspectRatioContainerUI/16_10_Container/Opponen
 question_emplacement_button = NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/AskQuestionContainer/HBoxContainer/EmplacementButton")
 question_caracteristique_button = NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/AskQuestionContainer/HBoxContainer/CategoryButton")
 question_value_button = NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/AskQuestionContainer/HBoxContainer/ValueButton")
+emplacement_value_buttons = [NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/EmplacementQuestionPopup/Grid/QuestionItem"), NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/EmplacementQuestionPopup/Grid/QuestionItem2"), NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/EmplacementQuestionPopup/Grid/QuestionItem4"), NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/EmplacementQuestionPopup/Grid/QuestionItem5"), NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/EmplacementQuestionPopup/Grid/QuestionItem6")]
+caracteristique_value_buttons = [NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/CategoryQuestionPopup2/Grid/QuestionItem"), NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/CategoryQuestionPopup2/Grid/QuestionItem2"), NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/CategoryQuestionPopup2/Grid/QuestionItem3")]
+color_value_buttons = [NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/ColorPopup/Grid/QuestionItem"), NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/ColorPopup/Grid/QuestionItem2"), NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/ColorPopup/Grid/QuestionItem3"), NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/ColorPopup/Grid/QuestionItem4")]
+shape_value_buttons = [NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/ShapePopup/Grid/QuestionItem"), NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/ShapePopup/Grid/QuestionItem2"), NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/ShapePopup/Grid/QuestionItem3"), NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/ShapePopup/Grid/QuestionItem4")]
 enemy_question_container = NodePath("../AspectRatioContainerUI/16_10_Container/OpponentQuestionContainer")
 yes_no_container = NodePath("../AspectRatioContainerUI/16_10_Container/YesNoPanelContainer")
 enemy_answer_container = NodePath("../AspectRatioContainerUI/16_10_Container/OpponentAnswerContainer")
@@ -303,6 +307,7 @@ layout_mode = 2
 mouse_filter = 2
 
 [node name="OpponentQuestionContainer" type="PanelContainer" parent="AspectRatioContainerUI/16_10_Container" unique_id=920652146 node_paths=PackedStringArray("emplacement_texture", "caracteristique_texture", "value_texture")]
+visible = false
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -375,6 +380,7 @@ begin_cap_mode = 2
 end_cap_mode = 2
 
 [node name="YesNoPanelContainer" type="PanelContainer" parent="AspectRatioContainerUI/16_10_Container" unique_id=1085846489 node_paths=PackedStringArray("yes_button", "no_button", "yes_is_lying_label", "no_is_lying_label")]
+visible = false
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -442,7 +448,6 @@ label_settings = ExtResource("8_jix7a")
 horizontal_alignment = 1
 
 [node name="AskQuestionUI" type="Control" parent="AspectRatioContainerUI/16_10_Container" unique_id=1524920362]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -833,7 +838,7 @@ default_color = Color(0.8, 0.8, 0.8, 1)
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="SolutionConstructorUI" type="Control" parent="AspectRatioContainerUI/16_10_Container" unique_id=2085883121 node_paths=PackedStringArray("player_mask", "submit_button", "color_popup", "texture_pack_popup")]
+[node name="SolutionConstructorUI" type="Control" parent="AspectRatioContainerUI/16_10_Container" unique_id=2085883121 node_paths=PackedStringArray("player_mask", "submit_button", "color_popup", "texture_pack_popup", "color_value_buttons", "texture_pack_value_buttons")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -846,6 +851,8 @@ player_mask = NodePath("PanelContainer/VBoxContainer/PlayerMaskSolution")
 submit_button = NodePath("PanelContainer/VBoxContainer/SubmitButton")
 color_popup = NodePath("ColorPopup")
 texture_pack_popup = NodePath("TexturePackPopup")
+color_value_buttons = [NodePath("ColorPopup/Grid/QuestionItem"), NodePath("ColorPopup/Grid/QuestionItem2"), NodePath("ColorPopup/Grid/QuestionItem3"), NodePath("ColorPopup/Grid/QuestionItem4")]
+texture_pack_value_buttons = [NodePath("TexturePackPopup/Grid/QuestionItem"), NodePath("TexturePackPopup/Grid/QuestionItem3"), NodePath("TexturePackPopup/Grid/QuestionItem4"), NodePath("TexturePackPopup/Grid/QuestionItem5")]
 
 [node name="PanelContainer" type="PanelContainer" parent="AspectRatioContainerUI/16_10_Container/SolutionConstructorUI" unique_id=203917557]
 layout_mode = 0
@@ -918,7 +925,6 @@ expand_mode = 3
 stretch_mode = 5
 
 [node name="ColorPopup" parent="AspectRatioContainerUI/16_10_Container/SolutionConstructorUI" unique_id=1878665429 instance=ExtResource("5_c16ls")]
-visible = false
 layout_mode = 0
 offset_left = 660.0
 offset_top = 330.0
@@ -966,7 +972,6 @@ value = "purple"
 visible = false
 
 [node name="TexturePackPopup" parent="AspectRatioContainerUI/16_10_Container/SolutionConstructorUI" unique_id=1260567830 instance=ExtResource("5_c16ls")]
-visible = false
 layout_mode = 0
 offset_left = 419.0
 offset_top = 330.0
