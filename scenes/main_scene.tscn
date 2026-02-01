@@ -741,6 +741,7 @@ value = "polygon"
 visible = false
 
 [node name="AnswersRecapContainer" type="PanelContainer" parent="AspectRatioContainerUI/16_10_Container" unique_id=1418793122 node_paths=PackedStringArray("knowledge_items_container", "scroll_container")]
+texture_filter = 4
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -1055,6 +1056,7 @@ visible = false
 
 [node name="MaskElementTooltip" parent="." unique_id=162241741 instance=ExtResource("1_onjth")]
 z_index = 2
+texture_filter = 4
 layout_mode = 0
 offset_bottom = 219.0
 theme_override_styles/panel = ExtResource("9_j4epa")
