@@ -1,62 +1,263 @@
 [gd_scene format=3 uid="uid://kyujtys3fddm"]
 
-[ext_resource type="Texture2D" uid="uid://s0i31mefft5d" path="res://assets/decor/decor_background.png" id="1_she06"]
 [ext_resource type="Script" uid="uid://16bhjwia2sg2" path="res://scenes/title_menu.gd" id="1_x5lbp"]
 [ext_resource type="Texture2D" uid="uid://cojsu2qieode4" path="res://assets/decor/decor_vignette.png" id="2_a2du2"]
+[ext_resource type="Texture2D" uid="uid://5t321wppcs8k" path="res://assets/fond minia.png" id="3_6gi7b"]
 [ext_resource type="FontFile" uid="uid://mriphbyw1vw3" path="res://assets/fonts/Comico-Regular.otf" id="3_a2du2"]
 [ext_resource type="Script" uid="uid://dog8f2fwh6sdw" path="res://scenes/play_button.gd" id="4_m3le7"]
+[ext_resource type="Texture2D" uid="uid://crgtxwbkap5ac" path="res://assets/big_button_normal.png" id="4_qwwvb"]
+[ext_resource type="Texture2D" uid="uid://du0xnpbsqpkf4" path="res://assets/big_button_hovered.png" id="5_ht66r"]
+[ext_resource type="Texture2D" uid="uid://b2hk4x7dsq0sn" path="res://assets/mask_elements/fills/horn_square_alpha.png" id="7_qwwvb"]
+[ext_resource type="Texture2D" uid="uid://bc7s5rvq5bci8" path="res://assets/mask_elements/lines/mouth_spike_line2.png" id="7_u1uyh"]
+[ext_resource type="Texture2D" uid="uid://crm2aglcjln3q" path="res://assets/mask_elements/lines/horn_square_line.png" id="8_ht66r"]
+[ext_resource type="Texture2D" uid="uid://bglvfvxetmjk1" path="res://assets/mask_elements/fills/eye_circle_alpha.png" id="9_cshe0"]
+[ext_resource type="Texture2D" uid="uid://dxxalp3uyny4n" path="res://assets/mask_elements/lines/eye_circle_line.png" id="10_0cjho"]
+[ext_resource type="Texture2D" uid="uid://bitv8kcvcciu2" path="res://assets/mask_elements/fills/mouth_spike_alpha.png" id="11_ow0x8"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m3le7"]
-bg_color = Color(0.27546945, 0.55202836, 0.23137423, 1)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x5lbp"]
-bg_color = Color(0.2095682, 0.4282287, 0.17471573, 1)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6gi7b"]
-bg_color = Color(0.32940543, 0.65690076, 0.27716067, 1)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-
-[sub_resource type="FontVariation" id="FontVariation_m3le7"]
-base_font = ExtResource("3_a2du2")
-variation_transform = Transform2D(1, 0.19, 0.15, 1.035, 0.315, 0.12)
+[sub_resource type="LabelSettings" id="LabelSettings_qwwvb"]
+font = ExtResource("3_a2du2")
+font_size = 100
+font_color = Color(1.4586968, 1.4586968, 1.4586968, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_x5lbp"]
-font = SubResource("FontVariation_m3le7")
-font_size = 146
-shadow_size = 85
-shadow_color = Color(0, 0, 0, 0.34901962)
-shadow_offset = Vector2(6.445, 7.445)
-stacked_outline_count = 2
-stacked_outline_0/size = 33
-stacked_outline_0/color = Color(0.6784314, 0.26666668, 0.72156864, 1)
-stacked_outline_1/size = 37
-stacked_outline_1/color = Color(0.34797847, 0.09647722, 0.3730088, 1)
+font = ExtResource("3_a2du2")
+font_size = 200
 
-[sub_resource type="LabelSettings" id="LabelSettings_6gi7b"]
-font = SubResource("FontVariation_m3le7")
-font_size = 400
-font_color = Color(0.9073415, 0.6931802, 0.9242977, 1)
-shadow_size = 85
-shadow_color = Color(0, 0, 0, 0.34901962)
-shadow_offset = Vector2(6.445, 7.445)
-stacked_outline_count = 2
-stacked_outline_0/size = 33
-stacked_outline_0/color = Color(0.6784314, 0.26666668, 0.72156864, 1)
-stacked_outline_1/size = 37
-stacked_outline_1/color = Color(0.34797847, 0.09647722, 0.3730088, 1)
+[sub_resource type="LabelSettings" id="LabelSettings_mh775"]
+font = ExtResource("3_a2du2")
+font_size = 100
 
-[node name="TitleMenu" type="Control" unique_id=643542623 node_paths=PackedStringArray("title_1", "title_2", "play_button")]
+[sub_resource type="Animation" id="Animation_u1uyh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AspectRatioContainerUI/16_10_Container/WhatTheFaceTitle1:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AspectRatioContainerUI/16_10_Container/WhatTheFaceTitle2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AspectRatioContainerUI/16_10_Container/WhatTheFaceTitle3:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AspectRatioContainerUI/16_10_Container/Mouth:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AspectRatioContainerUI/16_10_Container/Horns:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AspectRatioContainerUI/16_10_Container/Eyes:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AspectRatioContainerUI/16_10_Container/Mouth:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.08235294, 0.5372549, 0.7921569, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AspectRatioContainerUI/16_10_Container/Horns:self_modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.9529412, 0.22745098, 0.23921569, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AspectRatioContainerUI/16_10_Container/Eyes:self_modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 0.6784314, 0.2784314, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_4tl32"]
+resource_name = "loop"
+length = 2.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AspectRatioContainerUI/16_10_Container/WhatTheFaceTitle1:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 0.76666665, 1.0333333, 1.3666667, 1.7666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0.0, 0.17453292519943295, 0.08726646, 0.0, -0.08726646259971647, -0.17453292519943295]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AspectRatioContainerUI/16_10_Container/WhatTheFaceTitle2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.36666667, 0.8, 1.1333333, 1.6333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0.0, 0.08726646259971647, -0.08726646259971647, 0.17453292519943295, -0.17453292519943295]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AspectRatioContainerUI/16_10_Container/WhatTheFaceTitle3:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.46666667, 0.8333333, 1.2666667, 1.7333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0.0, -0.06981317007977318, 0.13962634015954636, -0.03490658503988659, 0.10471975511965978, -0.17453292519943295]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AspectRatioContainerUI/16_10_Container/Mouth:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.59999996, 0.96666664, 1.2333333, 1.5666666, 1.9666665),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0.0, 0.17453292519943295, 0.08726646, 0.0, -0.08726646259971647, -0.17453292519943295]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AspectRatioContainerUI/16_10_Container/Horns:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5666666, 0.99999994, 1.3333333, 1.8333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [0.0, 0.08726646259971647, -0.08726646259971647, 0.17453292519943295, -0.17453292519943295]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("AspectRatioContainerUI/16_10_Container/Eyes:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.39999995, 0.66666657, 1.0333333, 1.4666665, 1.9333332),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0.0, -0.06981317007977318, 0.13962634015954636, -0.03490658503988659, 0.10471975511965978, -0.17453292519943295]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("AspectRatioContainerUI/16_10_Container/Mouth:self_modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.2333333, 1.7333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Color(0.08235294, 0.5372549, 0.7921569, 1), Color(0.9529412, 0.22745098, 0.23921569, 1), Color(0.39215687, 0.6784314, 0.28627452, 1), Color(1, 0.6784314, 0.2784314, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("AspectRatioContainerUI/16_10_Container/Horns:self_modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.6, 0.96666664, 1.4666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Color(0.9529412, 0.22745098, 0.23921569, 1), Color(1, 0.6784314, 0.2784314, 1), Color(0.08235294, 0.5372549, 0.7921569, 1), Color(1, 0.6784314, 0.2784314, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("AspectRatioContainerUI/16_10_Container/Eyes:self_modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 0.43333334, 1.1333333, 1.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [Color(1, 0.6784314, 0.2784314, 1), Color(0.39215687, 0.6784314, 0.28627452, 1), Color(0.9529412, 0.22745098, 0.23921569, 1), Color(0.08235294, 0.5372549, 0.7921569, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qwwvb"]
+_data = {
+&"RESET": SubResource("Animation_u1uyh"),
+&"loop": SubResource("Animation_4tl32")
+}
+
+[node name="TitleMenu" type="Control" unique_id=643542623 node_paths=PackedStringArray("play_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -64,21 +265,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_x5lbp")
-title_1 = NodePath("AspectRatioContainerUI/16_10_Container/WhatTheFaceTitle")
-title_2 = NodePath("AspectRatioContainerUI/16_10_Container/WhatTheFaceTitle2")
 play_button = NodePath("AspectRatioContainerUI/16_10_Container/PlayButton")
 
-[node name="Background" type="TextureRect" parent="." unique_id=1507752960]
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=2036553174]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_she06")
-expand_mode = 1
+texture = ExtResource("3_6gi7b")
+region_rect = Rect2(0, -3.5190735, 1920, 1083.519)
+patch_margin_left = 308
+patch_margin_top = 179
+patch_margin_right = 305
+patch_margin_bottom = 199
 
 [node name="Vignette" type="TextureRect" parent="." unique_id=2127413183]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -103,7 +307,8 @@ ratio = 1.6
 layout_mode = 2
 mouse_filter = 2
 
-[node name="PlayButton" type="Button" parent="AspectRatioContainerUI/16_10_Container" unique_id=253196260]
+[node name="PlayButton" type="TextureButton" parent="AspectRatioContainerUI/16_10_Container" unique_id=148650617]
+modulate = Color(0.56759137, 0.9319261, 0.43329424, 1)
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 1
 anchors_preset = 8
@@ -111,55 +316,156 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -150.0
-offset_top = 227.0
-offset_right = 150.0
-offset_bottom = 373.0
+offset_left = -633.0
+offset_top = 173.0
+offset_right = -175.0
+offset_bottom = 381.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 size_flags_horizontal = 10
 size_flags_vertical = 3
-theme_override_fonts/font = ExtResource("3_a2du2")
-theme_override_font_sizes/font_size = 100
-theme_override_styles/normal = SubResource("StyleBoxFlat_m3le7")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_x5lbp")
-theme_override_styles/hover = SubResource("StyleBoxFlat_6gi7b")
-text = "PLAY
-"
-icon_alignment = 1
+texture_normal = ExtResource("4_qwwvb")
+texture_hover = ExtResource("5_ht66r")
+ignore_texture_size = true
+stretch_mode = 0
 script = ExtResource("4_m3le7")
 
-[node name="WhatTheFaceTitle" type="Label" parent="AspectRatioContainerUI/16_10_Container" unique_id=193552543]
+[node name="Label" type="Label" parent="AspectRatioContainerUI/16_10_Container/PlayButton" unique_id=452057196]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -739.0
-offset_top = -296.0
-offset_right = 402.0
-offset_bottom = -82.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-pivot_offset_ratio = Vector2(0.5, 0.5)
-text = "WHAT THE FACE"
-label_settings = SubResource("LabelSettings_x5lbp")
+text = "play"
+label_settings = SubResource("LabelSettings_qwwvb")
+horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="WhatTheFaceTitle2" type="Label" parent="AspectRatioContainerUI/16_10_Container" unique_id=534586364]
+[node name="WhatTheFaceTitle1" type="Label" parent="AspectRatioContainerUI/16_10_Container" unique_id=193552543]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 545.0
-offset_top = -300.0
-offset_right = 670.0
-offset_bottom = -86.0
+offset_left = -961.0
+offset_top = -581.0
+offset_right = 71.0
+offset_bottom = -143.0
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
-text = "?!"
-label_settings = SubResource("LabelSettings_6gi7b")
+text = "WHAT"
+label_settings = SubResource("LabelSettings_x5lbp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WhatTheFaceTitle2" type="Label" parent="AspectRatioContainerUI/16_10_Container" unique_id=715406666]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -961.0
+offset_top = -393.0
+offset_right = 71.0
+offset_bottom = 45.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+text = "the"
+label_settings = SubResource("LabelSettings_mh775")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WhatTheFaceTitle3" type="Label" parent="AspectRatioContainerUI/16_10_Container" unique_id=1974943588]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -955.0
+offset_top = -235.0
+offset_right = 77.0
+offset_bottom = 203.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+text = "FACE"
+label_settings = SubResource("LabelSettings_x5lbp")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Mouth" type="TextureRect" parent="AspectRatioContainerUI/16_10_Container" unique_id=1262972606]
+self_modulate = Color(0.08235294, 0.5372549, 0.7921569, 1)
+layout_mode = 0
+offset_left = 864.0
+offset_top = 160.0
+offset_right = 1888.0
+offset_bottom = 1184.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("11_ow0x8")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="MouthLine" type="TextureRect" parent="AspectRatioContainerUI/16_10_Container/Mouth" unique_id=1371783136]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 1024.0
+offset_bottom = 1023.0
+texture = ExtResource("7_u1uyh")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Horns" type="TextureRect" parent="AspectRatioContainerUI/16_10_Container" unique_id=1481952048]
+self_modulate = Color(0.9529412, 0.22745098, 0.23921569, 1)
+layout_mode = 0
+offset_left = 862.0
+offset_top = 64.0
+offset_right = 1886.0
+offset_bottom = 1088.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("7_qwwvb")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="HornsLine" type="TextureRect" parent="AspectRatioContainerUI/16_10_Container/Horns" unique_id=374426560]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_top = -1.0
+offset_right = 1024.0
+offset_bottom = 1023.0
+texture = ExtResource("8_ht66r")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Eyes" type="TextureRect" parent="AspectRatioContainerUI/16_10_Container" unique_id=1068371506]
+self_modulate = Color(1, 0.6784314, 0.2784314, 1)
+layout_mode = 0
+offset_left = 864.0
+offset_top = 87.0
+offset_right = 1888.0
+offset_bottom = 1111.0
+pivot_offset_ratio = Vector2(0.5, 0.5)
+texture = ExtResource("9_cshe0")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="EyesLine" type="TextureRect" parent="AspectRatioContainerUI/16_10_Container/Eyes" unique_id=1454650349]
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 0
+offset_top = -1.0
+offset_right = 1024.0
+offset_bottom = 1023.0
+texture = ExtResource("10_0cjho")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=705833723]
+libraries/ = SubResource("AnimationLibrary_qwwvb")
+autoplay = &"loop"
+speed_scale = 0.8
