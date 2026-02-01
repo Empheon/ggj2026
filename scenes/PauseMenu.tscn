@@ -1,0 +1,90 @@
+[gd_scene format=3 uid="uid://bg62l7o71vo5x"]
+
+[ext_resource type="Script" uid="uid://dqnmw3s3xu3gi" path="res://scenes/pause_menu.gd" id="1_g4jo0"]
+[ext_resource type="FontFile" uid="uid://mriphbyw1vw3" path="res://assets/fonts/Comico-Regular.otf" id="2_komsw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cuw72"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 20.0
+content_margin_bottom = 20.0
+
+[node name="PauseMenu" type="Control" unique_id=868330885 node_paths=PackedStringArray("resume_button", "quit_button", "canvas_layer")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g4jo0")
+resume_button = NodePath("CanvasLayer/Control/PanelContainer/VBoxContainer/ResumeButton")
+quit_button = NodePath("CanvasLayer/Control/PanelContainer/VBoxContainer/QuitButton")
+canvas_layer = NodePath("CanvasLayer")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1435130645]
+layer = 2
+
+[node name="Control" type="Control" parent="CanvasLayer" unique_id=1644347417]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/Control" unique_id=2074139810]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.47058824)
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer/Control" unique_id=706282879]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_cuw72")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/Control/PanelContainer" unique_id=1735554507]
+custom_minimum_size = Vector2(600, 300)
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/PanelContainer/VBoxContainer" unique_id=1549350435]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("2_komsw")
+theme_override_font_sizes/font_size = 32
+text = "PAUSE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="CanvasLayer/Control/PanelContainer/VBoxContainer" unique_id=2082971369]
+custom_minimum_size = Vector2(240, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_komsw")
+text = "RESUME"
+
+[node name="QuitButton" type="Button" parent="CanvasLayer/Control/PanelContainer/VBoxContainer" unique_id=550930336]
+custom_minimum_size = Vector2(240, 80)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_fonts/font = ExtResource("2_komsw")
+text = "QUIT
+"
