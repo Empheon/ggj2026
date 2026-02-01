@@ -765,7 +765,7 @@ value = "polygon"
 [node name="QuestionItem6" parent="AspectRatioContainerUI/16_10_Container/AskQuestionUI/ShapePopup/Grid" parent_id_path=PackedInt32Array(284634523, 1457894234) index="5" unique_id=446211000]
 visible = false
 
-[node name="AnswersRecapContainer" type="PanelContainer" parent="AspectRatioContainerUI/16_10_Container" unique_id=1418793122 node_paths=PackedStringArray("knowledge_items_container")]
+[node name="AnswersRecapContainer" type="PanelContainer" parent="AspectRatioContainerUI/16_10_Container" unique_id=1418793122 node_paths=PackedStringArray("knowledge_items_container", "scroll_container")]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -779,6 +779,7 @@ theme_override_styles/panel = ExtResource("9_j4epa")
 script = ExtResource("38_cn4eu")
 knowledge_items_container = NodePath("VBoxContainer/ScrollContainer/Content")
 knowledge_entry_packedscene = ExtResource("4_pu3yx")
+scroll_container = NodePath("VBoxContainer/ScrollContainer")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainerUI/16_10_Container/AnswersRecapContainer" unique_id=1760828029]
 layout_mode = 2
