@@ -5,19 +5,15 @@
 [ext_resource type="Texture2D" uid="uid://5t321wppcs8k" path="res://assets/fond minia.png" id="3_6gi7b"]
 [ext_resource type="FontFile" uid="uid://mriphbyw1vw3" path="res://assets/fonts/Comico-Regular.otf" id="3_a2du2"]
 [ext_resource type="Script" uid="uid://dog8f2fwh6sdw" path="res://scenes/play_button.gd" id="4_m3le7"]
-[ext_resource type="Texture2D" uid="uid://crgtxwbkap5ac" path="res://assets/big_button_normal.png" id="4_qwwvb"]
-[ext_resource type="Texture2D" uid="uid://du0xnpbsqpkf4" path="res://assets/big_button_hovered.png" id="5_ht66r"]
+[ext_resource type="StyleBox" uid="uid://bills0xo52iec" path="res://content/styleboxes/button_normal.tres" id="5_ht66r"]
+[ext_resource type="StyleBox" uid="uid://u2bagxb7i5qx" path="res://content/styleboxes/button_pressed.tres" id="6_cshe0"]
+[ext_resource type="StyleBox" uid="uid://dxrndvqfd13nm" path="res://content/styleboxes/button_hovered.tres" id="7_0cjho"]
 [ext_resource type="Texture2D" uid="uid://b2hk4x7dsq0sn" path="res://assets/mask_elements/fills/horn_square_alpha.png" id="7_qwwvb"]
 [ext_resource type="Texture2D" uid="uid://bc7s5rvq5bci8" path="res://assets/mask_elements/lines/mouth_spike_line2.png" id="7_u1uyh"]
 [ext_resource type="Texture2D" uid="uid://crm2aglcjln3q" path="res://assets/mask_elements/lines/horn_square_line.png" id="8_ht66r"]
 [ext_resource type="Texture2D" uid="uid://bglvfvxetmjk1" path="res://assets/mask_elements/fills/eye_circle_alpha.png" id="9_cshe0"]
 [ext_resource type="Texture2D" uid="uid://dxxalp3uyny4n" path="res://assets/mask_elements/lines/eye_circle_line.png" id="10_0cjho"]
 [ext_resource type="Texture2D" uid="uid://bitv8kcvcciu2" path="res://assets/mask_elements/fills/mouth_spike_alpha.png" id="11_ow0x8"]
-
-[sub_resource type="LabelSettings" id="LabelSettings_qwwvb"]
-font = ExtResource("3_a2du2")
-font_size = 100
-font_color = Color(1.4586968, 1.4586968, 1.4586968, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_x5lbp"]
 font = ExtResource("3_a2du2")
@@ -307,7 +303,7 @@ ratio = 1.6
 layout_mode = 2
 mouse_filter = 2
 
-[node name="PlayButton" type="TextureButton" parent="AspectRatioContainerUI/16_10_Container" unique_id=148650617]
+[node name="PlayButton" type="Button" parent="AspectRatioContainerUI/16_10_Container" unique_id=991021338]
 modulate = Color(0.56759137, 0.9319261, 0.43329424, 1)
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 1
@@ -316,32 +312,22 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -633.0
-offset_top = 173.0
-offset_right = -175.0
-offset_bottom = 381.0
+offset_left = -578.04456
+offset_top = 197.95795
+offset_right = -229.95538
+offset_bottom = 356.0421
 grow_horizontal = 2
 grow_vertical = 2
 pivot_offset_ratio = Vector2(0.5, 0.5)
 size_flags_horizontal = 10
 size_flags_vertical = 3
-texture_normal = ExtResource("4_qwwvb")
-texture_hover = ExtResource("5_ht66r")
-ignore_texture_size = true
-stretch_mode = 0
+theme_override_fonts/font = ExtResource("3_a2du2")
+theme_override_font_sizes/font_size = 75
+theme_override_styles/normal = ExtResource("5_ht66r")
+theme_override_styles/pressed = ExtResource("6_cshe0")
+theme_override_styles/hover = ExtResource("7_0cjho")
+text = "PLAY"
 script = ExtResource("4_m3le7")
-
-[node name="Label" type="Label" parent="AspectRatioContainerUI/16_10_Container/PlayButton" unique_id=452057196]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "play"
-label_settings = SubResource("LabelSettings_qwwvb")
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="WhatTheFaceTitle1" type="Label" parent="AspectRatioContainerUI/16_10_Container" unique_id=193552543]
 layout_mode = 1

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cr05qdjjehkw4"
-path="res://.godot/imported/bois.png-a6f39b4c5f41a5fd977f53b623a3d6e1.ctex"
+uid="uid://4nuyp2o2j46f"
+path="res://.godot/imported/UI_btn_up.png-456e2bccc6c09c517cf2f738d73e8c44.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/element_icons/bois.png"
-dest_files=["res://.godot/imported/bois.png-a6f39b4c5f41a5fd977f53b623a3d6e1.ctex"]
+source_file="res://assets/UI_btn_up.png"
+dest_files=["res://.godot/imported/UI_btn_up.png-456e2bccc6c09c517cf2f738d73e8c44.ctex"]
 
 [params]
 

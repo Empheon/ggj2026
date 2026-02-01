@@ -1,0 +1,11 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://dxrndvqfd13nm"]
+
+[ext_resource type="Texture2D" uid="uid://dr4soapjwuub5" path="res://assets/UI_btn_push.png" id="1_ec51r"]
+
+[resource]
+texture = ExtResource("1_ec51r")
+texture_margin_left = 10.518408
+texture_margin_top = 30.052595
+texture_margin_right = 12.021038
+texture_margin_bottom = 17.280243
+modulate_color = Color(0.23529412, 0.23529412, 0.23529412, 1)

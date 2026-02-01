@@ -23,6 +23,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_01n6w")
 
 [node name="Grid" type="VBoxContainer" parent="." unique_id=1457894234]
 layout_mode = 2
+theme_override_constants/separation = -2
 
 [node name="QuestionItem" parent="Grid" unique_id=842373604 instance=ExtResource("1_5cnnj")]
 layout_mode = 2

@@ -2,13 +2,20 @@
 
 [ext_resource type="FontFile" uid="uid://mriphbyw1vw3" path="res://assets/fonts/Comico-Regular.otf" id="1_exqqx"]
 [ext_resource type="Texture2D" uid="uid://brghiiw2e8ian" path="res://icon.svg" id="1_okj4d"]
+[ext_resource type="StyleBox" uid="uid://bills0xo52iec" path="res://content/styleboxes/button_normal.tres" id="2_i8oxd"]
+[ext_resource type="StyleBox" uid="uid://u2bagxb7i5qx" path="res://content/styleboxes/button_pressed.tres" id="3_3mnrm"]
+[ext_resource type="StyleBox" uid="uid://dxrndvqfd13nm" path="res://content/styleboxes/button_hovered.tres" id="4_c2nek"]
 
 [node name="QuestionItem" type="Button" unique_id=446211000]
-custom_minimum_size = Vector2(200, 80)
+texture_filter = 4
+custom_minimum_size = Vector2(200, 100)
 offset_right = 97.0
 offset_bottom = 40.0
 theme_override_fonts/font = ExtResource("1_exqqx")
 theme_override_font_sizes/font_size = 22
+theme_override_styles/normal = ExtResource("2_i8oxd")
+theme_override_styles/pressed = ExtResource("3_3mnrm")
+theme_override_styles/hover = ExtResource("4_c2nek")
 text = "ITEM NAME"
 icon = ExtResource("1_okj4d")
 alignment = 0

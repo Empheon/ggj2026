@@ -1,0 +1,11 @@
+[gd_resource type="StyleBoxTexture" format=3 uid="uid://bills0xo52iec"]
+
+[ext_resource type="Texture2D" uid="uid://4nuyp2o2j46f" path="res://assets/UI_btn_up.png" id="1_bofmv"]
+
+[resource]
+texture = ExtResource("1_bofmv")
+texture_margin_left = 10.518408
+texture_margin_top = 13.523667
+texture_margin_right = 12.021038
+texture_margin_bottom = 34.560486
+modulate_color = Color(0.234375, 0.234375, 0.234375, 1)
