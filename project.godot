@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Library="*uid://ien6m11l0pow"
 GameState="*uid://cm3qksh3j5eq8"
 AudioManager="*uid://b5qc7wocay3md"
+Shaker="*uid://cuohrn2xqblww"
 
 [display]
 
@@ -30,7 +31,7 @@ window/stretch/aspect="keep_height"
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/godot_resource_groups/plugin.cfg")
+enabled=PackedStringArray("res://addons/godot_resource_groups/plugin.cfg", "res://addons/shaker/plugin.cfg")
 
 [godot_resource_groups]
 

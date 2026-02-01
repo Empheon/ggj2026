@@ -28,6 +28,8 @@ extends Node
 
 @export var enemy_mask_view: Mask
 
+@export var chara_blink_animation_player : AnimationPlayer
+
 var current_player_question: Question
 
 func _ready() -> void:
@@ -76,6 +78,8 @@ func show_enemy_question():
 	enemy_question_container.show_for_question(enemy_question)
 	yes_no_container.show_for_question(enemy_question)
 	var player_answer = await yes_no_container.player_answered
+	chara_blink_animation_player.play("chara_choc")
+	chara_blink_animation_player.queue("chara_blink")
 	enemy_question_container.hide()
 	yes_no_container.hide()
 	GameState.answer_enemy_question(enemy_question, player_answer)

@@ -2,16 +2,18 @@
 
 [ext_resource type="Script" uid="uid://batrl4igcvmbc" path="res://scenes/main_scene_controller.gd" id="1_01n6w"]
 [ext_resource type="PackedScene" uid="uid://cxfrcsckvf7ob" path="res://scenes/mask_element_tooltip.tscn" id="1_onjth"]
-[ext_resource type="Texture2D" uid="uid://m7ksabc42goy" path="res://assets/ennemi.png" id="1_pw63i"]
 [ext_resource type="Texture2D" uid="uid://s0i31mefft5d" path="res://assets/decor/decor_background.png" id="2_0wyf6"]
 [ext_resource type="Texture2D" uid="uid://brghiiw2e8ian" path="res://icon.svg" id="3_7ykc4"]
 [ext_resource type="PackedScene" uid="uid://coyxsh5ai4ls" path="res://templates/mask_template.tscn" id="3_p27gv"]
+[ext_resource type="Texture2D" uid="uid://c2b5r7p75t5nv" path="res://assets/chara/chara_neutral.png" id="3_segjr"]
 [ext_resource type="PackedScene" uid="uid://cmwfwlylcj2tu" path="res://scenes/knowledge_entry.tscn" id="4_pu3yx"]
 [ext_resource type="Script" uid="uid://dc0jri8p6oc1f" path="res://scenes/opponent_question_container.gd" id="4_xa0eo"]
 [ext_resource type="Script" uid="uid://bewty6do40100" path="res://scenes/yes_no_panel_container.gd" id="5_3mjum"]
+[ext_resource type="Texture2D" uid="uid://cfkaijaquwypa" path="res://assets/chara/chara_blink.png" id="5_267kh"]
 [ext_resource type="PackedScene" uid="uid://djnd475p1ejia" path="res://scenes/question_popup.tscn" id="5_c16ls"]
 [ext_resource type="Texture2D" uid="uid://bpkhyyvu6kbik" path="res://assets/decor/decor_table.png" id="5_xp01v"]
 [ext_resource type="Texture2D" uid="uid://demfsa3fkpqut" path="res://assets/element_icons/coiffe.png" id="6_6wevv"]
+[ext_resource type="Texture2D" uid="uid://qxuslfoqjtij" path="res://assets/chara/chara_choc.png" id="6_86meh"]
 [ext_resource type="Texture2D" uid="uid://cojsu2qieode4" path="res://assets/decor/decor_vignette.png" id="6_xp01v"]
 [ext_resource type="Texture2D" uid="uid://vwjywu6ra06e" path="res://assets/element_icons/yeux.png" id="7_e1cbu"]
 [ext_resource type="Script" uid="uid://c6x6jxalq6naj" path="res://scenes/question_item_emplacement.gd" id="8_6u1mn"]
@@ -45,6 +47,77 @@
 [ext_resource type="Texture2D" uid="uid://tvlkcq80gjtx" path="res://assets/mask_elements/fills/base_triangle_alpha.png" id="40_segjr"]
 [ext_resource type="Script" uid="uid://ctfmhi0amixtk" path="res://scenes/victory_window.gd" id="41_cn4eu"]
 [ext_resource type="Script" uid="uid://5cuxxea7tm5t" path="res://scenes/game_over_window.gd" id="42_0wyf6"]
+[ext_resource type="Script" uid="uid://dp005512jd47v" path="res://addons/shaker/src/shaker_component.gd" id="48_8dxha"]
+[ext_resource type="Script" uid="uid://cb3gahvcjnl6c" path="res://addons/shaker/data/ShakerProperty.gd" id="49_j4epa"]
+[ext_resource type="Script" uid="uid://n68pquna3n35" path="res://addons/shaker/data/Vector2/ShakerTypeNoiseShake2D.gd" id="50_ruju6"]
+
+[sub_resource type="Animation" id="Animation_segjr"]
+length = 0.001
+
+[sub_resource type="Animation" id="Animation_beobj"]
+resource_name = "chara_idle"
+length = 4.0
+loop_mode = 1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_267kh"]
+_data = {
+&"RESET": SubResource("Animation_segjr"),
+&"chara_idle": SubResource("Animation_beobj")
+}
+
+[sub_resource type="Animation" id="Animation_duuju"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_segjr")]
+}
+
+[sub_resource type="Animation" id="Animation_8dxha"]
+resource_name = "chara_blink"
+length = 4.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.47, 1.6, 1.7666667, 1.9333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("3_segjr"), ExtResource("5_267kh"), ExtResource("3_segjr"), ExtResource("5_267kh"), ExtResource("3_segjr")]
+}
+
+[sub_resource type="Animation" id="Animation_j4epa"]
+resource_name = "chara_choc"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("6_86meh")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ruju6"]
+_data = {
+&"RESET": SubResource("Animation_duuju"),
+&"chara_blink": SubResource("Animation_8dxha"),
+&"chara_choc": SubResource("Animation_j4epa")
+}
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pu3yx"]
 content_margin_left = 100.0
@@ -187,6 +260,24 @@ font = ExtResource("33_segjr")
 font_size = 70
 font_color = Color(0.95, 0.81700003, 0.81700003, 1)
 
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5nybl"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_cq0lk"]
+noise = SubResource("FastNoiseLite_5nybl")
+
+[sub_resource type="Resource" id="Resource_j2yw6"]
+script = ExtResource("50_ruju6")
+noise_texture = SubResource("NoiseTexture2D_cq0lk")
+amplitude = Vector2(30, 30)
+offset = Vector2(15, -15)
+metadata/_custom_type_script = "uid://n68pquna3n35"
+
+[sub_resource type="Resource" id="Resource_8pjrr"]
+script = ExtResource("49_j4epa")
+property_name = "position"
+shake_type = SubResource("Resource_j2yw6")
+metadata/_custom_type_script = "uid://cb3gahvcjnl6c"
+
 [node name="MainScene" type="Control" unique_id=53327232]
 layout_mode = 3
 anchors_preset = 15
@@ -194,8 +285,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_vertical_guides_ = [-381.0, 959.0]
+metadata/_edit_horizontal_guides_ = [473.0]
 
-[node name="Controller" type="Node" parent="." unique_id=659297586 node_paths=PackedStringArray("ask_question_ui", "ask_question_container", "ask_button", "emplacement_popup", "caracteristique_popup", "color_popup", "forme_popup", "enemy_answer_popup", "question_emplacement_button", "question_caracteristique_button", "question_value_button", "emplacement_value_buttons", "caracteristique_value_buttons", "color_value_buttons", "shape_value_buttons", "enemy_question_container", "yes_no_container", "enemy_answer_container", "mask_element_tooltip", "enemy_mask_view")]
+[node name="Controller" type="Node" parent="." unique_id=659297586 node_paths=PackedStringArray("ask_question_ui", "ask_question_container", "ask_button", "emplacement_popup", "caracteristique_popup", "color_popup", "forme_popup", "enemy_answer_popup", "question_emplacement_button", "question_caracteristique_button", "question_value_button", "emplacement_value_buttons", "caracteristique_value_buttons", "color_value_buttons", "shape_value_buttons", "enemy_question_container", "yes_no_container", "enemy_answer_container", "mask_element_tooltip", "enemy_mask_view", "chara_blink_animation_player")]
 script = ExtResource("1_01n6w")
 ask_question_ui = NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI")
 ask_question_container = NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/AskQuestionContainer")
@@ -217,6 +310,7 @@ yes_no_container = NodePath("../AspectRatioContainerUI/16_10_Container/YesNoPane
 enemy_answer_container = NodePath("../AspectRatioContainerUI/16_10_Container/OpponentAnswerContainer")
 mask_element_tooltip = NodePath("../MaskElementTooltip")
 enemy_mask_view = NodePath("../AspectRatioContainerWorld/16_10_Container/Ennemi/EnemyMaskContainer/EnemyMask")
+chara_blink_animation_player = NodePath("../AspectRatioContainerWorld/16_10_Container/Ennemi/CharaBlink")
 
 [node name="Background" type="TextureRect" parent="." unique_id=670894497]
 layout_mode = 1
@@ -247,30 +341,42 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -450.0
-offset_top = -548.0
-offset_right = 480.0
-offset_bottom = 351.0
+offset_left = -597.0
+offset_top = -659.0
+offset_right = 592.1206
+offset_bottom = 446.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("1_pw63i")
+texture = ExtResource("3_segjr")
 expand_mode = 1
 stretch_mode = 5
 
 [node name="EnemyMaskContainer" type="Control" parent="AspectRatioContainerWorld/16_10_Container/Ennemi" unique_id=501929746]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_right = 1.0
-offset_bottom = -366.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -299.0
+offset_top = -444.5
+offset_right = 305.0
+offset_bottom = 159.5
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="EnemyMask" parent="AspectRatioContainerWorld/16_10_Container/Ennemi/EnemyMaskContainer" unique_id=938033601 instance=ExtResource("3_p27gv")]
 layout_mode = 1
 
+[node name="CharaIdle" type="AnimationPlayer" parent="AspectRatioContainerWorld/16_10_Container/Ennemi" unique_id=1581521932]
+libraries/ = SubResource("AnimationLibrary_267kh")
+
+[node name="CharaBlink" type="AnimationPlayer" parent="AspectRatioContainerWorld/16_10_Container/Ennemi" unique_id=835592679]
+libraries/ = SubResource("AnimationLibrary_ruju6")
+autoplay = &"chara_blink"
+
 [node name="Table" type="TextureRect" parent="AspectRatioContainerWorld/16_10_Container" unique_id=386368298]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -796,10 +902,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -697.0
-offset_top = 304.0
-offset_right = -404.0
-offset_bottom = 405.0
+offset_left = -756.0
+offset_top = 360.0
+offset_right = -435.0
+offset_bottom = 491.0
 grow_horizontal = 0
 theme_override_styles/panel = SubResource("StyleBoxFlat_pu3yx")
 script = ExtResource("36_womr8")
@@ -839,7 +945,7 @@ default_color = Color(0.8, 0.8, 0.8, 1)
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="SolutionConstructorUI" type="Control" parent="AspectRatioContainerUI/16_10_Container" unique_id=2085883121 node_paths=PackedStringArray("player_mask", "submit_button", "color_popup", "texture_pack_popup", "color_value_buttons", "texture_pack_value_buttons")]
+[node name="SolutionConstructorUI" type="Control" parent="AspectRatioContainerUI/16_10_Container" unique_id=2085883121 node_paths=PackedStringArray("player_mask", "submit_button", "color_popup", "texture_pack_popup", "color_value_buttons", "texture_pack_value_buttons", "screen_shaker")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -854,6 +960,7 @@ color_popup = NodePath("ColorPopup")
 texture_pack_popup = NodePath("TexturePackPopup")
 color_value_buttons = [NodePath("ColorPopup/Grid/QuestionItem"), NodePath("ColorPopup/Grid/QuestionItem2"), NodePath("ColorPopup/Grid/QuestionItem3"), NodePath("ColorPopup/Grid/QuestionItem4")]
 texture_pack_value_buttons = [NodePath("TexturePackPopup/Grid/QuestionItem"), NodePath("TexturePackPopup/Grid/QuestionItem3"), NodePath("TexturePackPopup/Grid/QuestionItem4"), NodePath("TexturePackPopup/Grid/QuestionItem5")]
+screen_shaker = NodePath("../../../ScreenShaker")
 
 [node name="PanelContainer" type="PanelContainer" parent="AspectRatioContainerUI/16_10_Container/SolutionConstructorUI" unique_id=203917557]
 layout_mode = 0
@@ -875,9 +982,6 @@ horizontal_alignment = 1
 [node name="PlayerMaskSolution" parent="AspectRatioContainerUI/16_10_Container/SolutionConstructorUI/PanelContainer/VBoxContainer" unique_id=1109706206 instance=ExtResource("3_p27gv")]
 layout_mode = 2
 size_flags_vertical = 3
-
-[node name="BaseHead" parent="AspectRatioContainerUI/16_10_Container/SolutionConstructorUI/PanelContainer/VBoxContainer/PlayerMaskSolution" index="0" unique_id=489152504]
-visible = false
 
 [node name="SubmitButton" type="Button" parent="AspectRatioContainerUI/16_10_Container/SolutionConstructorUI/PanelContainer/VBoxContainer" unique_id=864944153]
 layout_mode = 2
@@ -926,6 +1030,7 @@ expand_mode = 3
 stretch_mode = 5
 
 [node name="ColorPopup" parent="AspectRatioContainerUI/16_10_Container/SolutionConstructorUI" unique_id=1878665429 instance=ExtResource("5_c16ls")]
+visible = false
 layout_mode = 0
 offset_left = 660.0
 offset_top = 330.0
@@ -973,6 +1078,7 @@ value = "purple"
 visible = false
 
 [node name="TexturePackPopup" parent="AspectRatioContainerUI/16_10_Container/SolutionConstructorUI" unique_id=1260567830 instance=ExtResource("5_c16ls")]
+visible = false
 layout_mode = 0
 offset_left = 419.0
 offset_top = 330.0
@@ -1155,6 +1261,15 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_0wyf6")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_xp01v")
 theme_override_styles/hover = SubResource("StyleBoxFlat_jix7a")
 text = "TRY AGAIN"
+
+[node name="ScreenShaker" type="Node" parent="." unique_id=209249521 node_paths=PackedStringArray("Targets")]
+script = ExtResource("48_8dxha")
+custom_target = true
+Targets = [NodePath("../AspectRatioContainerWorld"), NodePath("../AspectRatioContainerUI")]
+duration = 0.5
+fade_in = 0.028164038
+shakerProperty = Array[ExtResource("49_j4epa")]([SubResource("Resource_8pjrr")])
+metadata/_custom_type_script = "uid://dp005512jd47v"
 
 [editable path="AspectRatioContainerUI/16_10_Container/AskQuestionUI/EmplacementQuestionPopup"]
 [editable path="AspectRatioContainerUI/16_10_Container/AskQuestionUI/CategoryQuestionPopup2"]

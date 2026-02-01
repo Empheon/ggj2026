@@ -28,6 +28,7 @@ yeux = NodePath("Yeux")
 bouche = NodePath("Bouche")
 
 [node name="BaseHead" type="TextureRect" parent="." unique_id=489152504]
+visible = false
 texture_filter = 4
 layout_mode = 1
 anchors_preset = -1

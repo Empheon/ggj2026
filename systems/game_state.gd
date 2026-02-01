@@ -6,6 +6,7 @@ signal player_knowledge_acquired(knowledge: Dictionary) # {Question:bool}
 signal player_hp_changed
 signal victory
 signal gameover
+signal player_guessed_bad
 
 var player_mask: MaskInfo
 var enemy_mask: MaskInfo
@@ -88,8 +89,9 @@ func player_submit_solution(mask: MaskInfo):
 		if player_hp <= 0:
 			print('GAME OVER')
 			gameover.emit("no_hp")
-			AudioManager.play_game_over()
+			player_guessed_bad.emit()
 		else:
+			player_guessed_bad.emit()
 			AudioManager.play_bad_guess()
 	else:
 		print('VICTORY!')

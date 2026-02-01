@@ -10,6 +10,9 @@ extends Node
 @export var victory: AudioStreamPlayer
 @export var game_over: AudioStreamPlayer
 
+func _ready() -> void:
+	GameState.gameover.connect(func(_arg=null): play_game_over())
+
 func play_click():
 	click.play()
 

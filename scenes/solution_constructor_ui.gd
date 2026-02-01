@@ -8,6 +8,8 @@ extends Control
 @export var color_value_buttons: Array[ButtonItemColor]
 @export var texture_pack_value_buttons: Array[ButtonItemShape]
 
+@export var screen_shaker : ShakerComponent
+
 var solution_mask_info: MaskInfo
 var current_element_type: String
 
@@ -27,6 +29,7 @@ func connect_signals():
 		shape_value_button.pressed.connect(_on_shape_value_button_pressed.bind(shape_value_button))
 
 	submit_button.pressed.connect(GameState.player_submit_solution.bind(solution_mask_info))
+	GameState.player_guessed_bad.connect(screen_shaker.play_shake)
 		
 func _on_mask_element_clicked(_element: MaskElement, element_type: String):
 	current_element_type = element_type
