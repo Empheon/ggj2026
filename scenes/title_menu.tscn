@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://kyujtys3fddm"]
 
 [ext_resource type="Texture2D" uid="uid://s0i31mefft5d" path="res://assets/decor/decor_background.png" id="1_she06"]
+[ext_resource type="Script" uid="uid://16bhjwia2sg2" path="res://scenes/title_menu.gd" id="1_x5lbp"]
 [ext_resource type="Texture2D" uid="uid://cojsu2qieode4" path="res://assets/decor/decor_vignette.png" id="2_a2du2"]
 [ext_resource type="FontFile" uid="uid://mriphbyw1vw3" path="res://assets/fonts/Comico-Regular.otf" id="3_a2du2"]
 [ext_resource type="Script" uid="uid://dog8f2fwh6sdw" path="res://scenes/play_button.gd" id="4_m3le7"]
@@ -26,13 +27,46 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[node name="TitleMenu" type="Control" unique_id=643542623]
+[sub_resource type="FontVariation" id="FontVariation_m3le7"]
+base_font = ExtResource("3_a2du2")
+variation_transform = Transform2D(1, 0.19, 0.15, 1.035, 0.315, 0.12)
+
+[sub_resource type="LabelSettings" id="LabelSettings_x5lbp"]
+font = SubResource("FontVariation_m3le7")
+font_size = 146
+shadow_size = 85
+shadow_color = Color(0, 0, 0, 0.34901962)
+shadow_offset = Vector2(6.445, 7.445)
+stacked_outline_count = 2
+stacked_outline_0/size = 33
+stacked_outline_0/color = Color(0.6784314, 0.26666668, 0.72156864, 1)
+stacked_outline_1/size = 37
+stacked_outline_1/color = Color(0.34797847, 0.09647722, 0.3730088, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_6gi7b"]
+font = SubResource("FontVariation_m3le7")
+font_size = 400
+font_color = Color(0.9073415, 0.6931802, 0.9242977, 1)
+shadow_size = 85
+shadow_color = Color(0, 0, 0, 0.34901962)
+shadow_offset = Vector2(6.445, 7.445)
+stacked_outline_count = 2
+stacked_outline_0/size = 33
+stacked_outline_0/color = Color(0.6784314, 0.26666668, 0.72156864, 1)
+stacked_outline_1/size = 37
+stacked_outline_1/color = Color(0.34797847, 0.09647722, 0.3730088, 1)
+
+[node name="TitleMenu" type="Control" unique_id=643542623 node_paths=PackedStringArray("title_1", "title_2", "play_button")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_x5lbp")
+title_1 = NodePath("AspectRatioContainerUI/16_10_Container/WhatTheFaceTitle")
+title_2 = NodePath("AspectRatioContainerUI/16_10_Container/WhatTheFaceTitle2")
+play_button = NodePath("AspectRatioContainerUI/16_10_Container/PlayButton")
 
 [node name="Background" type="TextureRect" parent="." unique_id=1507752960]
 layout_mode = 1
@@ -83,6 +117,7 @@ offset_right = 150.0
 offset_bottom = 373.0
 grow_horizontal = 2
 grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
 size_flags_horizontal = 10
 size_flags_vertical = 3
 theme_override_fonts/font = ExtResource("3_a2du2")
@@ -94,3 +129,37 @@ text = "PLAY
 "
 icon_alignment = 1
 script = ExtResource("4_m3le7")
+
+[node name="WhatTheFaceTitle" type="Label" parent="AspectRatioContainerUI/16_10_Container" unique_id=193552543]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -739.0
+offset_top = -296.0
+offset_right = 402.0
+offset_bottom = -82.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+text = "WHAT THE FACE"
+label_settings = SubResource("LabelSettings_x5lbp")
+
+[node name="WhatTheFaceTitle2" type="Label" parent="AspectRatioContainerUI/16_10_Container" unique_id=534586364]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 545.0
+offset_top = -300.0
+offset_right = 670.0
+offset_bottom = -86.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset_ratio = Vector2(0.5, 0.5)
+text = "?!"
+label_settings = SubResource("LabelSettings_6gi7b")
