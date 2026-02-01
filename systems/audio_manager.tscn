@@ -9,7 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://bth8evhshvb4x" path="res://assets/sfx/bad_guess.wav" id="7_32s03"]
 [ext_resource type="AudioStream" uid="uid://dj7ocummtitoc" path="res://assets/sfx/victory.wav" id="8_craq5"]
 [ext_resource type="AudioStream" uid="uid://xnglkt4qerv2" path="res://assets/sfx/game_over.wav" id="9_ko56v"]
-[ext_resource type="AudioStream" uid="uid://bdrdgflmf0rsp" path="res://assets/sfx/Stay the Course.mp3" id="10_uiila"]
+[ext_resource type="AudioStream" uid="uid://crv50tbt2puh6" path="res://assets/sfx/Thinking Music.mp3" id="10_uiila"]
 
 [sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_qamf2"]
 random_pitch = 1.0594631
