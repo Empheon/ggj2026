@@ -15,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://cojsu2qieode4" path="res://assets/decor/decor_vignette.png" id="6_xp01v"]
 [ext_resource type="Texture2D" uid="uid://vwjywu6ra06e" path="res://assets/element_icons/yeux.png" id="7_e1cbu"]
 [ext_resource type="Script" uid="uid://c6x6jxalq6naj" path="res://scenes/question_item_emplacement.gd" id="8_6u1mn"]
+[ext_resource type="LabelSettings" uid="uid://3usnrbuy8k7j" path="res://content/label_settings/comico_34.tres" id="8_jix7a"]
 [ext_resource type="Texture2D" uid="uid://bwaikg2oxhk1y" path="res://assets/element_icons/bouche.png" id="9_4w45t"]
 [ext_resource type="Texture2D" uid="uid://cpofgtgt1oqo6" path="res://assets/element_icons/face.png" id="10_mngbo"]
 [ext_resource type="Texture2D" uid="uid://erktnwnvsbjj" path="res://assets/element_icons/any.png" id="11_4w45t"]
@@ -31,11 +32,13 @@
 [ext_resource type="Script" uid="uid://p71gtqfgq6y8" path="res://scenes/life_display.gd" id="32_p27gv"]
 [ext_resource type="Texture2D" uid="uid://cacmud6rtnja3" path="res://assets/heart.png" id="32_xa0eo"]
 [ext_resource type="Texture2D" uid="uid://cyd4rw663hjbu" path="res://assets/heart_empty.png" id="33_3mjum"]
+[ext_resource type="FontFile" uid="uid://mriphbyw1vw3" path="res://assets/fonts/Comico-Regular.otf" id="33_segjr"]
 [ext_resource type="Script" uid="uid://cafmmqocct2dv" path="res://scenes/solution_constructor_ui.gd" id="35_womr8"]
-[ext_resource type="Texture2D" uid="uid://dx7c6mpd1dpjs" path="res://assets/ui_color.png" id="36_0wyf6"]
+[ext_resource type="Texture2D" uid="uid://dx7c6mpd1dpjs" path="res://assets/element_icons/ui_color.png" id="36_0wyf6"]
 [ext_resource type="Texture2D" uid="uid://5t3ulchtu2b" path="res://assets/mask_elements/fills/base_circle_alpha.png" id="36_cn4eu"]
 [ext_resource type="Script" uid="uid://c13d7tse1uyq8" path="res://scenes/opponent_answer_container.gd" id="36_womr8"]
 [ext_resource type="Texture2D" uid="uid://brli2nvck5tk6" path="res://assets/mask_elements/fills/base_polygon_alpha.png" id="37_0wyf6"]
+[ext_resource type="LabelSettings" uid="uid://bcxwauw5ctkjl" path="res://content/label_settings/comico_28.tres" id="37_beobj"]
 [ext_resource type="Script" uid="uid://bjwcllmqlgptm" path="res://scenes/answers_recap_container.gd" id="38_cn4eu"]
 [ext_resource type="Texture2D" uid="uid://bt15rdu6voboe" path="res://assets/mask_elements/fills/base_spike_alpha.png" id="38_xp01v"]
 [ext_resource type="Texture2D" uid="uid://4eetbyojoihk" path="res://assets/mask_elements/fills/base_square_alpha.png" id="39_jix7a"]
@@ -56,10 +59,6 @@ corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
-
-[sub_resource type="LabelSettings" id="LabelSettings_7ykc4"]
-font_size = 28
-font_color = Color(0.6042, 0.76, 0.532, 1)
 
 [sub_resource type="Curve" id="Curve_xp01v"]
 _data = [Vector2(0, 1), 0.0, -0.78575486, 0, 1, Vector2(1, 0.2142452), -0.78575486, 0.0, 1, 0]
@@ -162,16 +161,11 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[sub_resource type="LabelSettings" id="LabelSettings_womr8"]
-font_size = 28
-
-[sub_resource type="LabelSettings" id="LabelSettings_3mjum"]
-font_size = 24
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p27gv"]
 bg_color = Color(0.35585532, 0.5729271, 0.27759397, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_cn4eu"]
+font = ExtResource("33_segjr")
 font_size = 114
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0wyf6"]
@@ -328,7 +322,7 @@ theme_override_constants/separation = 20
 [node name="QuestionStart" type="Label" parent="AspectRatioContainerUI/16_10_Container/OpponentQuestionContainer/HBoxContainer" unique_id=2032458010]
 layout_mode = 2
 text = "Do I have a"
-label_settings = SubResource("LabelSettings_7ykc4")
+label_settings = ExtResource("8_jix7a")
 
 [node name="EmplacementButton" type="TextureRect" parent="AspectRatioContainerUI/16_10_Container/OpponentQuestionContainer/HBoxContainer" unique_id=1110187083]
 custom_minimum_size = Vector2(100, 100)
@@ -340,7 +334,7 @@ stretch_mode = 5
 [node name="QuestionMid" type="Label" parent="AspectRatioContainerUI/16_10_Container/OpponentQuestionContainer/HBoxContainer" unique_id=1061101294]
 layout_mode = 2
 text = "whose"
-label_settings = SubResource("LabelSettings_7ykc4")
+label_settings = ExtResource("8_jix7a")
 
 [node name="CategoryButton" type="TextureRect" parent="AspectRatioContainerUI/16_10_Container/OpponentQuestionContainer/HBoxContainer" unique_id=985165926]
 custom_minimum_size = Vector2(100, 100)
@@ -352,7 +346,7 @@ stretch_mode = 5
 [node name="QuestionEnd" type="Label" parent="AspectRatioContainerUI/16_10_Container/OpponentQuestionContainer/HBoxContainer" unique_id=109787908]
 layout_mode = 2
 text = "is a"
-label_settings = SubResource("LabelSettings_7ykc4")
+label_settings = ExtResource("8_jix7a")
 
 [node name="ValueButton" type="TextureRect" parent="AspectRatioContainerUI/16_10_Container/OpponentQuestionContainer/HBoxContainer" unique_id=1622991688]
 custom_minimum_size = Vector2(100, 100)
@@ -364,7 +358,7 @@ stretch_mode = 5
 [node name="QuestionMark" type="Label" parent="AspectRatioContainerUI/16_10_Container/OpponentQuestionContainer/HBoxContainer" unique_id=2018163870]
 layout_mode = 2
 text = "?"
-label_settings = SubResource("LabelSettings_7ykc4")
+label_settings = ExtResource("8_jix7a")
 
 [node name="Line2D" type="Line2D" parent="AspectRatioContainerUI/16_10_Container/OpponentQuestionContainer" unique_id=1493513830]
 show_behind_parent = true
@@ -406,6 +400,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("33_segjr")
 theme_override_font_sizes/font_size = 65
 theme_override_styles/normal = SubResource("StyleBoxFlat_gubc5")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_rt2n2")
@@ -416,6 +411,7 @@ text = "YES"
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "(LYING)"
+label_settings = ExtResource("8_jix7a")
 horizontal_alignment = 1
 
 [node name="VBoxContainerNo" type="VBoxContainer" parent="AspectRatioContainerUI/16_10_Container/YesNoPanelContainer/HBoxContainer" unique_id=296417668]
@@ -426,6 +422,7 @@ size_flags_horizontal = 3
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("33_segjr")
 theme_override_font_sizes/font_size = 65
 theme_override_styles/normal = SubResource("StyleBoxFlat_pw63i")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_7ykc4")
@@ -436,9 +433,11 @@ text = "NO"
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "(LYING)"
+label_settings = ExtResource("8_jix7a")
 horizontal_alignment = 1
 
 [node name="AskQuestionUI" type="Control" parent="AspectRatioContainerUI/16_10_Container" unique_id=1524920362]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -468,7 +467,7 @@ theme_override_constants/separation = 20
 [node name="QuestionStart" type="Label" parent="AspectRatioContainerUI/16_10_Container/AskQuestionUI/AskQuestionContainer/HBoxContainer" unique_id=1531232710]
 layout_mode = 2
 text = "Do I have a"
-label_settings = SubResource("LabelSettings_7ykc4")
+label_settings = ExtResource("8_jix7a")
 
 [node name="EmplacementButton" type="Button" parent="AspectRatioContainerUI/16_10_Container/AskQuestionUI/AskQuestionContainer/HBoxContainer" unique_id=780568879]
 custom_minimum_size = Vector2(100, 100)
@@ -482,7 +481,7 @@ expand_icon = true
 [node name="QuestionMid" type="Label" parent="AspectRatioContainerUI/16_10_Container/AskQuestionUI/AskQuestionContainer/HBoxContainer" unique_id=41963229]
 layout_mode = 2
 text = "whose"
-label_settings = SubResource("LabelSettings_7ykc4")
+label_settings = ExtResource("8_jix7a")
 
 [node name="CategoryButton" type="Button" parent="AspectRatioContainerUI/16_10_Container/AskQuestionUI/AskQuestionContainer/HBoxContainer" unique_id=1912288124]
 custom_minimum_size = Vector2(100, 100)
@@ -496,7 +495,7 @@ expand_icon = true
 [node name="QuestionEnd" type="Label" parent="AspectRatioContainerUI/16_10_Container/AskQuestionUI/AskQuestionContainer/HBoxContainer" unique_id=483210003]
 layout_mode = 2
 text = "is"
-label_settings = SubResource("LabelSettings_7ykc4")
+label_settings = ExtResource("8_jix7a")
 
 [node name="ValueButton" type="Button" parent="AspectRatioContainerUI/16_10_Container/AskQuestionUI/AskQuestionContainer/HBoxContainer" unique_id=349294370]
 custom_minimum_size = Vector2(100, 100)
@@ -510,13 +509,14 @@ expand_icon = true
 [node name="QuestionMark" type="Label" parent="AspectRatioContainerUI/16_10_Container/AskQuestionUI/AskQuestionContainer/HBoxContainer" unique_id=874061727]
 layout_mode = 2
 text = "?"
-label_settings = SubResource("LabelSettings_7ykc4")
+label_settings = ExtResource("8_jix7a")
 
 [node name="AskButton" type="Button" parent="AspectRatioContainerUI/16_10_Container/AskQuestionUI/AskQuestionContainer/HBoxContainer" unique_id=530994128]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 size_flags_horizontal = 10
 size_flags_vertical = 3
+theme_override_fonts/font = ExtResource("33_segjr")
 theme_override_font_sizes/font_size = 65
 theme_override_styles/normal = SubResource("StyleBoxFlat_c1pb6")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_6wevv")
@@ -525,7 +525,6 @@ text = "ASK"
 icon_alignment = 1
 
 [node name="EmplacementQuestionPopup" parent="AspectRatioContainerUI/16_10_Container/AskQuestionUI" unique_id=475127142 instance=ExtResource("5_c16ls")]
-visible = false
 layout_mode = 0
 offset_left = 502.0
 offset_top = 457.0
@@ -569,6 +568,7 @@ script = ExtResource("8_6u1mn")
 value = "any"
 
 [node name="CategoryQuestionPopup2" parent="AspectRatioContainerUI/16_10_Container/AskQuestionUI" unique_id=569791868 instance=ExtResource("5_c16ls")]
+visible = false
 layout_mode = 0
 offset_left = 726.0
 offset_top = 709.0
@@ -603,6 +603,7 @@ visible = false
 visible = false
 
 [node name="ColorPopup" parent="AspectRatioContainerUI/16_10_Container/AskQuestionUI" unique_id=1113487206 instance=ExtResource("5_c16ls")]
+visible = false
 layout_mode = 0
 offset_left = 913.0
 offset_top = 448.0
@@ -800,6 +801,7 @@ layout_mode = 2
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "YES/NO"
+label_settings = ExtResource("8_jix7a")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -855,7 +857,7 @@ layout_mode = 2
 [node name="SolutionTitle" type="Label" parent="AspectRatioContainerUI/16_10_Container/SolutionConstructorUI/PanelContainer/VBoxContainer" unique_id=1696464168]
 layout_mode = 2
 text = "My Mask"
-label_settings = SubResource("LabelSettings_womr8")
+label_settings = ExtResource("8_jix7a")
 horizontal_alignment = 1
 
 [node name="PlayerMaskSolution" parent="AspectRatioContainerUI/16_10_Container/SolutionConstructorUI/PanelContainer/VBoxContainer" unique_id=1109706206 instance=ExtResource("3_p27gv")]
@@ -867,6 +869,7 @@ visible = false
 
 [node name="SubmitButton" type="Button" parent="AspectRatioContainerUI/16_10_Container/SolutionConstructorUI/PanelContainer/VBoxContainer" unique_id=864944153]
 layout_mode = 2
+theme_override_fonts/font = ExtResource("33_segjr")
 theme_override_font_sizes/font_size = 24
 text = "Of course I know him, 
 it's me!"
@@ -884,7 +887,7 @@ layout_mode = 2
 [node name="RemainingTriesTitle" type="Label" parent="AspectRatioContainerUI/16_10_Container/SolutionConstructorUI/PanelContainer/VBoxContainer/LifeDisplay/HBoxContainer" unique_id=497599751]
 layout_mode = 2
 text = "Remaining tries:"
-label_settings = SubResource("LabelSettings_3mjum")
+label_settings = ExtResource("37_beobj")
 
 [node name="Heart1" type="TextureRect" parent="AspectRatioContainerUI/16_10_Container/SolutionConstructorUI/PanelContainer/VBoxContainer/LifeDisplay/HBoxContainer" unique_id=1239943868]
 custom_minimum_size = Vector2(0, 42)
@@ -911,6 +914,7 @@ expand_mode = 3
 stretch_mode = 5
 
 [node name="ColorPopup" parent="AspectRatioContainerUI/16_10_Container/SolutionConstructorUI" unique_id=1878665429 instance=ExtResource("5_c16ls")]
+visible = false
 layout_mode = 0
 offset_left = 660.0
 offset_top = 320.0
@@ -957,6 +961,7 @@ value = "purple"
 visible = false
 
 [node name="TexturePackPopup" parent="AspectRatioContainerUI/16_10_Container/SolutionConstructorUI" unique_id=1260567830 instance=ExtResource("5_c16ls")]
+visible = false
 layout_mode = 0
 offset_left = 419.0
 offset_top = 325.0
@@ -1002,6 +1007,7 @@ layout_mode = 0
 offset_bottom = 219.0
 
 [node name="VictoryWindow" type="Control" parent="." unique_id=1957963325 node_paths=PackedStringArray("continue_button")]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -1056,6 +1062,7 @@ offset_right = 235.30444
 offset_bottom = 333.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("33_segjr")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_0wyf6")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_xp01v")

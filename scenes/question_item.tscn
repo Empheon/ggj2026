@@ -1,11 +1,14 @@
 [gd_scene format=3 uid="uid://dbwymc4be63sc"]
 
+[ext_resource type="FontFile" uid="uid://mriphbyw1vw3" path="res://assets/fonts/Comico-Regular.otf" id="1_exqqx"]
 [ext_resource type="Texture2D" uid="uid://brghiiw2e8ian" path="res://icon.svg" id="1_okj4d"]
 
 [node name="QuestionItem" type="Button" unique_id=446211000]
 custom_minimum_size = Vector2(200, 80)
 offset_right = 97.0
 offset_bottom = 40.0
+theme_override_fonts/font = ExtResource("1_exqqx")
+theme_override_font_sizes/font_size = 22
 text = "ITEM NAME"
 icon = ExtResource("1_okj4d")
 alignment = 0

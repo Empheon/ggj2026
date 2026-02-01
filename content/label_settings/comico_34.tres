@@ -1,0 +1,7 @@
+[gd_resource type="LabelSettings" format=3 uid="uid://3usnrbuy8k7j"]
+
+[ext_resource type="FontFile" uid="uid://mriphbyw1vw3" path="res://assets/fonts/Comico-Regular.otf" id="1_68nku"]
+
+[resource]
+font = ExtResource("1_68nku")
+font_size = 34
