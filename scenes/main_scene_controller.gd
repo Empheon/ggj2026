@@ -71,11 +71,15 @@ func connect_signals():
 	
 
 func show_enemy_question():
+	yes_no_container.hide()
+	enemy_question_container.hide()
 	ask_question_ui.hide()
 	GameState.try_to_take_a_guess()
 		
 	var enemy_question := GameState.generate_enemy_question()
+	await get_tree().create_timer(0.5).timeout
 	enemy_question_container.show_for_question(enemy_question)
+	await get_tree().create_timer(0.5).timeout
 	yes_no_container.show_for_question(enemy_question)
 	var player_answer = await yes_no_container.player_answered
 	chara_blink_animation_player.play("chara_choc")
@@ -83,6 +87,7 @@ func show_enemy_question():
 	enemy_question_container.hide()
 	yes_no_container.hide()
 	GameState.answer_enemy_question(enemy_question, player_answer)
+	await get_tree().create_timer(0.6).timeout
 	show_player_ask_interface()
 
 func show_player_ask_interface():
@@ -93,6 +98,15 @@ func show_player_ask_interface():
 	ask_button.disabled = true
 	
 	ask_question_ui.show()
+	ask_question_container.modulate.a = 0.0
+	ask_question_container.scale = Vector2.ONE*0.2
+	var tween := create_tween().set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	tween.set_parallel()
+	tween.tween_property(ask_question_container,"scale",Vector2.ONE,0.5)
+	tween.set_trans(Tween.TRANS_QUART).tween_property(ask_question_container,"modulate:a",1.0,0.4)
+	
+	
+	
 	await ask_button.pressed
 	AudioManager.play_click()
 	ask_question_ui.hide()

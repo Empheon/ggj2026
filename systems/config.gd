@@ -10,7 +10,7 @@ const ELEMENT_TYPE_ICON : Dictionary[String, Texture2D] = {
 }
 
 const ELEMENT_TYPE_NAME : Dictionary[String, String] = {
-	"any":"Any",
+	"any":"Something",
 	"face":"Base",
 	"coiffe":"Hairstyle",
 	"yeux":"Eyes",
