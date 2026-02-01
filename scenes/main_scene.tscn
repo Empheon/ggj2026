@@ -183,6 +183,7 @@ bg_color = Color(0.3949234, 0.22915834, 0, 1)
 bg_color = Color(0.9556342, 0.58328664, 3.85046e-07, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_0wyf6"]
+font = ExtResource("33_segjr")
 font_size = 70
 font_color = Color(0.95, 0.81700003, 0.81700003, 1)
 
@@ -1148,6 +1149,7 @@ offset_right = 235.30444
 offset_bottom = 333.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("33_segjr")
 theme_override_font_sizes/font_size = 36
 theme_override_styles/normal = SubResource("StyleBoxFlat_0wyf6")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_xp01v")
