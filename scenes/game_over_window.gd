@@ -12,7 +12,7 @@ func show_gameover(reason: String):
 	match reason:
 		&"no_hp":
 			reason_text.text = "You guessed wrong!"
-		&"player_lie":
+		&"lie":
 			reason_text.text = "I know you lied!!!"
 		&"enemy_guessed":
 			reason_text.text = "I guessed my mask before you!"
