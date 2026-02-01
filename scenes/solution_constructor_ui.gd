@@ -60,6 +60,7 @@ func update_solution():
 	submit_button.disabled = not solution_mask_info.is_valid()
 
 func _on_color_value_button_pressed(color_value_button: ButtonItemColor):
+	AudioManager.play_click()
 	match current_element_type:
 		"face":
 			solution_mask_info.face_info.couleur = color_value_button.value
@@ -73,6 +74,7 @@ func _on_color_value_button_pressed(color_value_button: ButtonItemColor):
 	update_solution()
 
 func _on_shape_value_button_pressed(shape_value_button: ButtonItemShape):
+	AudioManager.play_click()
 	match current_element_type:
 		"face":
 			solution_mask_info.face_info.forme = shape_value_button.value

@@ -14,6 +14,7 @@ func _ready() -> void:
 	popup.visible = false
 
 func _toggle_popup() -> void:
+	AudioManager.play_click()
 	popup.visible = !popup.visible
 
 func _on_item_pressed(item_button: Button) -> void:

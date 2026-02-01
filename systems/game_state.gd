@@ -7,8 +7,6 @@ signal player_hp_changed
 signal victory
 signal gameover
 
-var available_masks: Array[Mask]
-
 var player_mask: MaskInfo
 var enemy_mask: MaskInfo
 
@@ -91,9 +89,13 @@ func player_submit_solution(mask: MaskInfo):
 		if player_hp <= 0:
 			print('GAME OVER')
 			gameover.emit()
+			AudioManager.play_game_over()
+		else:
+			AudioManager.play_bad_guess()
 	else:
 		print('VICTORY!')
 		victory.emit()
+		AudioManager.play_victory()
 	
 
 func generate_enemy_question() -> Question:

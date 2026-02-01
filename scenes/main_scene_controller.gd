@@ -92,8 +92,14 @@ func show_player_ask_interface():
 	
 	ask_question_ui.show()
 	await ask_button.pressed
+	AudioManager.play_click()
 	ask_question_ui.hide()
+	await get_tree().create_timer(0.5).timeout
 	var enemy_answer := GameState.ask_question_to_enemy(current_player_question)
+	if enemy_answer:
+		AudioManager.play_enemy_yes()
+	else:
+		AudioManager.play_enemy_no()
 	enemy_answer_container.display_answer(enemy_answer)
 	await get_tree().create_timer(2).timeout
 	enemy_answer_container.hide()
@@ -101,6 +107,7 @@ func show_player_ask_interface():
 	
 	
 func _on_question_button_pressed(origin_button: Button, destination_button: Button):
+	AudioManager.play_click()
 	destination_button.icon = origin_button.icon
 	destination_button.self_modulate = Color.WHITE
 	if origin_button is ButtonItemEmplacement:
