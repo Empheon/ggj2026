@@ -19,6 +19,8 @@
 [ext_resource type="Script" uid="uid://c6x6jxalq6naj" path="res://scenes/question_item_emplacement.gd" id="8_6u1mn"]
 [ext_resource type="LabelSettings" uid="uid://3usnrbuy8k7j" path="res://content/label_settings/comico_34.tres" id="8_jix7a"]
 [ext_resource type="Texture2D" uid="uid://bwaikg2oxhk1y" path="res://assets/element_icons/bouche.png" id="9_4w45t"]
+[ext_resource type="StyleBox" uid="uid://b07jcjk42dp2l" path="res://content/styleboxes/textbox.tres" id="9_j4epa"]
+[ext_resource type="StyleBox" uid="uid://d1a0tl72u1l1e" path="res://content/styleboxes/textbox_inverted.tres" id="9_ruju6"]
 [ext_resource type="Texture2D" uid="uid://cpofgtgt1oqo6" path="res://assets/element_icons/face.png" id="10_mngbo"]
 [ext_resource type="Texture2D" uid="uid://erktnwnvsbjj" path="res://assets/element_icons/any.png" id="11_4w45t"]
 [ext_resource type="Texture2D" uid="uid://cgvgwg1ehm64e" path="res://assets/element_icons/couleur.png" id="12_si52b"]
@@ -119,21 +121,6 @@ _data = {
 &"chara_choc": SubResource("Animation_j4epa")
 }
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pu3yx"]
-content_margin_left = 100.0
-content_margin_top = 40.0
-content_margin_right = 100.0
-content_margin_bottom = 40.0
-bg_color = Color(0.09221632, 0.25482938, 0.26809105, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-
 [sub_resource type="Curve" id="Curve_xp01v"]
 _data = [Vector2(0, 1), 0.0, -0.78575486, 0, 1, Vector2(1, 0.2142452), -0.78575486, 0.0, 1, 0]
 point_count = 2
@@ -177,28 +164,6 @@ corner_radius_top_right = 50
 corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_onjth"]
-content_margin_left = 8.0
-content_margin_top = 8.0
-content_margin_right = 8.0
-content_margin_bottom = 8.0
-bg_color = Color(0.55859375, 0.55859375, 0.55859375, 1)
-corner_radius_top_left = 4
-corner_radius_top_right = 4
-corner_radius_bottom_right = 4
-corner_radius_bottom_left = 4
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mngbo"]
-content_margin_left = 10.0
-content_margin_top = 10.0
-content_margin_right = 10.0
-content_margin_bottom = 10.0
-bg_color = Color(0, 0, 0, 0.19607843)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4w45t"]
 bg_color = Color(0.8204735, 0.23499575, 0.22530821, 1)
 corner_radius_top_left = 50
@@ -215,21 +180,6 @@ corner_radius_bottom_left = 50
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_si52b"]
 bg_color = Color(0.926667, 0.34485224, 0.31945273, 1)
-corner_radius_top_left = 50
-corner_radius_top_right = 50
-corner_radius_bottom_right = 50
-corner_radius_bottom_left = 50
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iav3h"]
-content_margin_left = 20.0
-content_margin_top = 20.0
-content_margin_right = 20.0
-content_margin_bottom = 20.0
-bg_color = Color(0.09221632, 0.25482938, 0.26809105, 1)
-border_width_left = 2
-border_width_top = 2
-border_width_right = 2
-border_width_bottom = 2
 corner_radius_top_left = 50
 corner_radius_top_right = 50
 corner_radius_bottom_right = 50
@@ -414,7 +364,6 @@ layout_mode = 2
 mouse_filter = 2
 
 [node name="OpponentQuestionContainer" type="PanelContainer" parent="AspectRatioContainerUI/16_10_Container" unique_id=920652146 node_paths=PackedStringArray("emplacement_texture", "caracteristique_texture", "value_texture")]
-visible = false
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -426,7 +375,7 @@ offset_right = -502.5
 offset_bottom = -341.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_pu3yx")
+theme_override_styles/panel = ExtResource("9_ruju6")
 script = ExtResource("4_xa0eo")
 emplacement_texture = NodePath("HBoxContainer/EmplacementButton")
 caracteristique_texture = NodePath("HBoxContainer/CategoryButton")
@@ -482,7 +431,7 @@ show_behind_parent = true
 points = PackedVector2Array(369.5, 14, 403.5, -49)
 width = 27.955
 width_curve = SubResource("Curve_xp01v")
-default_color = Color(0.8, 0.8, 0.8, 1)
+default_color = Color(0.3647059, 0.20392157, 0.3764706, 1)
 begin_cap_mode = 2
 end_cap_mode = 2
 
@@ -499,7 +448,7 @@ offset_right = -501.0
 offset_bottom = -48.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_pu3yx")
+theme_override_styles/panel = ExtResource("9_j4epa")
 script = ExtResource("5_3mjum")
 yes_button = NodePath("HBoxContainer/VBoxContainerYes/YesButton")
 no_button = NodePath("HBoxContainer/VBoxContainerNo/NoButton")
@@ -575,7 +524,7 @@ offset_right = -228.0
 offset_bottom = -88.0
 grow_horizontal = 2
 grow_vertical = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_pu3yx")
+theme_override_styles/panel = ExtResource("9_j4epa")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="AspectRatioContainerUI/16_10_Container/AskQuestionUI/AskQuestionContainer" unique_id=552352996]
 layout_mode = 2
@@ -642,11 +591,13 @@ text = "ASK"
 icon_alignment = 1
 
 [node name="EmplacementQuestionPopup" parent="AspectRatioContainerUI/16_10_Container/AskQuestionUI" unique_id=475127142 instance=ExtResource("5_c16ls")]
+visible = false
 layout_mode = 0
 offset_left = 502.0
 offset_top = 457.0
 offset_right = 722.0
 offset_bottom = 893.0
+theme_override_styles/panel = ExtResource("9_j4epa")
 
 [node name="QuestionItem" parent="AspectRatioContainerUI/16_10_Container/AskQuestionUI/EmplacementQuestionPopup/Grid" parent_id_path=PackedInt32Array(475127142, 1457894234) index="0" unique_id=842373604]
 text = "HAIRSTYLE"
@@ -691,6 +642,7 @@ offset_left = 726.0
 offset_top = 709.0
 offset_right = 946.0
 offset_bottom = 909.0
+theme_override_styles/panel = ExtResource("9_j4epa")
 
 [node name="QuestionItem" parent="AspectRatioContainerUI/16_10_Container/AskQuestionUI/CategoryQuestionPopup2/Grid" parent_id_path=PackedInt32Array(569791868, 1457894234) index="0" unique_id=842373604]
 text = "COLOR"
@@ -726,7 +678,7 @@ offset_left = 914.0
 offset_top = 557.0
 offset_right = 1134.0
 offset_bottom = 907.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_onjth")
+theme_override_styles/panel = ExtResource("9_j4epa")
 
 [node name="QuestionItem" parent="AspectRatioContainerUI/16_10_Container/AskQuestionUI/ColorPopup/Grid" parent_id_path=PackedInt32Array(1113487206, 1457894234) index="0" unique_id=842373604]
 self_modulate = Color(0.9529412, 0.22745098, 0.23921569, 1)
@@ -768,11 +720,13 @@ value = "purple"
 visible = false
 
 [node name="ShapePopup" parent="AspectRatioContainerUI/16_10_Container/AskQuestionUI" unique_id=284634523 instance=ExtResource("5_c16ls")]
+visible = false
 layout_mode = 0
 offset_left = 913.0
 offset_top = 557.0
 offset_right = 1133.0
 offset_bottom = 909.0
+theme_override_styles/panel = ExtResource("9_j4epa")
 
 [node name="QuestionItem" parent="AspectRatioContainerUI/16_10_Container/AskQuestionUI/ShapePopup/Grid" parent_id_path=PackedInt32Array(284634523, 1457894234) index="0" unique_id=842373604]
 text = "SQUARE"
@@ -813,12 +767,12 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -465.0
+offset_left = -562.0
 offset_top = 50.0
 offset_right = -50.0
 offset_bottom = 467.0
 grow_horizontal = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_mngbo")
+theme_override_styles/panel = ExtResource("9_j4epa")
 script = ExtResource("38_cn4eu")
 knowledge_items_container = NodePath("VBoxContainer/ScrollContainer/Content")
 knowledge_entry_packedscene = ExtResource("4_pu3yx")
@@ -902,12 +856,12 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -756.0
-offset_top = 360.0
-offset_right = -435.0
-offset_bottom = 491.0
+offset_left = -699.0
+offset_top = 499.0
+offset_right = -378.0
+offset_bottom = 630.0
 grow_horizontal = 0
-theme_override_styles/panel = SubResource("StyleBoxFlat_pu3yx")
+theme_override_styles/panel = ExtResource("9_ruju6")
 script = ExtResource("36_womr8")
 answer_label = NodePath("VBoxContainer/Label")
 liar_button = NodePath("VBoxContainer/Button")
@@ -938,10 +892,10 @@ icon_alignment = 1
 [node name="Line2D" type="Line2D" parent="AspectRatioContainerUI/16_10_Container/OpponentAnswerContainer" unique_id=434491173]
 show_behind_parent = true
 position = Vector2(-382, 135)
-points = PackedVector2Array(416, -33, 347, 16)
+points = PackedVector2Array(393, -85, 328, -101)
 width = 27.955
 width_curve = SubResource("Curve_xp01v")
-default_color = Color(0.8, 0.8, 0.8, 1)
+default_color = Color(0.3529412, 0.20784314, 0.3764706, 1)
 begin_cap_mode = 2
 end_cap_mode = 2
 
@@ -968,7 +922,7 @@ offset_left = 6.0
 offset_top = 272.0
 offset_right = 397.0
 offset_bottom = 781.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_iav3h")
+theme_override_styles/panel = ExtResource("9_j4epa")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainerUI/16_10_Container/SolutionConstructorUI/PanelContainer" unique_id=574526104]
 layout_mode = 2
@@ -1036,7 +990,7 @@ offset_left = 660.0
 offset_top = 330.0
 offset_right = 880.0
 offset_bottom = 680.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_onjth")
+theme_override_styles/panel = ExtResource("9_j4epa")
 
 [node name="QuestionItem" parent="AspectRatioContainerUI/16_10_Container/SolutionConstructorUI/ColorPopup/Grid" parent_id_path=PackedInt32Array(1878665429, 1457894234) index="0" unique_id=842373604]
 self_modulate = Color(0.9529412, 0.22745098, 0.23921569, 1)
@@ -1084,6 +1038,7 @@ offset_left = 419.0
 offset_top = 330.0
 offset_right = 639.0
 offset_bottom = 682.0
+theme_override_styles/panel = ExtResource("9_j4epa")
 
 [node name="QuestionItem" parent="AspectRatioContainerUI/16_10_Container/SolutionConstructorUI/TexturePackPopup/Grid" parent_id_path=PackedInt32Array(1260567830, 1457894234) index="0" unique_id=842373604]
 text = "ROUND"
@@ -1123,6 +1078,7 @@ visible = false
 z_index = 2
 layout_mode = 0
 offset_bottom = 219.0
+theme_override_styles/panel = ExtResource("9_j4epa")
 
 [node name="VictoryWindow" type="Control" parent="." unique_id=1957963325 node_paths=PackedStringArray("continue_button")]
 visible = false
