@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://bn80thmxcvuf6"]
 
 [ext_resource type="Script" uid="uid://batrl4igcvmbc" path="res://scenes/main_scene_controller.gd" id="1_01n6w"]
-[ext_resource type="PackedScene" uid="uid://cxfrcsckvf7ob" path="res://scenes/mask_element_tooltip.tscn" id="1_onjth"]
+[ext_resource type="PackedScene" path="res://scenes/mask_element_tooltip.tscn" id="1_onjth"]
 [ext_resource type="Texture2D" uid="uid://m7ksabc42goy" path="res://assets/ennemi.png" id="1_pw63i"]
 [ext_resource type="Texture2D" uid="uid://s0i31mefft5d" path="res://assets/decor/decor_background.png" id="2_0wyf6"]
 [ext_resource type="Texture2D" uid="uid://brghiiw2e8ian" path="res://icon.svg" id="3_7ykc4"]
@@ -29,7 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://bbd8e4q87sin7" path="res://assets/element_icons/rond.png" id="26_0wyf6"]
 [ext_resource type="Texture2D" uid="uid://bbvih1002gv3a" path="res://assets/element_icons/piques.png" id="27_xp01v"]
 [ext_resource type="Texture2D" uid="uid://lp2ex3syjqaw" path="res://assets/element_icons/polyygon.png" id="28_jix7a"]
-[ext_resource type="Script" uid="uid://p71gtqfgq6y8" path="res://scenes/life_display.gd" id="32_p27gv"]
+[ext_resource type="Script" path="res://scenes/life_display.gd" id="32_p27gv"]
 [ext_resource type="Texture2D" uid="uid://cacmud6rtnja3" path="res://assets/heart.png" id="32_xa0eo"]
 [ext_resource type="Texture2D" uid="uid://cyd4rw663hjbu" path="res://assets/heart_empty.png" id="33_3mjum"]
 [ext_resource type="FontFile" uid="uid://mriphbyw1vw3" path="res://assets/fonts/Comico-Regular.otf" id="33_segjr"]
@@ -39,11 +39,12 @@
 [ext_resource type="Script" uid="uid://c13d7tse1uyq8" path="res://scenes/opponent_answer_container.gd" id="36_womr8"]
 [ext_resource type="Texture2D" uid="uid://brli2nvck5tk6" path="res://assets/mask_elements/fills/base_polygon_alpha.png" id="37_0wyf6"]
 [ext_resource type="LabelSettings" uid="uid://bcxwauw5ctkjl" path="res://content/label_settings/comico_28.tres" id="37_beobj"]
-[ext_resource type="Script" uid="uid://bjwcllmqlgptm" path="res://scenes/answers_recap_container.gd" id="38_cn4eu"]
+[ext_resource type="Script" path="res://scenes/answers_recap_container.gd" id="38_cn4eu"]
 [ext_resource type="Texture2D" uid="uid://bt15rdu6voboe" path="res://assets/mask_elements/fills/base_spike_alpha.png" id="38_xp01v"]
 [ext_resource type="Texture2D" uid="uid://4eetbyojoihk" path="res://assets/mask_elements/fills/base_square_alpha.png" id="39_jix7a"]
 [ext_resource type="Texture2D" uid="uid://tvlkcq80gjtx" path="res://assets/mask_elements/fills/base_triangle_alpha.png" id="40_segjr"]
-[ext_resource type="Script" uid="uid://ctfmhi0amixtk" path="res://scenes/victory_window.gd" id="41_cn4eu"]
+[ext_resource type="Script" path="res://scenes/victory_window.gd" id="41_cn4eu"]
+[ext_resource type="Script" uid="uid://5cuxxea7tm5t" path="res://scenes/game_over_window.gd" id="42_0wyf6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pu3yx"]
 content_margin_left = 100.0
@@ -162,7 +163,11 @@ corner_radius_bottom_right = 50
 corner_radius_bottom_left = 50
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p27gv"]
-bg_color = Color(0.35585532, 0.5729271, 0.27759397, 1)
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+bg_color = Color(0.57, 0.33259502, 0.2793, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_cn4eu"]
 font = ExtResource("33_segjr")
@@ -177,6 +182,10 @@ bg_color = Color(0.3949234, 0.22915834, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jix7a"]
 bg_color = Color(0.9556342, 0.58328664, 3.85046e-07, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_0wyf6"]
+font_size = 70
+font_color = Color(0.95, 0.81700003, 0.81700003, 1)
+
 [node name="MainScene" type="Control" unique_id=53327232]
 layout_mode = 3
 anchors_preset = 15
@@ -185,7 +194,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Controller" type="Node" parent="." unique_id=659297586 node_paths=PackedStringArray("ask_question_ui", "ask_question_container", "ask_button", "emplacement_popup", "caracteristique_popup", "color_popup", "forme_popup", "enemy_answer_popup", "question_emplacement_button", "question_caracteristique_button", "question_value_button", "emplacement_value_buttons", "caracteristique_value_buttons", "color_value_buttons", "shape_value_buttons", "enemy_question_container", "yes_no_container", "enemy_answer_container", "mask_element_tooltip", "enemy_mask_view")]
+[node name="Controller" type="Node" parent="." unique_id=659297586 node_paths=PackedStringArray("ask_question_ui", "ask_question_container", "ask_button", "emplacement_popup", "caracteristique_popup", "color_popup", "forme_popup", "enemy_answer_popup", "question_emplacement_button", "question_caracteristique_button", "question_value_button", "enemy_question_container", "yes_no_container", "enemy_answer_container", "mask_element_tooltip", "enemy_mask_view")]
 script = ExtResource("1_01n6w")
 ask_question_ui = NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI")
 ask_question_container = NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/AskQuestionContainer")
@@ -198,10 +207,6 @@ enemy_answer_popup = NodePath("../AspectRatioContainerUI/16_10_Container/Opponen
 question_emplacement_button = NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/AskQuestionContainer/HBoxContainer/EmplacementButton")
 question_caracteristique_button = NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/AskQuestionContainer/HBoxContainer/CategoryButton")
 question_value_button = NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/AskQuestionContainer/HBoxContainer/ValueButton")
-emplacement_value_buttons = [NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/EmplacementQuestionPopup/Grid/QuestionItem"), NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/EmplacementQuestionPopup/Grid/QuestionItem2"), NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/EmplacementQuestionPopup/Grid/QuestionItem3"), NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/EmplacementQuestionPopup/Grid/QuestionItem4"), NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/EmplacementQuestionPopup/Grid/QuestionItem5"), NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/EmplacementQuestionPopup/Grid/QuestionItem6")]
-caracteristique_value_buttons = [NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/CategoryQuestionPopup2/Grid/QuestionItem"), NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/CategoryQuestionPopup2/Grid/QuestionItem2"), NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/CategoryQuestionPopup2/Grid/QuestionItem3")]
-color_value_buttons = [NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/ColorPopup/Grid/QuestionItem"), NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/ColorPopup/Grid/QuestionItem2"), NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/ColorPopup/Grid/QuestionItem3"), NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/ColorPopup/Grid/QuestionItem4"), NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/ColorPopup/Grid/QuestionItem5")]
-shape_value_buttons = [NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/ShapePopup/Grid/QuestionItem"), NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/ShapePopup/Grid/QuestionItem2"), NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/ShapePopup/Grid/QuestionItem3"), NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/ShapePopup/Grid/QuestionItem4"), NodePath("../AspectRatioContainerUI/16_10_Container/AskQuestionUI/ShapePopup/Grid/QuestionItem5")]
 enemy_question_container = NodePath("../AspectRatioContainerUI/16_10_Container/OpponentQuestionContainer")
 yes_no_container = NodePath("../AspectRatioContainerUI/16_10_Container/YesNoPanelContainer")
 enemy_answer_container = NodePath("../AspectRatioContainerUI/16_10_Container/OpponentAnswerContainer")
@@ -605,10 +610,10 @@ visible = false
 [node name="ColorPopup" parent="AspectRatioContainerUI/16_10_Container/AskQuestionUI" unique_id=1113487206 instance=ExtResource("5_c16ls")]
 visible = false
 layout_mode = 0
-offset_left = 913.0
-offset_top = 448.0
-offset_right = 1133.0
-offset_bottom = 884.0
+offset_left = 914.0
+offset_top = 557.0
+offset_right = 1134.0
+offset_bottom = 907.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_onjth")
 
 [node name="QuestionItem" parent="AspectRatioContainerUI/16_10_Container/AskQuestionUI/ColorPopup/Grid" parent_id_path=PackedInt32Array(1113487206, 1457894234) index="0" unique_id=842373604]
@@ -640,6 +645,7 @@ script = ExtResource("17_k6f3i")
 value = "blue"
 
 [node name="QuestionItem5" parent="AspectRatioContainerUI/16_10_Container/AskQuestionUI/ColorPopup/Grid" parent_id_path=PackedInt32Array(1113487206, 1457894234) index="4" unique_id=1216540401]
+visible = false
 self_modulate = Color(0.6784314, 0.26666668, 0.72156864, 1)
 text = "PURPLE"
 icon = ExtResource("36_0wyf6")
@@ -650,12 +656,11 @@ value = "purple"
 visible = false
 
 [node name="ShapePopup" parent="AspectRatioContainerUI/16_10_Container/AskQuestionUI" unique_id=284634523 instance=ExtResource("5_c16ls")]
-visible = false
 layout_mode = 0
-offset_left = 912.0
-offset_top = 448.0
-offset_right = 1132.0
-offset_bottom = 884.0
+offset_left = 913.0
+offset_top = 557.0
+offset_right = 1133.0
+offset_bottom = 909.0
 
 [node name="QuestionItem" parent="AspectRatioContainerUI/16_10_Container/AskQuestionUI/ShapePopup/Grid" parent_id_path=PackedInt32Array(284634523, 1457894234) index="0" unique_id=842373604]
 text = "SQUARE"
@@ -682,6 +687,7 @@ script = ExtResource("18_xdqt8")
 value = "spiky"
 
 [node name="QuestionItem5" parent="AspectRatioContainerUI/16_10_Container/AskQuestionUI/ShapePopup/Grid" parent_id_path=PackedInt32Array(284634523, 1457894234) index="4" unique_id=1216540401]
+visible = false
 text = "POLYGONAL"
 icon = ExtResource("28_jix7a")
 script = ExtResource("18_xdqt8")
@@ -827,7 +833,7 @@ default_color = Color(0.8, 0.8, 0.8, 1)
 begin_cap_mode = 2
 end_cap_mode = 2
 
-[node name="SolutionConstructorUI" type="Control" parent="AspectRatioContainerUI/16_10_Container" unique_id=2085883121 node_paths=PackedStringArray("player_mask", "submit_button", "color_popup", "texture_pack_popup", "color_value_buttons", "texture_pack_value_buttons")]
+[node name="SolutionConstructorUI" type="Control" parent="AspectRatioContainerUI/16_10_Container" unique_id=2085883121 node_paths=PackedStringArray("player_mask", "submit_button", "color_popup", "texture_pack_popup")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -840,8 +846,6 @@ player_mask = NodePath("PanelContainer/VBoxContainer/PlayerMaskSolution")
 submit_button = NodePath("PanelContainer/VBoxContainer/SubmitButton")
 color_popup = NodePath("ColorPopup")
 texture_pack_popup = NodePath("TexturePackPopup")
-color_value_buttons = [NodePath("ColorPopup/Grid/QuestionItem"), NodePath("ColorPopup/Grid/QuestionItem2"), NodePath("ColorPopup/Grid/QuestionItem3"), NodePath("ColorPopup/Grid/QuestionItem4"), NodePath("ColorPopup/Grid/QuestionItem5")]
-texture_pack_value_buttons = [NodePath("TexturePackPopup/Grid/QuestionItem"), NodePath("TexturePackPopup/Grid/QuestionItem2"), NodePath("TexturePackPopup/Grid/QuestionItem3"), NodePath("TexturePackPopup/Grid/QuestionItem4"), NodePath("TexturePackPopup/Grid/QuestionItem5")]
 
 [node name="PanelContainer" type="PanelContainer" parent="AspectRatioContainerUI/16_10_Container/SolutionConstructorUI" unique_id=203917557]
 layout_mode = 0
@@ -917,9 +921,9 @@ stretch_mode = 5
 visible = false
 layout_mode = 0
 offset_left = 660.0
-offset_top = 320.0
+offset_top = 330.0
 offset_right = 880.0
-offset_bottom = 756.0
+offset_bottom = 680.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_onjth")
 
 [node name="QuestionItem" parent="AspectRatioContainerUI/16_10_Container/SolutionConstructorUI/ColorPopup/Grid" parent_id_path=PackedInt32Array(1878665429, 1457894234) index="0" unique_id=842373604]
@@ -951,6 +955,7 @@ script = ExtResource("17_k6f3i")
 value = "blue"
 
 [node name="QuestionItem5" parent="AspectRatioContainerUI/16_10_Container/SolutionConstructorUI/ColorPopup/Grid" parent_id_path=PackedInt32Array(1878665429, 1457894234) index="4" unique_id=1216540401]
+visible = false
 self_modulate = Color(0.6784314, 0.26666668, 0.72156864, 1)
 text = "PURPLE"
 icon = ExtResource("36_0wyf6")
@@ -964,9 +969,9 @@ visible = false
 visible = false
 layout_mode = 0
 offset_left = 419.0
-offset_top = 325.0
+offset_top = 330.0
 offset_right = 639.0
-offset_bottom = 761.0
+offset_bottom = 682.0
 
 [node name="QuestionItem" parent="AspectRatioContainerUI/16_10_Container/SolutionConstructorUI/TexturePackPopup/Grid" parent_id_path=PackedInt32Array(1260567830, 1457894234) index="0" unique_id=842373604]
 text = "ROUND"
@@ -975,6 +980,7 @@ script = ExtResource("18_xdqt8")
 value = "round"
 
 [node name="QuestionItem2" parent="AspectRatioContainerUI/16_10_Container/SolutionConstructorUI/TexturePackPopup/Grid" parent_id_path=PackedInt32Array(1260567830, 1457894234) index="1" unique_id=1641545328]
+visible = false
 text = "ANGLED"
 icon = ExtResource("37_0wyf6")
 script = ExtResource("18_xdqt8")
@@ -1068,6 +1074,80 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_0wyf6")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_xp01v")
 theme_override_styles/hover = SubResource("StyleBoxFlat_jix7a")
 text = "CONTINUE"
+
+[node name="GameOverWindow" type="Control" parent="." unique_id=1145591654 node_paths=PackedStringArray("try_again_button", "reason_text")]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("42_0wyf6")
+try_again_button = NodePath("TryAgainButton")
+reason_text = NodePath("GameOverPanel/VBoxContainer/Reason")
+
+[node name="ColorRect" type="ColorRect" parent="GameOverWindow" unique_id=520958493]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.18039216, 0.078431375, 0.05490196, 0.8862745)
+
+[node name="GameOverPanel" type="PanelContainer" parent="GameOverWindow" unique_id=1695357872]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -692.0
+offset_top = -187.0
+offset_right = 692.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_p27gv")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GameOverWindow/GameOverPanel" unique_id=676530265]
+layout_mode = 2
+
+[node name="GameOverText" type="Label" parent="GameOverWindow/GameOverPanel/VBoxContainer" unique_id=1405006016]
+layout_mode = 2
+size_flags_vertical = 1
+text = "Game Over"
+label_settings = SubResource("LabelSettings_cn4eu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Reason" type="Label" parent="GameOverWindow/GameOverPanel/VBoxContainer" unique_id=745065830]
+layout_mode = 2
+size_flags_vertical = 1
+text = "You lied!!!"
+label_settings = SubResource("LabelSettings_0wyf6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TryAgainButton" type="Button" parent="GameOverWindow" unique_id=774918943]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -235.30432
+offset_top = 234.0
+offset_right = 235.30444
+offset_bottom = 333.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 36
+theme_override_styles/normal = SubResource("StyleBoxFlat_0wyf6")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_xp01v")
+theme_override_styles/hover = SubResource("StyleBoxFlat_jix7a")
+text = "TRY AGAIN"
 
 [editable path="AspectRatioContainerUI/16_10_Container/AskQuestionUI/EmplacementQuestionPopup"]
 [editable path="AspectRatioContainerUI/16_10_Container/AskQuestionUI/CategoryQuestionPopup2"]

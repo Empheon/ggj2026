@@ -17,11 +17,11 @@ var is_enemy_turn: bool = false:
 
 var player_knowledge: Dictionary[Question, bool] # {Question:bool}
 var enemy_knowledge: Dictionary[Question, bool] # {Question:bool}
-var player_hp: int = 3 :
+var enemy_knowledge_lies: Array[Question] # Questions where the player lied to the enemy
+var player_hp: int = 3:
 	set(value):
-		player_hp = clampi(value,0,10)
+		player_hp = clampi(value, 0, 10)
 		player_hp_changed.emit()
-var enemy_hp: int = 3
 
 # enemy variables
 var trick_question_probability: float = 0
@@ -40,7 +40,6 @@ func start_round():
 	player_knowledge.clear()
 	enemy_knowledge.clear()
 	player_hp = 3
-	enemy_hp = 3
 	trick_question_probability = 0
 	is_enemy_turn = true
 
@@ -88,7 +87,7 @@ func player_submit_solution(mask: MaskInfo):
 		player_hp -= 1
 		if player_hp <= 0:
 			print('GAME OVER')
-			gameover.emit()
+			gameover.emit("no_hp")
 			AudioManager.play_game_over()
 		else:
 			AudioManager.play_bad_guess()
@@ -138,41 +137,43 @@ func generate_enemy_trick_question() -> Question:
 	var question := Question.new()
 	return question
 
-func try_to_take_a_guess() -> MaskInfo:
+func try_to_take_a_guess():
 	if enemy_sure_masks.size() >= 1:
 		enemy_sure_masks_probability += enemy_sure_masks_probability_step
 
-	print('proba take a guess ', enemy_sure_masks_probability)
 	var r_take_a_guess = randf() < enemy_sure_masks_probability
 
 	if (enemy_sure_masks.size() >= 1 && r_take_a_guess) || enemy_sure_masks.size() == 4:
 		var guess_mask = MaskInfo.new()
-		if enemy_sure_masks["bouche"] != null:
+		if enemy_sure_masks.has("bouche"):
 			guess_mask.bouche_info = enemy_sure_masks["bouche"]
 		else:
 			guess_mask.bouche_info.couleur = get_random_couleur()
 			guess_mask.bouche_info.forme = get_random_forme()
 		
-		if enemy_sure_masks["coiffe"] != null:
+		if enemy_sure_masks.has("coiffe"):
 			guess_mask.coiffe_info = enemy_sure_masks["coiffe"]
 		else:
 			guess_mask.coiffe_info.couleur = get_random_couleur()
 			guess_mask.coiffe_info.forme = get_random_forme()
 
-		if enemy_sure_masks["face"] != null:
+		if enemy_sure_masks.has("face"):
 			guess_mask.face_info = enemy_sure_masks["face"]
 		else:
 			guess_mask.face_info.couleur = get_random_couleur()
 			guess_mask.face_info.forme = get_random_forme()
 
-		if enemy_sure_masks["yeux"] != null:
+		if enemy_sure_masks.has("yeux"):
 			guess_mask.yeux_info = enemy_sure_masks["yeux"]
 		else:
 			guess_mask.yeux_info.couleur = get_random_couleur()
 			guess_mask.yeux_info.forme = get_random_forme()
 
-		return guess_mask
-	return null
+		if compare_masks(enemy_mask, guess_mask):
+			gameover.emit("enemy_guessed")
+		else:
+			print("Enemy guessed wrong mask :(")
+	
 
 func refresh_enemy_sure_masks():
 	enemy_sure_masks.clear()
@@ -183,10 +184,10 @@ func refresh_enemy_sure_masks():
 			possible_masks[emplacement][caracteristique] = {}
 			match caracteristique:
 				&"couleur":
-					for value in [&"red", &"yellow", &"green", &"blue", &"purple"]:
+					for value in [&"red", &"yellow", &"green", &"blue"]:
 						possible_masks[emplacement][caracteristique][value] = true
 				&"forme":
-					for value in [&"square", &"triangle", &"round", &"spiky", &"polygon"]:
+					for value in [&"square", &"triangle", &"round", &"spiky"]:
 						possible_masks[emplacement][caracteristique][value] = true
 	
 	# filter all anything "no" knowledge
@@ -200,6 +201,8 @@ func refresh_enemy_sure_masks():
 		if question.emplacement != "any" and enemy_knowledge[question] and !possible_masks[question.emplacement][question.caracteristique][question.value]:
 			# TODO: Player is lying!!!
 			print("Player is lying!!!")
+			on_player_lie_detected()
+			return
 		if question.emplacement != "any" and !enemy_knowledge[question]:
 			possible_masks[question.emplacement][question.caracteristique][question.value] = false
 				
@@ -229,9 +232,9 @@ func is_emplacement_caracteristique_sure(emplacement: String, caracteristique: S
 	var possible_values = []
 	match caracteristique:
 		&"couleur":
-			possible_values = [&"red", &"yellow", &"green", &"blue", &"purple"]
+			possible_values = [&"red", &"yellow", &"green", &"blue"]
 		&"forme":
-			possible_values = [&"square", &"triangle", &"round", &"spiky", &"polygon"]
+			possible_values = [&"square", &"triangle", &"round", &"spiky"]
 	for question in enemy_knowledge:
 		if (question.emplacement == emplacement or question.emplacement == "any") and question.caracteristique == caracteristique and !enemy_knowledge[question]:
 			if question.value in possible_values:
@@ -261,7 +264,11 @@ func is_question_useless(new_question: Question) -> bool:
 
 
 	return false
-				
+
+func on_player_lie_detected():
+	gameover.emit("lie")
+	
+	
 func ask_question_to_enemy(question: Question) -> bool:
 	var answer := get_mask_truth(player_mask, question)
 	var new_knowledge := {question: answer}
@@ -280,7 +287,7 @@ func submit_player_solution(mask: Mask) -> bool:
 	return player_mask.is_equivalent_to(mask)
 
 func get_random_couleur() -> String:
-	return ["red", "yellow", "green", "blue", "purple"].pick_random()
+	return ["red", "yellow", "green", "blue"].pick_random()
 
 func get_random_forme() -> String:
-	return ["square", "triangle", "round", "spiky", "polygon"].pick_random()
+	return ["square", "triangle", "round", "spiky"].pick_random()

@@ -70,9 +70,7 @@ func connect_signals():
 
 func show_enemy_question():
 	ask_question_ui.hide()
-	var guess_mask = GameState.try_to_take_a_guess()
-	if guess_mask != null:
-		print("Guessing mask: ", guess_mask)
+	GameState.try_to_take_a_guess()
 		
 	var enemy_question := GameState.generate_enemy_question()
 	enemy_question_container.show_for_question(enemy_question)
