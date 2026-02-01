@@ -290,6 +290,7 @@ libraries/ = SubResource("AnimationLibrary_ruju6")
 autoplay = &"chara_blink"
 
 [node name="Table" type="TextureRect" parent="AspectRatioContainerWorld/16_10_Container" unique_id=386368298]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -429,7 +430,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="YesButton" type="Button" parent="AspectRatioContainerUI/16_10_Container/YesNoPanelContainer/HBoxContainer/VBoxContainerYes" unique_id=360842254]
-modulate = Color(0.39215687, 0.6784314, 0.28627452, 1)
+modulate = Color(0.5471182, 0.9312937, 0.40223196, 1)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -452,7 +453,7 @@ layout_mode = 2
 size_flags_horizontal = 3
 
 [node name="NoButton" type="Button" parent="AspectRatioContainerUI/16_10_Container/YesNoPanelContainer/HBoxContainer/VBoxContainerNo" unique_id=272141412]
-self_modulate = Color(0.9529412, 0.22745098, 0.23921569, 1)
+self_modulate = Color(1.2923918, 0.34129894, 0.3602391, 1)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
@@ -471,7 +472,6 @@ label_settings = ExtResource("8_jix7a")
 horizontal_alignment = 1
 
 [node name="AskQuestionUI" type="Control" parent="AspectRatioContainerUI/16_10_Container" unique_id=1524920362]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -660,6 +660,7 @@ offset_bottom = 896.0
 theme_override_styles/panel = ExtResource("9_j4epa")
 
 [node name="QuestionItem" parent="AspectRatioContainerUI/16_10_Container/AskQuestionUI/ColorPopup/Grid" parent_id_path=PackedInt32Array(1113487206, 1457894234) index="0" unique_id=842373604]
+modulate = Color(1.353256, 1.353256, 1.353256, 1)
 self_modulate = Color(0.9529412, 0.22745098, 0.23921569, 1)
 text = "RED"
 icon = ExtResource("36_0wyf6")
@@ -667,6 +668,7 @@ script = ExtResource("17_k6f3i")
 value = "red"
 
 [node name="QuestionItem2" parent="AspectRatioContainerUI/16_10_Container/AskQuestionUI/ColorPopup/Grid" parent_id_path=PackedInt32Array(1113487206, 1457894234) index="1" unique_id=1641545328]
+modulate = Color(1.353256, 1.353256, 1.353256, 1)
 self_modulate = Color(1, 0.6784314, 0.2784314, 1)
 text = "YELLOW"
 icon = ExtResource("36_0wyf6")
@@ -674,6 +676,7 @@ script = ExtResource("17_k6f3i")
 value = "yellow"
 
 [node name="QuestionItem3" parent="AspectRatioContainerUI/16_10_Container/AskQuestionUI/ColorPopup/Grid" parent_id_path=PackedInt32Array(1113487206, 1457894234) index="2" unique_id=336210733]
+modulate = Color(1.353256, 1.353256, 1.353256, 1)
 self_modulate = Color(0.39215687, 0.6784314, 0.28627452, 1)
 text = "GREEN"
 icon = ExtResource("36_0wyf6")
@@ -681,6 +684,7 @@ script = ExtResource("17_k6f3i")
 value = "green"
 
 [node name="QuestionItem4" parent="AspectRatioContainerUI/16_10_Container/AskQuestionUI/ColorPopup/Grid" parent_id_path=PackedInt32Array(1113487206, 1457894234) index="3" unique_id=457536566]
+modulate = Color(1.353256, 1.353256, 1.353256, 1)
 self_modulate = Color(0.08235294, 0.5372549, 0.7921569, 1)
 text = "BLUE"
 icon = ExtResource("36_0wyf6")
@@ -689,6 +693,7 @@ value = "blue"
 
 [node name="QuestionItem5" parent="AspectRatioContainerUI/16_10_Container/AskQuestionUI/ColorPopup/Grid" parent_id_path=PackedInt32Array(1113487206, 1457894234) index="4" unique_id=1216540401]
 visible = false
+modulate = Color(1.353256, 1.353256, 1.353256, 1)
 self_modulate = Color(0.6784314, 0.26666668, 0.72156864, 1)
 text = "PURPLE"
 icon = ExtResource("36_0wyf6")
@@ -974,6 +979,7 @@ offset_bottom = 757.0
 theme_override_styles/panel = ExtResource("9_j4epa")
 
 [node name="QuestionItem" parent="AspectRatioContainerUI/16_10_Container/SolutionConstructorUI/ColorPopup/Grid" parent_id_path=PackedInt32Array(1878665429, 1457894234) index="0" unique_id=842373604]
+modulate = Color(1.353256, 1.353256, 1.353256, 1)
 self_modulate = Color(0.9529412, 0.22745098, 0.23921569, 1)
 text = "RED"
 icon = ExtResource("36_0wyf6")
@@ -981,6 +987,7 @@ script = ExtResource("17_k6f3i")
 value = "red"
 
 [node name="QuestionItem2" parent="AspectRatioContainerUI/16_10_Container/SolutionConstructorUI/ColorPopup/Grid" parent_id_path=PackedInt32Array(1878665429, 1457894234) index="1" unique_id=1641545328]
+modulate = Color(1.353256, 1.353256, 1.353256, 1)
 self_modulate = Color(1, 0.6784314, 0.2784314, 1)
 text = "YELLOW"
 icon = ExtResource("36_0wyf6")
@@ -988,6 +995,7 @@ script = ExtResource("17_k6f3i")
 value = "yellow"
 
 [node name="QuestionItem3" parent="AspectRatioContainerUI/16_10_Container/SolutionConstructorUI/ColorPopup/Grid" parent_id_path=PackedInt32Array(1878665429, 1457894234) index="2" unique_id=336210733]
+modulate = Color(1.353256, 1.353256, 1.353256, 1)
 self_modulate = Color(0.39215687, 0.6784314, 0.28627452, 1)
 text = "GREEN"
 icon = ExtResource("36_0wyf6")
@@ -995,6 +1003,7 @@ script = ExtResource("17_k6f3i")
 value = "green"
 
 [node name="QuestionItem4" parent="AspectRatioContainerUI/16_10_Container/SolutionConstructorUI/ColorPopup/Grid" parent_id_path=PackedInt32Array(1878665429, 1457894234) index="3" unique_id=457536566]
+modulate = Color(1.353256, 1.353256, 1.353256, 1)
 self_modulate = Color(0.08235294, 0.5372549, 0.7921569, 1)
 text = "BLUE"
 icon = ExtResource("36_0wyf6")
@@ -1003,6 +1012,7 @@ value = "blue"
 
 [node name="QuestionItem5" parent="AspectRatioContainerUI/16_10_Container/SolutionConstructorUI/ColorPopup/Grid" parent_id_path=PackedInt32Array(1878665429, 1457894234) index="4" unique_id=1216540401]
 visible = false
+modulate = Color(1.353256, 1.353256, 1.353256, 1)
 self_modulate = Color(0.6784314, 0.26666668, 0.72156864, 1)
 text = "PURPLE"
 icon = ExtResource("36_0wyf6")

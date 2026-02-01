@@ -305,6 +305,7 @@ mouse_filter = 2
 
 [node name="PlayButton" type="Button" parent="AspectRatioContainerUI/16_10_Container" unique_id=991021338]
 modulate = Color(0.56759137, 0.9319261, 0.43329424, 1)
+self_modulate = Color(1.353256, 1.353256, 1.353256, 1)
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 1
 anchors_preset = 8
